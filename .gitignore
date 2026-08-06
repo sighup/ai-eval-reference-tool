@@ -1,0 +1,35 @@
+.DS_Store
+.idea/
+
+.env
+
+## Docsify
+docsify/
+
+## Node
+node_modules/
+
+## VSCode
+.vscode
+.code-workspace
+
+## Webpack
+dist/
+
+# Python
+**/__pycache__/
+*.pyc
+**/venv/
+**/.venv/
+.ruff_cache/
+.pytest_cache/
+
+## Reference tool
+# Tool side effects (refund ledgers, escalation queues) are per-run artefacts.
+runs/
+# Traces are generated, except the frozen starter recordings the tests pin.
+traces/*
+!traces/starter/
+
+# Claude Code
+.claude/

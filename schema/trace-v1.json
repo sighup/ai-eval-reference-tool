@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://liatrio.com/ai-evaluation-bootcamp/schema/trace-v1.json",
+  "title": "Support agent run trace, v1",
+  "description": "One JSON object per agent run. One run per line in a JSONL file. A scorer can json.loads(line) and get nested steps with nothing but the standard library. A trace is self-contained: everything the model was sent is recorded verbatim, so scoring a run never requires the repository at the commit that produced it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "timestamp",
+    "fixture_id",
+    "mode",
+    "model",
+    "params",
+    "provider",
+    "prompt",
+    "fingerprint",
+    "input",
+    "steps",
+    "final_output",
+    "stop_reason",
+    "usage",
+    "cost_usd",
+    "labels"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Semver. Bumped only on a breaking change.",
+      "const": "1.0"
+    },
+    "run_id": {
+      "description": "Unique per run. Derived from fixture_id plus a repeat index, so repeated runs of one fixture do not collide and each gets its own runs/<run_id>/ directory.",
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "description": "When the run started, ISO-8601 UTC. Volatile: normalised out before comparing two runs. Present so a set of runs accumulated over days can be ordered and dated.",
+      "type": "string",
+      "minLength": 1
+    },
+    "fixture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "description": "live called the API; replay served turns from a recording.",
+      "enum": ["replay", "live"]
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "params": {
+      "description": "The sampling parameters as sent. Not volatile: temperature and the thinking setting change what the model does, so a comparison that normalised them away would attribute the result to the wrong thing. Additional keys are allowed, so adding a parameter does not invalidate existing traces.",
+      "type": "object",
+      "required": ["max_tokens", "temperature"],
+      "properties": {
+        "max_tokens": { "type": "integer", "minimum": 1 },
+        "temperature": { "type": "number", "minimum": 0 },
+        "thinking": {
+          "description": "Recorded because it is switched off explicitly. Omitting it from the request enables adaptive thinking, and the trace has no field for thinking blocks.",
+          "type": "object"
+        }
+      }
+    },
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prompt": {
+      "description": "Everything that shaped the model's behaviour, exactly as sent. Recorded verbatim rather than by reference: judging a run means judging the assembled prompt, and a digest cannot show that a template variable failed to substitute or that a retrieved document never reached the context.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "tools"],
+      "properties": {
+        "system": {
+          "description": "The rendered system prompt as sent, after template substitution.",
+          "type": "string"
+        },
+        "tools": {
+          "description": "The tool definitions as sent. Descriptions are included because their wording is what decides whether a tool gets called.",
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      }
+    },
+    "fingerprint": {
+      "description": "Digests of the three editable surfaces, for grouping runs by configuration. Derived from bytes recorded elsewhere in the trace or on disk, so they can be recomputed and checked rather than trusted. Not volatile: these are the independent variable when comparing runs.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prompt_sha256", "tools_sha256", "corpus_sha256"],
+      "properties": {
+        "prompt_sha256": { "type": "string", "minLength": 64, "maxLength": 64 },
+        "tools_sha256": { "type": "string", "minLength": 64, "maxLength": 64 },
+        "corpus_sha256": {
+          "description": "Over the whole corpus, not just the retrieved subset: a change to any document can change what retrieval returns.",
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["customer_id", "session_id", "message"],
+      "properties": {
+        "customer_id": { "type": "string" },
+        "session_id": { "type": "string" },
+        "message": { "type": "string" }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/step" }
+    },
+    "final_output": {
+      "description": "The agent's last user-facing text. Empty string if the run produced none.",
+      "type": "string"
+    },
+    "stop_reason": {
+      "description": "Why the run ended. Closed enum, so a scorer can switch on it exhaustively. The first five are passed through from the model; escalated means the terminal tool fired; max_steps means the loop cap was hit. The SDK's tool_use and pause_turn are absent on purpose: the loop continues past both, so neither can ever end a run.",
+      "enum": [
+        "end_turn",
+        "max_tokens",
+        "stop_sequence",
+        "refusal",
+        "model_context_window_exceeded",
+        "escalated",
+        "max_steps"
+      ]
+    },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_tokens", "output_tokens", "cached_tokens"],
+      "properties": {
+        "input_tokens": { "type": "integer", "minimum": 0 },
+        "output_tokens": { "type": "integer", "minimum": 0 },
+        "cached_tokens": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "cost_usd": {
+      "description": "Rounded to 6dp so the field is stable under re-serialisation.",
+      "type": "number",
+      "minimum": 0
+    },
+    "labels": {
+      "description": "Reserved for whoever is scoring. The agent never writes to it.",
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "step": {
+      "type": "object",
+      "required": ["step_id", "source"],
+      "properties": {
+        "step_id": { "type": "integer", "minimum": 0 },
+        "source": { "enum": ["user", "agent", "system"] }
+      },
+      "oneOf": [
+        { "$ref": "#/$defs/user_step" },
+        { "$ref": "#/$defs/agent_step" },
+        { "$ref": "#/$defs/system_step" }
+      ]
+    },
+    "user_step": {
+      "description": "Everything that went in for one user turn: the raw message, what retrieval returned for it, and the content the model actually received.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["step_id", "source", "message", "rendered"],
+      "properties": {
+        "step_id": { "type": "integer", "minimum": 0 },
+        "source": { "const": "user" },
+        "message": {
+          "description": "The customer's message, unmodified.",
+          "type": "string"
+        },
+        "retrieved": {
+          "description": "What retrieval returned for this turn, in rank order. score is the raw BM25 score, not normalised. Present whenever retrieval ran; text is duplicated from the corpus so a grounding check has document text keyed by doc_id without parsing it back out of the rendered content.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["doc_id", "score", "text"],
+            "properties": {
+              "doc_id": { "type": "string" },
+              "score": { "type": "number" },
+              "text": { "type": "string" }
+            }
+          }
+        },
+        "rendered": {
+          "description": "The user-turn content as sent, after the retrieved documents were templated into it. This is what makes a templating failure visible to a scorer.",
+          "type": "string"
+        }
+      }
+    },
+    "agent_step": {
+      "description": "What came out of one model turn.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["step_id", "source", "message"],
+      "properties": {
+        "step_id": { "type": "integer", "minimum": 0 },
+        "source": { "const": "agent" },
+        "message": { "type": "string" },
+        "tool_calls": {
+          "description": "All tool calls issued in one model turn appear in one step. name and arguments are unconstrained, so adding a tool or a parameter does not invalidate existing traces.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tool_call_id", "name", "arguments"],
+            "properties": {
+              "tool_call_id": { "type": "string" },
+              "name": { "type": "string" },
+              "arguments": { "type": "object" }
+            }
+          }
+        }
+      }
+    },
+    "system_step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["step_id", "source", "observations"],
+      "properties": {
+        "step_id": { "type": "integer", "minimum": 0 },
+        "source": { "const": "system" },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source_call_id", "content", "is_error"],
+            "properties": {
+              "source_call_id": { "type": "string" },
+              "content": { "type": "object" },
+              "is_error": {
+                "description": "Lets a scorer tell a failed call from a successful call that returned bad news, without reading the API payload.",
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,702 @@
+{
+  "cust-1042": {
+    "customer_id": "cust-1042",
+    "name": "Dana Whitfield",
+    "email": "dana.whitfield@example.com",
+    "address": {
+      "line1": "418 Hollybrook Lane",
+      "line2": null,
+      "city": "Ashfield",
+      "region": "OR",
+      "postal_code": "97140",
+      "country": "US"
+    },
+    "joined_at": "2024-11-23"
+  },
+  "cust-1071": {
+    "customer_id": "cust-1071",
+    "name": "Georgina Bellweather",
+    "email": "georginabellweather@example.com",
+    "address": {
+      "line1": "2807 Harrowgate Street",
+      "line2": null,
+      "city": "Loam Valley",
+      "region": "IA",
+      "postal_code": "52230",
+      "country": "US"
+    },
+    "joined_at": "2023-03-22"
+  },
+  "cust-1274": {
+    "customer_id": "cust-1274",
+    "name": "Esme Ashgrove",
+    "email": "esme.ashgrove@example.com",
+    "address": {
+      "line1": "892 Underhill Avenue",
+      "line2": null,
+      "city": "Fallow Mill",
+      "region": "PA",
+      "postal_code": "17450",
+      "country": "US"
+    },
+    "joined_at": "2025-11-07"
+  },
+  "cust-1660": {
+    "customer_id": "cust-1660",
+    "name": "Ines Raghunathan",
+    "email": "i.raghunathan@example.com",
+    "address": {
+      "line1": "2963 Elmsworth Lane",
+      "line2": "Apt 28A",
+      "city": "Gullwing",
+      "region": "CA",
+      "postal_code": "93588",
+      "country": "US"
+    },
+    "joined_at": "2023-11-30"
+  },
+  "cust-1670": {
+    "customer_id": "cust-1670",
+    "name": "Vikram Falkenrath",
+    "email": "vikram.f@example.com",
+    "address": {
+      "line1": "2038 Saltmarsh Row",
+      "line2": "Unit 34D",
+      "city": "Marrow Creek",
+      "region": "MT",
+      "postal_code": "59747",
+      "country": "US"
+    },
+    "joined_at": "2023-08-29"
+  },
+  "cust-1736": {
+    "customer_id": "cust-1736",
+    "name": "Kwame Achebe",
+    "email": "kwame.a@example.com",
+    "address": {
+      "line1": "1632 Thistledown Way",
+      "line2": null,
+      "city": "Harrow Bay",
+      "region": "ME",
+      "postal_code": "04668",
+      "country": "US"
+    },
+    "joined_at": "2023-05-24"
+  },
+  "cust-2071": {
+    "customer_id": "cust-2071",
+    "name": "Marcus Oyelaran",
+    "email": "m.oyelaran@example.com",
+    "address": {
+      "line1": "77 Kestrel Court",
+      "line2": "Apt 3B",
+      "city": "Brant Harbor",
+      "region": "MA",
+      "postal_code": "01998",
+      "country": "US"
+    },
+    "joined_at": "2025-12-21"
+  },
+  "cust-2579": {
+    "customer_id": "cust-2579",
+    "name": "Esme Eriksen",
+    "email": "esme.e@example.com",
+    "address": {
+      "line1": "1886 Oldgate Lane",
+      "line2": null,
+      "city": "Juniper Flats",
+      "region": "NM",
+      "postal_code": "87478",
+      "country": "US"
+    },
+    "joined_at": "2023-01-23"
+  },
+  "cust-2700": {
+    "customer_id": "cust-2700",
+    "name": "Jarrah Kilbride",
+    "email": "jarrah.kilbride@example.com",
+    "address": {
+      "line1": "1459 Harrowgate Way",
+      "line2": null,
+      "city": "Kestrel Ridge",
+      "region": "WY",
+      "postal_code": "82860",
+      "country": "US"
+    },
+    "joined_at": "2025-01-03"
+  },
+  "cust-2707": {
+    "customer_id": "cust-2707",
+    "name": "Wren Kilbride",
+    "email": "wrenkilbride@example.com",
+    "address": {
+      "line1": "2351 Harrowgate Terrace",
+      "line2": null,
+      "city": "Juniper Flats",
+      "region": "NM",
+      "postal_code": "87426",
+      "country": "US"
+    },
+    "joined_at": "2024-05-17"
+  },
+  "cust-2846": {
+    "customer_id": "cust-2846",
+    "name": "Ugo Girardot",
+    "email": "ugogirardot@example.com",
+    "address": {
+      "line1": "2945 Larkspur Lane",
+      "line2": null,
+      "city": "Juniper Flats",
+      "region": "NM",
+      "postal_code": "87400",
+      "country": "US"
+    },
+    "joined_at": "2024-09-11"
+  },
+  "cust-2851": {
+    "customer_id": "cust-2851",
+    "name": "Dmitri Nakashima",
+    "email": "dmitri.n@example.com",
+    "address": {
+      "line1": "4765 Coldharbour Street",
+      "line2": null,
+      "city": "Gullwing",
+      "region": "CA",
+      "postal_code": "93566",
+      "country": "US"
+    },
+    "joined_at": "2022-12-11"
+  },
+  "cust-3059": {
+    "customer_id": "cust-3059",
+    "name": "Callum Falkenrath",
+    "email": "c.falkenrath@example.com",
+    "address": {
+      "line1": "1937 Coldharbour Close",
+      "line2": null,
+      "city": "Salt Ridge",
+      "region": "UT",
+      "postal_code": "84511",
+      "country": "US"
+    },
+    "joined_at": "2024-07-05"
+  },
+  "cust-3257": {
+    "customer_id": "cust-3257",
+    "name": "Callum Everly",
+    "email": "c.everly@example.com",
+    "address": {
+      "line1": "3547 Vinegar Street",
+      "line2": null,
+      "city": "Norbeck",
+      "region": "MD",
+      "postal_code": "20843",
+      "country": "US"
+    },
+    "joined_at": "2024-02-14"
+  },
+  "cust-3266": {
+    "customer_id": "cust-3266",
+    "name": "Hugo Quillfeather",
+    "email": "hugo.quillfeather@example.com",
+    "address": {
+      "line1": "599 Gorsehill Row",
+      "line2": null,
+      "city": "Loam Valley",
+      "region": "IA",
+      "postal_code": "52206",
+      "country": "US"
+    },
+    "joined_at": "2025-05-10"
+  },
+  "cust-3307": {
+    "customer_id": "cust-3307",
+    "name": "Wilhelmina Thornbury",
+    "email": "wilhelminathornbury@example.com",
+    "address": {
+      "line1": "885 Alderwood Drive",
+      "line2": null,
+      "city": "Loam Valley",
+      "region": "IA",
+      "postal_code": "52225",
+      "country": "US"
+    },
+    "joined_at": "2023-11-23"
+  },
+  "cust-3308": {
+    "customer_id": "cust-3308",
+    "name": "Priya Raghunathan",
+    "email": "priya.r@example.com",
+    "address": {
+      "line1": "9 Tolliver Row",
+      "line2": null,
+      "city": "Wren Falls",
+      "region": "CO",
+      "postal_code": "80699",
+      "country": "US"
+    },
+    "joined_at": "2026-06-13"
+  },
+  "cust-3379": {
+    "customer_id": "cust-3379",
+    "name": "Kirra Peralta",
+    "email": "k.peralta@example.com",
+    "address": {
+      "line1": "2778 Pennywhistle Way",
+      "line2": null,
+      "city": "Ashfield",
+      "region": "OR",
+      "postal_code": "97162",
+      "country": "US"
+    },
+    "joined_at": "2024-04-11"
+  },
+  "cust-3468": {
+    "customer_id": "cust-3468",
+    "name": "Yusuf Lavigne",
+    "email": "yusuf.lavigne@example.com",
+    "address": {
+      "line1": "1699 Ashcombe Avenue",
+      "line2": "Suite 12C",
+      "city": "Thistle Grove",
+      "region": "VT",
+      "postal_code": "05684",
+      "country": "US"
+    },
+    "joined_at": "2026-01-13"
+  },
+  "cust-3546": {
+    "customer_id": "cust-3546",
+    "name": "Kirra Girardot",
+    "email": "k.girardot@example.com",
+    "address": {
+      "line1": "3168 Coldharbour Drive",
+      "line2": null,
+      "city": "Gullwing",
+      "region": "CA",
+      "postal_code": "93535",
+      "country": "US"
+    },
+    "joined_at": "2024-12-18"
+  },
+  "cust-3647": {
+    "customer_id": "cust-3647",
+    "name": "Dmitri Lavigne",
+    "email": "dmitri.lavigne@example.com",
+    "address": {
+      "line1": "3614 Gorsehill Close",
+      "line2": "Suite 17C",
+      "city": "Ashfield",
+      "region": "OR",
+      "postal_code": "97183",
+      "country": "US"
+    },
+    "joined_at": "2025-03-24"
+  },
+  "cust-4104": {
+    "customer_id": "cust-4104",
+    "name": "Perpetua Oyelaran",
+    "email": "perpetuaoyelaran@example.com",
+    "address": {
+      "line1": "4259 Ashcombe Terrace",
+      "line2": null,
+      "city": "Verdigris",
+      "region": "KS",
+      "postal_code": "67020",
+      "country": "US"
+    },
+    "joined_at": "2024-08-06"
+  },
+  "cust-4525": {
+    "customer_id": "cust-4525",
+    "name": "Xiomara Bramhall",
+    "email": "xiomarabramhall@example.com",
+    "address": {
+      "line1": "701 Draycott Avenue",
+      "line2": null,
+      "city": "Sable Point",
+      "region": "MI",
+      "postal_code": "49476",
+      "country": "US"
+    },
+    "joined_at": "2024-04-16"
+  },
+  "cust-4659": {
+    "customer_id": "cust-4659",
+    "name": "Joaquin Jankowski",
+    "email": "joaquin.jankowski@example.com",
+    "address": {
+      "line1": "1953 Yewtree Terrace",
+      "line2": "Unit 14B",
+      "city": "Gullwing",
+      "region": "CA",
+      "postal_code": "93564",
+      "country": "US"
+    },
+    "joined_at": "2024-10-06"
+  },
+  "cust-4850": {
+    "customer_id": "cust-4850",
+    "name": "Mireille Jessup",
+    "email": "mireillejessup@example.com",
+    "address": {
+      "line1": "149 Vinegar Close",
+      "line2": null,
+      "city": "Salt Ridge",
+      "region": "UT",
+      "postal_code": "84566",
+      "country": "US"
+    },
+    "joined_at": "2025-02-10"
+  },
+  "cust-4893": {
+    "customer_id": "cust-4893",
+    "name": "Otto Yarrow",
+    "email": "otto.yarrow@example.com",
+    "address": {
+      "line1": "4206 Pennywhistle Lane",
+      "line2": null,
+      "city": "Gullwing",
+      "region": "CA",
+      "postal_code": "93560",
+      "country": "US"
+    },
+    "joined_at": "2025-03-03"
+  },
+  "cust-5179": {
+    "customer_id": "cust-5179",
+    "name": "Bram Whitfield",
+    "email": "bramwhitfield@example.com",
+    "address": {
+      "line1": "375 Wainwright Row",
+      "line2": null,
+      "city": "Windhollow",
+      "region": "WA",
+      "postal_code": "98612",
+      "country": "US"
+    },
+    "joined_at": "2024-05-10"
+  },
+  "cust-5263": {
+    "customer_id": "cust-5263",
+    "name": "Thaddeus Nakashima",
+    "email": "t.nakashima@example.com",
+    "address": {
+      "line1": "2873 Gorsehill Row",
+      "line2": null,
+      "city": "Harrow Bay",
+      "region": "ME",
+      "postal_code": "04601",
+      "country": "US"
+    },
+    "joined_at": "2024-04-26"
+  },
+  "cust-5470": {
+    "customer_id": "cust-5470",
+    "name": "Soren Ivarsson",
+    "email": "soren.ivarsson@example.com",
+    "address": {
+      "line1": "2040 Vinegar Avenue",
+      "line2": null,
+      "city": "Wren Falls",
+      "region": "CO",
+      "postal_code": "80671",
+      "country": "US"
+    },
+    "joined_at": "2024-08-10"
+  },
+  "cust-5749": {
+    "customer_id": "cust-5749",
+    "name": "Bram Kilbride",
+    "email": "b.kilbride@example.com",
+    "address": {
+      "line1": "2761 Ashcombe Terrace",
+      "line2": null,
+      "city": "Fallow Mill",
+      "region": "PA",
+      "postal_code": "17491",
+      "country": "US"
+    },
+    "joined_at": "2026-06-13"
+  },
+  "cust-5774": {
+    "customer_id": "cust-5774",
+    "name": "Zora Halloway",
+    "email": "zora.h@example.com",
+    "address": {
+      "line1": "3771 Oldgate Row",
+      "line2": null,
+      "city": "Marrow Creek",
+      "region": "MT",
+      "postal_code": "59756",
+      "country": "US"
+    },
+    "joined_at": "2022-10-31"
+  },
+  "cust-5847": {
+    "customer_id": "cust-5847",
+    "name": "Cordelia Lavigne",
+    "email": "cordelialavigne@example.com",
+    "address": {
+      "line1": "3818 Cobbler Way",
+      "line2": "Unit 20C",
+      "city": "Tanner's Reach",
+      "region": "NC",
+      "postal_code": "28715",
+      "country": "US"
+    },
+    "joined_at": "2023-10-21"
+  },
+  "cust-6411": {
+    "customer_id": "cust-6411",
+    "name": "Tamsin Rennick",
+    "email": "t.rennick@example.com",
+    "address": {
+      "line1": "2403 Harrowgate Street",
+      "line2": null,
+      "city": "Loam Valley",
+      "region": "IA",
+      "postal_code": "52269",
+      "country": "US"
+    },
+    "joined_at": "2023-07-11"
+  },
+  "cust-6554": {
+    "customer_id": "cust-6554",
+    "name": "Niamh Tremblay",
+    "email": "niamh.tremblay@example.com",
+    "address": {
+      "line1": "4290 Netherfield Terrace",
+      "line2": null,
+      "city": "Harrow Bay",
+      "region": "ME",
+      "postal_code": "04632",
+      "country": "US"
+    },
+    "joined_at": "2023-10-26"
+  },
+  "cust-6727": {
+    "customer_id": "cust-6727",
+    "name": "Otto Lavigne",
+    "email": "otto.lavigne@example.com",
+    "address": {
+      "line1": "3617 Quarryman Lane",
+      "line2": null,
+      "city": "Ember Lake",
+      "region": "MN",
+      "postal_code": "55743",
+      "country": "US"
+    },
+    "joined_at": "2023-06-02"
+  },
+  "cust-6769": {
+    "customer_id": "cust-6769",
+    "name": "Lucian Raghunathan",
+    "email": "lucian.r@example.com",
+    "address": {
+      "line1": "1535 Quarryman Avenue",
+      "line2": null,
+      "city": "Wren Falls",
+      "region": "CO",
+      "postal_code": "80612",
+      "country": "US"
+    },
+    "joined_at": "2023-10-06"
+  },
+  "cust-7391": {
+    "customer_id": "cust-7391",
+    "name": "Soren Rasmussen",
+    "email": "soren.rasmussen@example.com",
+    "address": {
+      "line1": "3898 Gorsehill Close",
+      "line2": null,
+      "city": "Verdigris",
+      "region": "KS",
+      "postal_code": "67092",
+      "country": "US"
+    },
+    "joined_at": "2023-09-12"
+  },
+  "cust-7504": {
+    "customer_id": "cust-7504",
+    "name": "Isolde Mbeki",
+    "email": "isoldembeki@example.com",
+    "address": {
+      "line1": "3844 Larkspur Lane",
+      "line2": null,
+      "city": "Tanner's Reach",
+      "region": "NC",
+      "postal_code": "28743",
+      "country": "US"
+    },
+    "joined_at": "2023-04-28"
+  },
+  "cust-7745": {
+    "customer_id": "cust-7745",
+    "name": "Jarrah Hawthorne",
+    "email": "j.hawthorne@example.com",
+    "address": {
+      "line1": "322 Tolliver Row",
+      "line2": null,
+      "city": "Wren Falls",
+      "region": "CO",
+      "postal_code": "80624",
+      "country": "US"
+    },
+    "joined_at": "2024-05-17"
+  },
+  "cust-7777": {
+    "customer_id": "cust-7777",
+    "name": "Thaddeus Tremblay",
+    "email": "thaddeustremblay@example.com",
+    "address": {
+      "line1": "4095 Tolliver Way",
+      "line2": null,
+      "city": "Ashfield",
+      "region": "OR",
+      "postal_code": "97109",
+      "country": "US"
+    },
+    "joined_at": "2023-06-20"
+  },
+  "cust-8103": {
+    "customer_id": "cust-8103",
+    "name": "Sabine Raghunathan",
+    "email": "sabine.raghunathan@example.com",
+    "address": {
+      "line1": "2251 Harrowgate Street",
+      "line2": null,
+      "city": "Ember Lake",
+      "region": "MN",
+      "postal_code": "55787",
+      "country": "US"
+    },
+    "joined_at": "2025-06-20"
+  },
+  "cust-8242": {
+    "customer_id": "cust-8242",
+    "name": "Kwame Rasmussen",
+    "email": "k.rasmussen@example.com",
+    "address": {
+      "line1": "2070 Alderwood Row",
+      "line2": null,
+      "city": "Fallow Mill",
+      "region": "PA",
+      "postal_code": "17477",
+      "country": "US"
+    },
+    "joined_at": "2023-05-17"
+  },
+  "cust-8394": {
+    "customer_id": "cust-8394",
+    "name": "Marcus Whitfeld",
+    "email": "m.whitfeld@example.com",
+    "address": {
+      "line1": "1116 Kestrel Terrace",
+      "line2": null,
+      "city": "Wren Falls",
+      "region": "CO",
+      "postal_code": "80616",
+      "country": "US"
+    },
+    "joined_at": "2024-11-16"
+  },
+  "cust-8645": {
+    "customer_id": "cust-8645",
+    "name": "Valentina Raghunathan",
+    "email": "valentina.raghunathan@example.com",
+    "address": {
+      "line1": "3557 Fennimore Row",
+      "line2": "Suite 4C",
+      "city": "Marrow Creek",
+      "region": "MT",
+      "postal_code": "59779",
+      "country": "US"
+    },
+    "joined_at": "2025-06-03"
+  },
+  "cust-8801": {
+    "customer_id": "cust-8801",
+    "name": "Mateo Bellweather",
+    "email": "mateo.bellweather@example.com",
+    "address": {
+      "line1": "1863 Wainwright Row",
+      "line2": null,
+      "city": "Norbeck",
+      "region": "MD",
+      "postal_code": "20876",
+      "country": "US"
+    },
+    "joined_at": "2025-03-10"
+  },
+  "cust-8871": {
+    "customer_id": "cust-8871",
+    "name": "Georgina Corrigan",
+    "email": "g.corrigan@example.com",
+    "address": {
+      "line1": "877 Beechworth Lane",
+      "line2": null,
+      "city": "Marrow Creek",
+      "region": "MT",
+      "postal_code": "59749",
+      "country": "US"
+    },
+    "joined_at": "2024-12-09"
+  },
+  "cust-9287": {
+    "customer_id": "cust-9287",
+    "name": "Thaddeus Ivarsson",
+    "email": "t.ivarsson@example.com",
+    "address": {
+      "line1": "1182 Pennywhistle Drive",
+      "line2": null,
+      "city": "Wren Falls",
+      "region": "CO",
+      "postal_code": "80602",
+      "country": "US"
+    },
+    "joined_at": "2024-05-30"
+  },
+  "cust-9468": {
+    "customer_id": "cust-9468",
+    "name": "Marcus Dunmore",
+    "email": "m.dunmore@example.com",
+    "address": {
+      "line1": "1480 Netherfield Drive",
+      "line2": null,
+      "city": "Windhollow",
+      "region": "WA",
+      "postal_code": "98678",
+      "country": "US"
+    },
+    "joined_at": "2024-01-25"
+  },
+  "cust-9793": {
+    "customer_id": "cust-9793",
+    "name": "Rosalind Castellanos",
+    "email": "rosalind.castellanos@example.com",
+    "address": {
+      "line1": "2603 Saltmarsh Row",
+      "line2": null,
+      "city": "Windhollow",
+      "region": "WA",
+      "postal_code": "98641",
+      "country": "US"
+    },
+    "joined_at": "2024-05-23"
+  },
+  "cust-9982": {
+    "customer_id": "cust-9982",
+    "name": "Lucian Delacroix",
+    "email": "luciandelacroix@example.com",
+    "address": {
+      "line1": "3081 Rushbourne Street",
+      "line2": null,
+      "city": "Gullwing",
+      "region": "CA",
+      "postal_code": "93546",
+      "country": "US"
+    },
+    "joined_at": "2024-05-08"
+  }
+}

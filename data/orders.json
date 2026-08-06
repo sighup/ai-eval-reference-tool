@@ -1,0 +1,7338 @@
+{
+  "A-3201": {
+    "order_id": "A-3201",
+    "customer_id": "cust-1670",
+    "placed_at": "2026-06-27",
+    "status": "delivered",
+    "total_cents": 11400,
+    "items": [
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 1,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF39217743818",
+      "estimated_delivery": "2026-07-06",
+      "delivered_at": "2026-07-05"
+    }
+  },
+  "A-3206": {
+    "order_id": "A-3206",
+    "customer_id": "cust-8394",
+    "placed_at": "2025-11-06",
+    "status": "delivered",
+    "total_cents": 4398,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 2,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP013410234181",
+      "estimated_delivery": "2025-11-12",
+      "delivered_at": "2025-11-13"
+    }
+  },
+  "A-3211": {
+    "order_id": "A-3211",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-04-11",
+    "status": "delivered",
+    "total_cents": 6450,
+    "items": [
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 1,
+        "unit_price_cents": 3300
+      },
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 3,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF46102595755",
+      "estimated_delivery": "2026-04-19",
+      "delivered_at": "2026-04-19"
+    }
+  },
+  "A-3220": {
+    "order_id": "A-3220",
+    "customer_id": "cust-2707",
+    "placed_at": "2026-03-12",
+    "status": "delivered",
+    "total_cents": 10600,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP960276587844",
+      "estimated_delivery": "2026-03-15",
+      "delivered_at": "2026-03-15"
+    }
+  },
+  "A-3221": {
+    "order_id": "A-3221",
+    "customer_id": "cust-6554",
+    "placed_at": "2025-10-28",
+    "status": "delivered",
+    "total_cents": 25200,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 3,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF33085236705",
+      "estimated_delivery": "2025-11-07",
+      "delivered_at": "2025-11-05"
+    }
+  },
+  "A-3222": {
+    "order_id": "A-3222",
+    "customer_id": "cust-7391",
+    "placed_at": "2026-07-09",
+    "status": "delivered",
+    "total_cents": 19950,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 3,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      },
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP886861172667",
+      "estimated_delivery": "2026-07-16",
+      "delivered_at": "2026-07-16"
+    }
+  },
+  "A-3224": {
+    "order_id": "A-3224",
+    "customer_id": "cust-3379",
+    "placed_at": "2024-10-29",
+    "status": "delivered",
+    "total_cents": 2100,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF38504406962",
+      "estimated_delivery": "2024-11-02",
+      "delivered_at": "2024-11-01"
+    }
+  },
+  "A-3229": {
+    "order_id": "A-3229",
+    "customer_id": "cust-3307",
+    "placed_at": "2025-05-04",
+    "status": "delivered",
+    "total_cents": 21200,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 2,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF54655482631",
+      "estimated_delivery": "2025-05-07",
+      "delivered_at": "2025-05-07"
+    }
+  },
+  "A-3232": {
+    "order_id": "A-3232",
+    "customer_id": "cust-4104",
+    "placed_at": "2025-12-25",
+    "status": "delivered",
+    "total_cents": 5200,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP457791785390",
+      "estimated_delivery": "2026-01-01",
+      "delivered_at": "2025-12-30"
+    }
+  },
+  "A-3238": {
+    "order_id": "A-3238",
+    "customer_id": "cust-4525",
+    "placed_at": "2025-02-13",
+    "status": "delivered",
+    "total_cents": 16500,
+    "items": [
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      },
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 2,
+        "unit_price_cents": 3300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP683838003056",
+      "estimated_delivery": "2025-02-19",
+      "delivered_at": "2025-02-19"
+    }
+  },
+  "A-3239": {
+    "order_id": "A-3239",
+    "customer_id": "cust-9982",
+    "placed_at": "2025-12-13",
+    "status": "delivered",
+    "total_cents": 36050,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 2,
+        "unit_price_cents": 12800
+      },
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 1,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 2,
+        "unit_price_cents": 3300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP732605249847",
+      "estimated_delivery": "2025-12-17",
+      "delivered_at": "2025-12-17"
+    }
+  },
+  "A-3249": {
+    "order_id": "A-3249",
+    "customer_id": "cust-2707",
+    "placed_at": "2026-02-14",
+    "status": "delivered",
+    "total_cents": 11650,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      },
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF99345862500",
+      "estimated_delivery": "2026-02-22",
+      "delivered_at": "2026-02-20"
+    }
+  },
+  "A-3256": {
+    "order_id": "A-3256",
+    "customer_id": "cust-6411",
+    "placed_at": "2024-11-07",
+    "status": "cancelled",
+    "total_cents": 3300,
+    "items": [
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 1,
+        "unit_price_cents": 3300
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2024-11-15",
+      "delivered_at": null
+    }
+  },
+  "A-3260": {
+    "order_id": "A-3260",
+    "customer_id": "cust-6769",
+    "placed_at": "2025-03-22",
+    "status": "delivered",
+    "total_cents": 9650,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      },
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 2,
+        "unit_price_cents": 2400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF47229554437",
+      "estimated_delivery": "2025-03-29",
+      "delivered_at": "2025-03-30"
+    }
+  },
+  "A-3261": {
+    "order_id": "A-3261",
+    "customer_id": "cust-5179",
+    "placed_at": "2024-12-25",
+    "status": "delivered",
+    "total_cents": 3400,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF60266689814",
+      "estimated_delivery": "2024-12-27",
+      "delivered_at": "2024-12-28"
+    }
+  },
+  "A-3262": {
+    "order_id": "A-3262",
+    "customer_id": "cust-4893",
+    "placed_at": "2025-04-13",
+    "status": "delivered",
+    "total_cents": 4600,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 2,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF47794263642",
+      "estimated_delivery": "2025-04-18",
+      "delivered_at": "2025-04-18"
+    }
+  },
+  "A-3268": {
+    "order_id": "A-3268",
+    "customer_id": "cust-8394",
+    "placed_at": "2025-05-19",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP737594697916",
+      "estimated_delivery": "2025-05-27",
+      "delivered_at": "2025-05-27"
+    }
+  },
+  "A-3270": {
+    "order_id": "A-3270",
+    "customer_id": "cust-5847",
+    "placed_at": "2026-07-23",
+    "status": "in_transit",
+    "total_cents": 7200,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP873420912354",
+      "estimated_delivery": "2026-07-25",
+      "delivered_at": null
+    }
+  },
+  "A-3275": {
+    "order_id": "A-3275",
+    "customer_id": "cust-2700",
+    "placed_at": "2026-07-03",
+    "status": "delivered",
+    "total_cents": 4999,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 1,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP608608330003",
+      "estimated_delivery": "2026-07-11",
+      "delivered_at": "2026-07-11"
+    }
+  },
+  "A-3277": {
+    "order_id": "A-3277",
+    "customer_id": "cust-5774",
+    "placed_at": "2026-04-24",
+    "status": "delivered",
+    "total_cents": 2199,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP463830208033",
+      "estimated_delivery": "2026-04-28",
+      "delivered_at": "2026-04-28"
+    }
+  },
+  "A-3278": {
+    "order_id": "A-3278",
+    "customer_id": "cust-6727",
+    "placed_at": "2025-04-16",
+    "status": "delivered",
+    "total_cents": 12000,
+    "items": [
+      {
+        "sku": "NG-3245",
+        "name": "Folding Camp Stool",
+        "quantity": 1,
+        "unit_price_cents": 3600
+      },
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      },
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 2,
+        "unit_price_cents": 2600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF60507076821",
+      "estimated_delivery": "2025-04-21",
+      "delivered_at": "2025-04-22"
+    }
+  },
+  "A-3282": {
+    "order_id": "A-3282",
+    "customer_id": "cust-4104",
+    "placed_at": "2026-07-14",
+    "status": "delivered",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 2,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF22850240388",
+      "estimated_delivery": "2026-07-22",
+      "delivered_at": "2026-07-22"
+    }
+  },
+  "A-3286": {
+    "order_id": "A-3286",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-07-20",
+    "status": "in_transit",
+    "total_cents": 48999,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      },
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      },
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 3,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF47611379359",
+      "estimated_delivery": "2026-07-30",
+      "delivered_at": null
+    }
+  },
+  "A-3287": {
+    "order_id": "A-3287",
+    "customer_id": "cust-3059",
+    "placed_at": "2026-07-26",
+    "status": "shipped",
+    "total_cents": 4800,
+    "items": [
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 2,
+        "unit_price_cents": 2400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP856293730812",
+      "estimated_delivery": "2026-07-29",
+      "delivered_at": null
+    }
+  },
+  "A-3290": {
+    "order_id": "A-3290",
+    "customer_id": "cust-7391",
+    "placed_at": "2026-07-20",
+    "status": "delivered",
+    "total_cents": 12900,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 2,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP861012120397",
+      "estimated_delivery": "2026-07-24",
+      "delivered_at": "2026-07-24"
+    }
+  },
+  "A-3307": {
+    "order_id": "A-3307",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 26300,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      },
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 2,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "A-3311": {
+    "order_id": "A-3311",
+    "customer_id": "cust-8394",
+    "placed_at": "2025-11-02",
+    "status": "delivered",
+    "total_cents": 8900,
+    "items": [
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP139134943662",
+      "estimated_delivery": "2025-11-05",
+      "delivered_at": "2025-11-05"
+    }
+  },
+  "A-3314": {
+    "order_id": "A-3314",
+    "customer_id": "cust-3308",
+    "placed_at": "2026-06-23",
+    "status": "delivered",
+    "total_cents": 8250,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      },
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF50997978086",
+      "estimated_delivery": "2026-06-27",
+      "delivered_at": "2026-06-27"
+    }
+  },
+  "A-3319": {
+    "order_id": "A-3319",
+    "customer_id": "cust-2700",
+    "placed_at": "2026-07-11",
+    "status": "cancelled",
+    "total_cents": 5950,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-07-19",
+      "delivered_at": null
+    }
+  },
+  "A-3321": {
+    "order_id": "A-3321",
+    "customer_id": "cust-5179",
+    "placed_at": "2026-03-27",
+    "status": "delivered",
+    "total_cents": 30100,
+    "items": [
+      {
+        "sku": "NG-2890",
+        "name": "Waxed Canvas Apron",
+        "quantity": 1,
+        "unit_price_cents": 5400
+      },
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 3,
+        "unit_price_cents": 4700
+      },
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF96883325311",
+      "estimated_delivery": "2026-04-03",
+      "delivered_at": "2026-04-03"
+    }
+  },
+  "A-3322": {
+    "order_id": "A-3322",
+    "customer_id": "cust-4850",
+    "placed_at": "2025-10-02",
+    "status": "delivered",
+    "total_cents": 4999,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 1,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF46112926151",
+      "estimated_delivery": "2025-10-05",
+      "delivered_at": "2025-10-06"
+    }
+  },
+  "A-3329": {
+    "order_id": "A-3329",
+    "customer_id": "cust-5749",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-07-30",
+      "delivered_at": null
+    }
+  },
+  "A-3332": {
+    "order_id": "A-3332",
+    "customer_id": "cust-7504",
+    "placed_at": "2025-01-16",
+    "status": "delivered",
+    "total_cents": 23400,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      },
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP725877355804",
+      "estimated_delivery": "2025-01-24",
+      "delivered_at": "2025-01-24"
+    }
+  },
+  "A-3340": {
+    "order_id": "A-3340",
+    "customer_id": "cust-7391",
+    "placed_at": "2025-05-21",
+    "status": "delivered",
+    "total_cents": 4700,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF64269574503",
+      "estimated_delivery": "2025-05-24",
+      "delivered_at": "2025-05-24"
+    }
+  },
+  "A-3361": {
+    "order_id": "A-3361",
+    "customer_id": "cust-2579",
+    "placed_at": "2026-04-08",
+    "status": "delivered",
+    "total_cents": 9348,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 3,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 2,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF86780474099",
+      "estimated_delivery": "2026-04-18",
+      "delivered_at": "2026-04-16"
+    }
+  },
+  "A-3364": {
+    "order_id": "A-3364",
+    "customer_id": "cust-8801",
+    "placed_at": "2025-04-07",
+    "status": "delivered",
+    "total_cents": 11550,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 3,
+        "unit_price_cents": 1450
+      },
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF30140171356",
+      "estimated_delivery": "2025-04-13",
+      "delivered_at": "2025-04-14"
+    }
+  },
+  "A-3367": {
+    "order_id": "A-3367",
+    "customer_id": "cust-2579",
+    "placed_at": "2025-10-19",
+    "status": "delivered",
+    "total_cents": 16199,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      },
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP219891240489",
+      "estimated_delivery": "2025-10-23",
+      "delivered_at": "2025-10-23"
+    }
+  },
+  "A-3370": {
+    "order_id": "A-3370",
+    "customer_id": "cust-4850",
+    "placed_at": "2026-07-26",
+    "status": "cancelled",
+    "total_cents": 9000,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 2,
+        "unit_price_cents": 1050
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 3,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-07-29",
+      "delivered_at": null
+    }
+  },
+  "A-3384": {
+    "order_id": "A-3384",
+    "customer_id": "cust-8103",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "A-3387": {
+    "order_id": "A-3387",
+    "customer_id": "cust-6769",
+    "placed_at": "2026-03-09",
+    "status": "delivered",
+    "total_cents": 9650,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      },
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 2,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF39747724594",
+      "estimated_delivery": "2026-03-16",
+      "delivered_at": "2026-03-17"
+    }
+  },
+  "A-3388": {
+    "order_id": "A-3388",
+    "customer_id": "cust-9468",
+    "placed_at": "2026-06-02",
+    "status": "delivered",
+    "total_cents": 1450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP408381028731",
+      "estimated_delivery": "2026-06-09",
+      "delivered_at": "2026-06-09"
+    }
+  },
+  "A-3390": {
+    "order_id": "A-3390",
+    "customer_id": "cust-8871",
+    "placed_at": "2026-07-02",
+    "status": "delivered",
+    "total_cents": 7200,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF66997352325",
+      "estimated_delivery": "2026-07-07",
+      "delivered_at": "2026-07-08"
+    }
+  },
+  "A-3391": {
+    "order_id": "A-3391",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-05-02",
+    "status": "delivered",
+    "total_cents": 4999,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 1,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP418820394155",
+      "estimated_delivery": "2026-05-07",
+      "delivered_at": "2026-05-08"
+    }
+  },
+  "A-3392": {
+    "order_id": "A-3392",
+    "customer_id": "cust-2579",
+    "placed_at": "2026-01-25",
+    "status": "delivered",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 2,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF23426455928",
+      "estimated_delivery": "2026-02-01",
+      "delivered_at": "2026-02-01"
+    }
+  },
+  "A-3393": {
+    "order_id": "A-3393",
+    "customer_id": "cust-4659",
+    "placed_at": "2026-07-17",
+    "status": "in_transit",
+    "total_cents": 8700,
+    "items": [
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 2,
+        "unit_price_cents": 2400
+      },
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP407931275654",
+      "estimated_delivery": "2026-07-19",
+      "delivered_at": null
+    }
+  },
+  "A-3394": {
+    "order_id": "A-3394",
+    "customer_id": "cust-3546",
+    "placed_at": "2025-08-28",
+    "status": "delivered",
+    "total_cents": 7350,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      },
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      },
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP551513627367",
+      "estimated_delivery": "2025-09-01",
+      "delivered_at": "2025-09-01"
+    }
+  },
+  "A-3395": {
+    "order_id": "A-3395",
+    "customer_id": "cust-1042",
+    "placed_at": "2024-12-31",
+    "status": "delivered",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 2,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF99770449331",
+      "estimated_delivery": "2025-01-02",
+      "delivered_at": "2025-01-03"
+    }
+  },
+  "A-3397": {
+    "order_id": "A-3397",
+    "customer_id": "cust-7777",
+    "placed_at": "2026-01-07",
+    "status": "delivered",
+    "total_cents": 4500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 3,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF38051375592",
+      "estimated_delivery": "2026-01-11",
+      "delivered_at": "2026-01-11"
+    }
+  },
+  "A-3398": {
+    "order_id": "A-3398",
+    "customer_id": "cust-9982",
+    "placed_at": "2026-02-10",
+    "status": "delivered",
+    "total_cents": 4200,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF08296387720",
+      "estimated_delivery": "2026-02-14",
+      "delivered_at": "2026-02-15"
+    }
+  },
+  "A-3399": {
+    "order_id": "A-3399",
+    "customer_id": "cust-9982",
+    "placed_at": "2024-09-06",
+    "status": "delivered",
+    "total_cents": 7200,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF03847918117",
+      "estimated_delivery": "2024-09-13",
+      "delivered_at": "2024-09-13"
+    }
+  },
+  "A-3400": {
+    "order_id": "A-3400",
+    "customer_id": "cust-3546",
+    "placed_at": "2025-08-17",
+    "status": "delivered",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 2,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP066181407770",
+      "estimated_delivery": "2025-08-20",
+      "delivered_at": "2025-08-20"
+    }
+  },
+  "A-3401": {
+    "order_id": "A-3401",
+    "customer_id": "cust-8242",
+    "placed_at": "2025-04-30",
+    "status": "delivered",
+    "total_cents": 9900,
+    "items": [
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF60436479959",
+      "estimated_delivery": "2025-05-07",
+      "delivered_at": "2025-05-08"
+    }
+  },
+  "A-3402": {
+    "order_id": "A-3402",
+    "customer_id": "cust-3308",
+    "placed_at": "2026-06-18",
+    "status": "delivered",
+    "total_cents": 3400,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP418820511702",
+      "estimated_delivery": "2026-06-23",
+      "delivered_at": "2026-06-24"
+    }
+  },
+  "A-3404": {
+    "order_id": "A-3404",
+    "customer_id": "cust-9793",
+    "placed_at": "2025-02-25",
+    "status": "delivered",
+    "total_cents": 4200,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF21188060147",
+      "estimated_delivery": "2025-02-28",
+      "delivered_at": "2025-02-28"
+    }
+  },
+  "A-3405": {
+    "order_id": "A-3405",
+    "customer_id": "cust-3307",
+    "placed_at": "2025-01-10",
+    "status": "delivered",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF56967718156",
+      "estimated_delivery": "2025-01-15",
+      "delivered_at": "2025-01-16"
+    }
+  },
+  "A-3406": {
+    "order_id": "A-3406",
+    "customer_id": "cust-5179",
+    "placed_at": "2025-01-05",
+    "status": "delivered",
+    "total_cents": 6800,
+    "items": [
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP285429138706",
+      "estimated_delivery": "2025-01-12",
+      "delivered_at": "2025-01-12"
+    }
+  },
+  "A-3408": {
+    "order_id": "A-3408",
+    "customer_id": "cust-2071",
+    "placed_at": "2026-07-27",
+    "status": "cancelled",
+    "total_cents": 5150,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      },
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "A-3410": {
+    "order_id": "A-3410",
+    "customer_id": "cust-9982",
+    "placed_at": "2025-07-08",
+    "status": "delivered",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF83518671454",
+      "estimated_delivery": "2025-07-12",
+      "delivered_at": "2025-07-12"
+    }
+  },
+  "A-3412": {
+    "order_id": "A-3412",
+    "customer_id": "cust-7777",
+    "placed_at": "2025-04-20",
+    "status": "delivered",
+    "total_cents": 5800,
+    "items": [
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 2,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF89586013087",
+      "estimated_delivery": "2025-04-24",
+      "delivered_at": "2025-04-25"
+    }
+  },
+  "A-3413": {
+    "order_id": "A-3413",
+    "customer_id": "cust-5847",
+    "placed_at": "2025-08-14",
+    "status": "delivered",
+    "total_cents": 3798,
+    "items": [
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 2,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP368973527404",
+      "estimated_delivery": "2025-08-17",
+      "delivered_at": "2025-08-17"
+    }
+  },
+  "A-3414": {
+    "order_id": "A-3414",
+    "customer_id": "cust-3257",
+    "placed_at": "2025-07-29",
+    "status": "delivered",
+    "total_cents": 1600,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF69321616072",
+      "estimated_delivery": "2025-08-06",
+      "delivered_at": "2025-08-06"
+    }
+  },
+  "A-3422": {
+    "order_id": "A-3422",
+    "customer_id": "cust-6769",
+    "placed_at": "2025-10-28",
+    "status": "delivered",
+    "total_cents": 5200,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP780685871060",
+      "estimated_delivery": "2025-11-01",
+      "delivered_at": "2025-10-31"
+    }
+  },
+  "A-3423": {
+    "order_id": "A-3423",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-01-28",
+    "status": "delivered",
+    "total_cents": 1899,
+    "items": [
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP196713445668",
+      "estimated_delivery": "2026-02-03",
+      "delivered_at": "2026-02-04"
+    }
+  },
+  "A-3426": {
+    "order_id": "A-3426",
+    "customer_id": "cust-3307",
+    "placed_at": "2025-08-09",
+    "status": "delivered",
+    "total_cents": 7850,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 3,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF30209653163",
+      "estimated_delivery": "2025-08-16",
+      "delivered_at": "2025-08-16"
+    }
+  },
+  "A-3432": {
+    "order_id": "A-3432",
+    "customer_id": "cust-7391",
+    "placed_at": "2026-07-08",
+    "status": "delivered",
+    "total_cents": 2900,
+    "items": [
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF81908601440",
+      "estimated_delivery": "2026-07-12",
+      "delivered_at": "2026-07-12"
+    }
+  },
+  "A-3436": {
+    "order_id": "A-3436",
+    "customer_id": "cust-5179",
+    "placed_at": "2026-02-17",
+    "status": "delivered",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF06377056236",
+      "estimated_delivery": "2026-02-23",
+      "delivered_at": "2026-02-21"
+    }
+  },
+  "A-3447": {
+    "order_id": "A-3447",
+    "customer_id": "cust-3059",
+    "placed_at": "2026-03-03",
+    "status": "delivered",
+    "total_cents": 2199,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP439732514703",
+      "estimated_delivery": "2026-03-10",
+      "delivered_at": "2026-03-11"
+    }
+  },
+  "A-3448": {
+    "order_id": "A-3448",
+    "customer_id": "cust-1660",
+    "placed_at": "2025-07-21",
+    "status": "delivered",
+    "total_cents": 6800,
+    "items": [
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP393210422121",
+      "estimated_delivery": "2025-07-24",
+      "delivered_at": "2025-07-24"
+    }
+  },
+  "A-3451": {
+    "order_id": "A-3451",
+    "customer_id": "cust-4525",
+    "placed_at": "2026-06-24",
+    "status": "delivered",
+    "total_cents": 1450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP317642663462",
+      "estimated_delivery": "2026-06-28",
+      "delivered_at": "2026-06-28"
+    }
+  },
+  "A-3452": {
+    "order_id": "A-3452",
+    "customer_id": "cust-6554",
+    "placed_at": "2026-07-20",
+    "status": "delivered",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP932666805199",
+      "estimated_delivery": "2026-07-24",
+      "delivered_at": "2026-07-25"
+    }
+  },
+  "A-3461": {
+    "order_id": "A-3461",
+    "customer_id": "cust-2707",
+    "placed_at": "2026-01-27",
+    "status": "delivered",
+    "total_cents": 15100,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 2,
+        "unit_price_cents": 6400
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP442753555394",
+      "estimated_delivery": "2026-01-31",
+      "delivered_at": "2026-01-31"
+    }
+  },
+  "A-3463": {
+    "order_id": "A-3463",
+    "customer_id": "cust-7777",
+    "placed_at": "2026-06-02",
+    "status": "delivered",
+    "total_cents": 21500,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 1,
+        "unit_price_cents": 21500
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF84323297979",
+      "estimated_delivery": "2026-06-09",
+      "delivered_at": "2026-06-08"
+    }
+  },
+  "A-3468": {
+    "order_id": "A-3468",
+    "customer_id": "cust-4850",
+    "placed_at": "2026-06-30",
+    "status": "delivered",
+    "total_cents": 9199,
+    "items": [
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      },
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 1,
+        "unit_price_cents": 4999
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP373047055893",
+      "estimated_delivery": "2026-07-05",
+      "delivered_at": "2026-07-04"
+    }
+  },
+  "A-3472": {
+    "order_id": "A-3472",
+    "customer_id": "cust-1670",
+    "placed_at": "2025-09-13",
+    "status": "delivered",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP044803756461",
+      "estimated_delivery": "2025-09-19",
+      "delivered_at": "2025-09-19"
+    }
+  },
+  "A-3473": {
+    "order_id": "A-3473",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-07-25",
+    "status": "cancelled",
+    "total_cents": 59200,
+    "items": [
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 2,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 2,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 2,
+        "unit_price_cents": 1050
+      },
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "A-3476": {
+    "order_id": "A-3476",
+    "customer_id": "cust-8394",
+    "placed_at": "2026-04-05",
+    "status": "delivered",
+    "total_cents": 16300,
+    "items": [
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      },
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF70037785282",
+      "estimated_delivery": "2026-04-11",
+      "delivered_at": "2026-04-12"
+    }
+  },
+  "A-3481": {
+    "order_id": "A-3481",
+    "customer_id": "cust-1042",
+    "placed_at": "2025-12-20",
+    "status": "delivered",
+    "total_cents": 1450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP968168081507",
+      "estimated_delivery": "2025-12-26",
+      "delivered_at": "2025-12-26"
+    }
+  },
+  "A-3485": {
+    "order_id": "A-3485",
+    "customer_id": "cust-9287",
+    "placed_at": "2025-05-03",
+    "status": "delivered",
+    "total_cents": 9998,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 2,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP676025472232",
+      "estimated_delivery": "2025-05-12",
+      "delivered_at": "2025-05-10"
+    }
+  },
+  "A-3495": {
+    "order_id": "A-3495",
+    "customer_id": "cust-6554",
+    "placed_at": "2026-03-03",
+    "status": "delivered",
+    "total_cents": 2600,
+    "items": [
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF83548161492",
+      "estimated_delivery": "2026-03-06",
+      "delivered_at": "2026-03-07"
+    }
+  },
+  "A-3496": {
+    "order_id": "A-3496",
+    "customer_id": "cust-4850",
+    "placed_at": "2025-08-03",
+    "status": "delivered",
+    "total_cents": 3400,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF78410388666",
+      "estimated_delivery": "2025-08-07",
+      "delivered_at": "2025-08-06"
+    }
+  },
+  "A-3501": {
+    "order_id": "A-3501",
+    "customer_id": "cust-2579",
+    "placed_at": "2025-10-14",
+    "status": "delivered",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP837879326244",
+      "estimated_delivery": "2025-10-21",
+      "delivered_at": "2025-10-21"
+    }
+  },
+  "A-3502": {
+    "order_id": "A-3502",
+    "customer_id": "cust-1736",
+    "placed_at": "2024-11-16",
+    "status": "delivered",
+    "total_cents": 7200,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP907811378368",
+      "estimated_delivery": "2024-11-25",
+      "delivered_at": "2024-11-24"
+    }
+  },
+  "A-3504": {
+    "order_id": "A-3504",
+    "customer_id": "cust-2579",
+    "placed_at": "2024-07-31",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF82869294641",
+      "estimated_delivery": "2024-08-06",
+      "delivered_at": "2024-08-07"
+    }
+  },
+  "A-3509": {
+    "order_id": "A-3509",
+    "customer_id": "cust-8394",
+    "placed_at": "2026-07-11",
+    "status": "delivered",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 2,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP298385776289",
+      "estimated_delivery": "2026-07-19",
+      "delivered_at": "2026-07-19"
+    }
+  },
+  "A-3519": {
+    "order_id": "A-3519",
+    "customer_id": "cust-6411",
+    "placed_at": "2025-03-06",
+    "status": "delivered",
+    "total_cents": 4800,
+    "items": [
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 2,
+        "unit_price_cents": 2400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF60231157444",
+      "estimated_delivery": "2025-03-13",
+      "delivered_at": "2025-03-12"
+    }
+  },
+  "A-3524": {
+    "order_id": "A-3524",
+    "customer_id": "cust-1670",
+    "placed_at": "2025-08-26",
+    "status": "delivered",
+    "total_cents": 1600,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF72894533511",
+      "estimated_delivery": "2025-08-31",
+      "delivered_at": "2025-08-30"
+    }
+  },
+  "A-3532": {
+    "order_id": "A-3532",
+    "customer_id": "cust-6554",
+    "placed_at": "2025-09-22",
+    "status": "delivered",
+    "total_cents": 2750,
+    "items": [
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF29841186780",
+      "estimated_delivery": "2025-09-30",
+      "delivered_at": "2025-09-30"
+    }
+  },
+  "A-3533": {
+    "order_id": "A-3533",
+    "customer_id": "cust-2846",
+    "placed_at": "2026-03-01",
+    "status": "delivered",
+    "total_cents": 28900,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      },
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 2,
+        "unit_price_cents": 6400
+      },
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 1,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP839825246658",
+      "estimated_delivery": "2026-03-03",
+      "delivered_at": "2026-03-04"
+    }
+  },
+  "A-3537": {
+    "order_id": "A-3537",
+    "customer_id": "cust-5774",
+    "placed_at": "2026-04-23",
+    "status": "delivered",
+    "total_cents": 26500,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      },
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP278063029848",
+      "estimated_delivery": "2026-05-01",
+      "delivered_at": "2026-05-01"
+    }
+  },
+  "A-3542": {
+    "order_id": "A-3542",
+    "customer_id": "cust-8871",
+    "placed_at": "2026-07-01",
+    "status": "delivered",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 2,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP358784167784",
+      "estimated_delivery": "2026-07-05",
+      "delivered_at": "2026-07-05"
+    }
+  },
+  "A-3545": {
+    "order_id": "A-3545",
+    "customer_id": "cust-3307",
+    "placed_at": "2026-05-12",
+    "status": "delivered",
+    "total_cents": 22950,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 1,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF68840512774",
+      "estimated_delivery": "2026-05-19",
+      "delivered_at": "2026-05-20"
+    }
+  },
+  "A-3550": {
+    "order_id": "A-3550",
+    "customer_id": "cust-4525",
+    "placed_at": "2025-03-20",
+    "status": "delivered",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF40560219085",
+      "estimated_delivery": "2025-03-27",
+      "delivered_at": "2025-03-25"
+    }
+  },
+  "A-3555": {
+    "order_id": "A-3555",
+    "customer_id": "cust-3059",
+    "placed_at": "2026-07-10",
+    "status": "delivered",
+    "total_cents": 50500,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      },
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 2,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 1,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP705583479007",
+      "estimated_delivery": "2026-07-14",
+      "delivered_at": "2026-07-14"
+    }
+  },
+  "A-3557": {
+    "order_id": "A-3557",
+    "customer_id": "cust-2707",
+    "placed_at": "2026-06-23",
+    "status": "delivered",
+    "total_cents": 1050,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF40009689503",
+      "estimated_delivery": "2026-06-29",
+      "delivered_at": "2026-06-29"
+    }
+  },
+  "A-3566": {
+    "order_id": "A-3566",
+    "customer_id": "cust-7777",
+    "placed_at": "2026-07-13",
+    "status": "delivered",
+    "total_cents": 7000,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP046525903304",
+      "estimated_delivery": "2026-07-19",
+      "delivered_at": "2026-07-19"
+    }
+  },
+  "A-3574": {
+    "order_id": "A-3574",
+    "customer_id": "cust-4104",
+    "placed_at": "2026-06-17",
+    "status": "delivered",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP438797724467",
+      "estimated_delivery": "2026-06-25",
+      "delivered_at": "2026-06-24"
+    }
+  },
+  "A-3575": {
+    "order_id": "A-3575",
+    "customer_id": "cust-2579",
+    "placed_at": "2026-06-23",
+    "status": "delivered",
+    "total_cents": 46349,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      },
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 2,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF01710087033",
+      "estimated_delivery": "2026-07-02",
+      "delivered_at": "2026-07-01"
+    }
+  },
+  "A-3580": {
+    "order_id": "A-3580",
+    "customer_id": "cust-5774",
+    "placed_at": "2026-01-24",
+    "status": "delivered",
+    "total_cents": 21000,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      },
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      },
+      {
+        "sku": "NG-2890",
+        "name": "Waxed Canvas Apron",
+        "quantity": 1,
+        "unit_price_cents": 5400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF46155870392",
+      "estimated_delivery": "2026-02-01",
+      "delivered_at": "2026-01-30"
+    }
+  },
+  "A-3581": {
+    "order_id": "A-3581",
+    "customer_id": "cust-7777",
+    "placed_at": "2025-10-03",
+    "status": "delivered",
+    "total_cents": 3900,
+    "items": [
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP399685111182",
+      "estimated_delivery": "2025-10-07",
+      "delivered_at": "2025-10-07"
+    }
+  },
+  "A-3583": {
+    "order_id": "A-3583",
+    "customer_id": "cust-1670",
+    "placed_at": "2026-05-27",
+    "status": "delivered",
+    "total_cents": 1600,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP115710897277",
+      "estimated_delivery": "2026-06-03",
+      "delivered_at": "2026-06-02"
+    }
+  },
+  "A-3588": {
+    "order_id": "A-3588",
+    "customer_id": "cust-4104",
+    "placed_at": "2026-05-05",
+    "status": "delivered",
+    "total_cents": 4200,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP516530173004",
+      "estimated_delivery": "2026-05-12",
+      "delivered_at": "2026-05-12"
+    }
+  },
+  "A-3595": {
+    "order_id": "A-3595",
+    "customer_id": "cust-3307",
+    "placed_at": "2025-08-28",
+    "status": "delivered",
+    "total_cents": 10600,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 2,
+        "unit_price_cents": 3200
+      },
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP619032655074",
+      "estimated_delivery": "2025-09-01",
+      "delivered_at": "2025-09-02"
+    }
+  },
+  "A-3596": {
+    "order_id": "A-3596",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-03-17",
+    "status": "delivered",
+    "total_cents": 28699,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 1,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 1,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      },
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP874879482332",
+      "estimated_delivery": "2026-03-20",
+      "delivered_at": "2026-03-21"
+    }
+  },
+  "A-3600": {
+    "order_id": "A-3600",
+    "customer_id": "cust-3307",
+    "placed_at": "2026-07-19",
+    "status": "delivered",
+    "total_cents": 5800,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 2,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP527127493847",
+      "estimated_delivery": "2026-07-22",
+      "delivered_at": "2026-07-22"
+    }
+  },
+  "B-5400": {
+    "order_id": "B-5400",
+    "customer_id": "cust-9287",
+    "placed_at": "2025-03-06",
+    "status": "delivered",
+    "total_cents": 2400,
+    "items": [
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 1,
+        "unit_price_cents": 2400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP671825594546",
+      "estimated_delivery": "2025-03-13",
+      "delivered_at": "2025-03-13"
+    }
+  },
+  "B-5405": {
+    "order_id": "B-5405",
+    "customer_id": "cust-8801",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 8900,
+    "items": [
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-04",
+      "delivered_at": null
+    }
+  },
+  "B-5410": {
+    "order_id": "B-5410",
+    "customer_id": "cust-5179",
+    "placed_at": "2025-08-08",
+    "status": "delivered",
+    "total_cents": 1050,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF31290643018",
+      "estimated_delivery": "2025-08-15",
+      "delivered_at": "2025-08-13"
+    }
+  },
+  "B-5413": {
+    "order_id": "B-5413",
+    "customer_id": "cust-5179",
+    "placed_at": "2025-08-15",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP615791841608",
+      "estimated_delivery": "2025-08-18",
+      "delivered_at": "2025-08-19"
+    }
+  },
+  "B-5414": {
+    "order_id": "B-5414",
+    "customer_id": "cust-8242",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 4700,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "B-5417": {
+    "order_id": "B-5417",
+    "customer_id": "cust-3059",
+    "placed_at": "2026-07-15",
+    "status": "delivered",
+    "total_cents": 15400,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      },
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF05664461130",
+      "estimated_delivery": "2026-07-22",
+      "delivered_at": "2026-07-22"
+    }
+  },
+  "B-5419": {
+    "order_id": "B-5419",
+    "customer_id": "cust-3379",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-03",
+      "delivered_at": null
+    }
+  },
+  "B-5424": {
+    "order_id": "B-5424",
+    "customer_id": "cust-6411",
+    "placed_at": "2026-07-17",
+    "status": "delivered",
+    "total_cents": 15900,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF61710288653",
+      "estimated_delivery": "2026-07-25",
+      "delivered_at": "2026-07-25"
+    }
+  },
+  "B-5430": {
+    "order_id": "B-5430",
+    "customer_id": "cust-8242",
+    "placed_at": "2025-08-28",
+    "status": "delivered",
+    "total_cents": 20500,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      },
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF21889270514",
+      "estimated_delivery": "2025-09-04",
+      "delivered_at": "2025-09-04"
+    }
+  },
+  "B-5432": {
+    "order_id": "B-5432",
+    "customer_id": "cust-5179",
+    "placed_at": "2026-02-14",
+    "status": "delivered",
+    "total_cents": 8200,
+    "items": [
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 2,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP830746766399",
+      "estimated_delivery": "2026-02-18",
+      "delivered_at": "2026-02-18"
+    }
+  },
+  "B-5437": {
+    "order_id": "B-5437",
+    "customer_id": "cust-8103",
+    "placed_at": "2025-08-10",
+    "status": "delivered",
+    "total_cents": 4200,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 2,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF77745016825",
+      "estimated_delivery": "2025-08-15",
+      "delivered_at": "2025-08-14"
+    }
+  },
+  "B-5440": {
+    "order_id": "B-5440",
+    "customer_id": "cust-4850",
+    "placed_at": "2026-06-10",
+    "status": "delivered",
+    "total_cents": 4199,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      },
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP520570981252",
+      "estimated_delivery": "2026-06-14",
+      "delivered_at": "2026-06-14"
+    }
+  },
+  "B-5444": {
+    "order_id": "B-5444",
+    "customer_id": "cust-1670",
+    "placed_at": "2026-07-27",
+    "status": "shipped",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP064173328792",
+      "estimated_delivery": "2026-07-29",
+      "delivered_at": null
+    }
+  },
+  "B-5450": {
+    "order_id": "B-5450",
+    "customer_id": "cust-3647",
+    "placed_at": "2025-12-13",
+    "status": "delivered",
+    "total_cents": 1450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF05783407192",
+      "estimated_delivery": "2025-12-20",
+      "delivered_at": "2025-12-20"
+    }
+  },
+  "B-5451": {
+    "order_id": "B-5451",
+    "customer_id": "cust-8394",
+    "placed_at": "2026-02-08",
+    "status": "delivered",
+    "total_cents": 9450,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      },
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF51692034668",
+      "estimated_delivery": "2026-02-13",
+      "delivered_at": "2026-02-13"
+    }
+  },
+  "B-5461": {
+    "order_id": "B-5461",
+    "customer_id": "cust-1042",
+    "placed_at": "2025-09-27",
+    "status": "delivered",
+    "total_cents": 20500,
+    "items": [
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      },
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP697118079670",
+      "estimated_delivery": "2025-10-01",
+      "delivered_at": "2025-10-01"
+    }
+  },
+  "B-5463": {
+    "order_id": "B-5463",
+    "customer_id": "cust-5847",
+    "placed_at": "2025-05-26",
+    "status": "delivered",
+    "total_cents": 19395,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 3,
+        "unit_price_cents": 4999
+      },
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 2,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF08424111126",
+      "estimated_delivery": "2025-06-02",
+      "delivered_at": "2025-06-02"
+    }
+  },
+  "B-5472": {
+    "order_id": "B-5472",
+    "customer_id": "cust-3468",
+    "placed_at": "2026-07-11",
+    "status": "delivered",
+    "total_cents": 1850,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP312859870025",
+      "estimated_delivery": "2026-07-16",
+      "delivered_at": "2026-07-16"
+    }
+  },
+  "B-5474": {
+    "order_id": "B-5474",
+    "customer_id": "cust-4850",
+    "placed_at": "2025-12-03",
+    "status": "delivered",
+    "total_cents": 8900,
+    "items": [
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP098943358976",
+      "estimated_delivery": "2025-12-05",
+      "delivered_at": "2025-12-06"
+    }
+  },
+  "B-5480": {
+    "order_id": "B-5480",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-06-07",
+    "status": "delivered",
+    "total_cents": 27500,
+    "items": [
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 2,
+        "unit_price_cents": 3300
+      },
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      },
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      },
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP121430716314",
+      "estimated_delivery": "2026-06-12",
+      "delivered_at": "2026-06-12"
+    }
+  },
+  "B-5489": {
+    "order_id": "B-5489",
+    "customer_id": "cust-7777",
+    "placed_at": "2025-08-08",
+    "status": "delivered",
+    "total_cents": 11400,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      },
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 2,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF10030512045",
+      "estimated_delivery": "2025-08-11",
+      "delivered_at": "2025-08-11"
+    }
+  },
+  "B-5491": {
+    "order_id": "B-5491",
+    "customer_id": "cust-5847",
+    "placed_at": "2026-07-23",
+    "status": "in_transit",
+    "total_cents": 3900,
+    "items": [
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP292847873052",
+      "estimated_delivery": "2026-07-31",
+      "delivered_at": null
+    }
+  },
+  "B-5496": {
+    "order_id": "B-5496",
+    "customer_id": "cust-6411",
+    "placed_at": "2026-06-03",
+    "status": "delivered",
+    "total_cents": 16500,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      },
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      },
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF62989578341",
+      "estimated_delivery": "2026-06-08",
+      "delivered_at": "2026-06-08"
+    }
+  },
+  "B-5498": {
+    "order_id": "B-5498",
+    "customer_id": "cust-5470",
+    "placed_at": "2025-05-11",
+    "status": "delivered",
+    "total_cents": 5900,
+    "items": [
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      },
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 1,
+        "unit_price_cents": 3300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF30444145310",
+      "estimated_delivery": "2025-05-16",
+      "delivered_at": "2025-05-17"
+    }
+  },
+  "B-5503": {
+    "order_id": "B-5503",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-07-27",
+    "status": "cancelled",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "B-5505": {
+    "order_id": "B-5505",
+    "customer_id": "cust-1274",
+    "placed_at": "2026-07-25",
+    "status": "shipped",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF83369166000",
+      "estimated_delivery": "2026-07-30",
+      "delivered_at": null
+    }
+  },
+  "B-5507": {
+    "order_id": "B-5507",
+    "customer_id": "cust-8242",
+    "placed_at": "2026-07-24",
+    "status": "in_transit",
+    "total_cents": 25350,
+    "items": [
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 1,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      },
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 2,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF62610131348",
+      "estimated_delivery": "2026-07-29",
+      "delivered_at": null
+    }
+  },
+  "B-5508": {
+    "order_id": "B-5508",
+    "customer_id": "cust-3257",
+    "placed_at": "2025-12-28",
+    "status": "delivered",
+    "total_cents": 6900,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 3,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF88910602576",
+      "estimated_delivery": "2026-01-01",
+      "delivered_at": "2026-01-02"
+    }
+  },
+  "B-5509": {
+    "order_id": "B-5509",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-07-19",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF17139137278",
+      "estimated_delivery": "2026-07-22",
+      "delivered_at": "2026-07-23"
+    }
+  },
+  "B-5510": {
+    "order_id": "B-5510",
+    "customer_id": "cust-2071",
+    "placed_at": "2026-07-16",
+    "status": "delivered",
+    "total_cents": 12800,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF77301944820",
+      "estimated_delivery": "2026-07-21",
+      "delivered_at": "2026-07-22"
+    }
+  },
+  "B-5512": {
+    "order_id": "B-5512",
+    "customer_id": "cust-7745",
+    "placed_at": "2025-04-06",
+    "status": "delivered",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP157512585360",
+      "estimated_delivery": "2025-04-13",
+      "delivered_at": "2025-04-14"
+    }
+  },
+  "B-5513": {
+    "order_id": "B-5513",
+    "customer_id": "cust-3308",
+    "placed_at": "2026-07-23",
+    "status": "shipped",
+    "total_cents": 26500,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 1,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      },
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 2,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP888575605773",
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "B-5516": {
+    "order_id": "B-5516",
+    "customer_id": "cust-5179",
+    "placed_at": "2024-10-18",
+    "status": "delivered",
+    "total_cents": 10500,
+    "items": [
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 2,
+        "unit_price_cents": 2400
+      },
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF22667153990",
+      "estimated_delivery": "2024-10-26",
+      "delivered_at": "2024-10-26"
+    }
+  },
+  "B-5517": {
+    "order_id": "B-5517",
+    "customer_id": "cust-8103",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 3600,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 2,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "B-5520": {
+    "order_id": "B-5520",
+    "customer_id": "cust-6411",
+    "placed_at": "2026-07-24",
+    "status": "in_transit",
+    "total_cents": 10600,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP392137356071",
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "B-5522": {
+    "order_id": "B-5522",
+    "customer_id": "cust-1071",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 17800,
+    "items": [
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 2,
+        "unit_price_cents": 8900
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-05",
+      "delivered_at": null
+    }
+  },
+  "B-5523": {
+    "order_id": "B-5523",
+    "customer_id": "cust-1071",
+    "placed_at": "2026-02-19",
+    "status": "delivered",
+    "total_cents": 1450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP748919854779",
+      "estimated_delivery": "2026-02-24",
+      "delivered_at": "2026-02-24"
+    }
+  },
+  "B-5524": {
+    "order_id": "B-5524",
+    "customer_id": "cust-1670",
+    "placed_at": "2026-07-10",
+    "status": "delivered",
+    "total_cents": 4100,
+    "items": [
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP701895566965",
+      "estimated_delivery": "2026-07-18",
+      "delivered_at": "2026-07-18"
+    }
+  },
+  "B-5526": {
+    "order_id": "B-5526",
+    "customer_id": "cust-1670",
+    "placed_at": "2025-04-12",
+    "status": "delivered",
+    "total_cents": 2100,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF84584418384",
+      "estimated_delivery": "2025-04-20",
+      "delivered_at": "2025-04-20"
+    }
+  },
+  "B-5527": {
+    "order_id": "B-5527",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-07-17",
+    "status": "in_transit",
+    "total_cents": 3150,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 3,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF77302108663",
+      "estimated_delivery": "2026-07-24",
+      "delivered_at": null
+    }
+  },
+  "B-5529": {
+    "order_id": "B-5529",
+    "customer_id": "cust-6411",
+    "placed_at": "2026-01-18",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP192809904595",
+      "estimated_delivery": "2026-01-23",
+      "delivered_at": "2026-01-24"
+    }
+  },
+  "B-5530": {
+    "order_id": "B-5530",
+    "customer_id": "cust-9982",
+    "placed_at": "2025-08-21",
+    "status": "delivered",
+    "total_cents": 15900,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF64873751961",
+      "estimated_delivery": "2025-08-26",
+      "delivered_at": "2025-08-24"
+    }
+  },
+  "B-5532": {
+    "order_id": "B-5532",
+    "customer_id": "cust-4104",
+    "placed_at": "2026-07-02",
+    "status": "delivered",
+    "total_cents": 14699,
+    "items": [
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      },
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      },
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF07560841311",
+      "estimated_delivery": "2026-07-09",
+      "delivered_at": "2026-07-08"
+    }
+  },
+  "B-5533": {
+    "order_id": "B-5533",
+    "customer_id": "cust-1736",
+    "placed_at": "2025-09-02",
+    "status": "delivered",
+    "total_cents": 28700,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 1,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF82519486401",
+      "estimated_delivery": "2025-09-06",
+      "delivered_at": "2025-09-07"
+    }
+  },
+  "B-5534": {
+    "order_id": "B-5534",
+    "customer_id": "cust-8394",
+    "placed_at": "2026-04-03",
+    "status": "delivered",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF09162063821",
+      "estimated_delivery": "2026-04-13",
+      "delivered_at": "2026-04-11"
+    }
+  },
+  "B-5538": {
+    "order_id": "B-5538",
+    "customer_id": "cust-3059",
+    "placed_at": "2026-02-07",
+    "status": "delivered",
+    "total_cents": 1600,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF25416357287",
+      "estimated_delivery": "2026-02-15",
+      "delivered_at": "2026-02-15"
+    }
+  },
+  "B-5543": {
+    "order_id": "B-5543",
+    "customer_id": "cust-6411",
+    "placed_at": "2025-12-10",
+    "status": "delivered",
+    "total_cents": 1050,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF00384228642",
+      "estimated_delivery": "2025-12-20",
+      "delivered_at": "2025-12-18"
+    }
+  },
+  "B-5545": {
+    "order_id": "B-5545",
+    "customer_id": "cust-2700",
+    "placed_at": "2026-05-15",
+    "status": "delivered",
+    "total_cents": 4700,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF28964617574",
+      "estimated_delivery": "2026-05-21",
+      "delivered_at": "2026-05-22"
+    }
+  },
+  "B-5551": {
+    "order_id": "B-5551",
+    "customer_id": "cust-2851",
+    "placed_at": "2024-11-29",
+    "status": "delivered",
+    "total_cents": 19600,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      },
+      {
+        "sku": "NG-3245",
+        "name": "Folding Camp Stool",
+        "quantity": 1,
+        "unit_price_cents": 3600
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      },
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF21503108232",
+      "estimated_delivery": "2024-12-02",
+      "delivered_at": "2024-12-02"
+    }
+  },
+  "B-5552": {
+    "order_id": "B-5552",
+    "customer_id": "cust-9468",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 5400,
+    "items": [
+      {
+        "sku": "NG-2890",
+        "name": "Waxed Canvas Apron",
+        "quantity": 1,
+        "unit_price_cents": 5400
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "B-5554": {
+    "order_id": "B-5554",
+    "customer_id": "cust-2851",
+    "placed_at": "2026-01-07",
+    "status": "delivered",
+    "total_cents": 22800,
+    "items": [
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 2,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      },
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF68563989633",
+      "estimated_delivery": "2026-01-15",
+      "delivered_at": "2026-01-15"
+    }
+  },
+  "B-5556": {
+    "order_id": "B-5556",
+    "customer_id": "cust-3307",
+    "placed_at": "2025-11-04",
+    "status": "delivered",
+    "total_cents": 5649,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      },
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP158125791891",
+      "estimated_delivery": "2025-11-10",
+      "delivered_at": "2025-11-10"
+    }
+  },
+  "B-5558": {
+    "order_id": "B-5558",
+    "customer_id": "cust-4525",
+    "placed_at": "2024-09-01",
+    "status": "delivered",
+    "total_cents": 14499,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 1,
+        "unit_price_cents": 4999
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      },
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF72413803254",
+      "estimated_delivery": "2024-09-10",
+      "delivered_at": "2024-09-08"
+    }
+  },
+  "B-5559": {
+    "order_id": "B-5559",
+    "customer_id": "cust-8871",
+    "placed_at": "2026-06-13",
+    "status": "delivered",
+    "total_cents": 13950,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      },
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      },
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF67569536582",
+      "estimated_delivery": "2026-06-19",
+      "delivered_at": "2026-06-20"
+    }
+  },
+  "B-5572": {
+    "order_id": "B-5572",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-07-07",
+    "status": "delivered",
+    "total_cents": 2199,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF77563721900",
+      "estimated_delivery": "2026-07-12",
+      "delivered_at": "2026-07-10"
+    }
+  },
+  "B-5574": {
+    "order_id": "B-5574",
+    "customer_id": "cust-8801",
+    "placed_at": "2026-07-26",
+    "status": "in_transit",
+    "total_cents": 8700,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 2,
+        "unit_price_cents": 2100
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF47013447171",
+      "estimated_delivery": "2026-07-29",
+      "delivered_at": null
+    }
+  },
+  "B-5575": {
+    "order_id": "B-5575",
+    "customer_id": "cust-1071",
+    "placed_at": "2024-12-07",
+    "status": "delivered",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP713865332447",
+      "estimated_delivery": "2024-12-15",
+      "delivered_at": "2024-12-15"
+    }
+  },
+  "B-5581": {
+    "order_id": "B-5581",
+    "customer_id": "cust-8871",
+    "placed_at": "2025-07-24",
+    "status": "delivered",
+    "total_cents": 14450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      },
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      },
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP720684684032",
+      "estimated_delivery": "2025-07-28",
+      "delivered_at": "2025-07-29"
+    }
+  },
+  "B-5584": {
+    "order_id": "B-5584",
+    "customer_id": "cust-7777",
+    "placed_at": "2026-07-24",
+    "status": "delivered",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF11318076698",
+      "estimated_delivery": "2026-07-28",
+      "delivered_at": "2026-07-27"
+    }
+  },
+  "B-5589": {
+    "order_id": "B-5589",
+    "customer_id": "cust-8242",
+    "placed_at": "2025-03-21",
+    "status": "delivered",
+    "total_cents": 8900,
+    "items": [
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF47751490755",
+      "estimated_delivery": "2025-03-26",
+      "delivered_at": "2025-03-25"
+    }
+  },
+  "B-5592": {
+    "order_id": "B-5592",
+    "customer_id": "cust-1042",
+    "placed_at": "2025-09-24",
+    "status": "delivered",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF01659818339",
+      "estimated_delivery": "2025-09-29",
+      "delivered_at": "2025-09-29"
+    }
+  },
+  "B-5594": {
+    "order_id": "B-5594",
+    "customer_id": "cust-2707",
+    "placed_at": "2026-04-18",
+    "status": "delivered",
+    "total_cents": 2400,
+    "items": [
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 1,
+        "unit_price_cents": 2400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP031403867960",
+      "estimated_delivery": "2026-04-22",
+      "delivered_at": "2026-04-22"
+    }
+  },
+  "B-5595": {
+    "order_id": "B-5595",
+    "customer_id": "cust-6411",
+    "placed_at": "2026-07-18",
+    "status": "shipped",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF02235923645",
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "B-5600": {
+    "order_id": "B-5600",
+    "customer_id": "cust-4893",
+    "placed_at": "2025-06-17",
+    "status": "delivered",
+    "total_cents": 1050,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP348029696154",
+      "estimated_delivery": "2025-06-26",
+      "delivered_at": "2025-06-24"
+    }
+  },
+  "B-5601": {
+    "order_id": "B-5601",
+    "customer_id": "cust-8801",
+    "placed_at": "2025-11-26",
+    "status": "delivered",
+    "total_cents": 12200,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP601457194461",
+      "estimated_delivery": "2025-12-03",
+      "delivered_at": "2025-12-04"
+    }
+  },
+  "B-5602": {
+    "order_id": "B-5602",
+    "customer_id": "cust-3307",
+    "placed_at": "2026-06-22",
+    "status": "delivered",
+    "total_cents": 26100,
+    "items": [
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 1,
+        "unit_price_cents": 3300
+      },
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 2,
+        "unit_price_cents": 7200
+      },
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP244130237020",
+      "estimated_delivery": "2026-06-25",
+      "delivered_at": "2026-06-25"
+    }
+  },
+  "B-5603": {
+    "order_id": "B-5603",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-07-30",
+      "delivered_at": null
+    }
+  },
+  "B-5611": {
+    "order_id": "B-5611",
+    "customer_id": "cust-4525",
+    "placed_at": "2026-05-14",
+    "status": "delivered",
+    "total_cents": 26050,
+    "items": [
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 3,
+        "unit_price_cents": 6800
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      },
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF43673196014",
+      "estimated_delivery": "2026-05-17",
+      "delivered_at": "2026-05-17"
+    }
+  },
+  "B-5613": {
+    "order_id": "B-5613",
+    "customer_id": "cust-8242",
+    "placed_at": "2025-06-28",
+    "status": "delivered",
+    "total_cents": 1850,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF99615320079",
+      "estimated_delivery": "2025-07-06",
+      "delivered_at": "2025-07-06"
+    }
+  },
+  "B-5616": {
+    "order_id": "B-5616",
+    "customer_id": "cust-5179",
+    "placed_at": "2026-01-02",
+    "status": "delivered",
+    "total_cents": 15600,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 3,
+        "unit_price_cents": 3300
+      },
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 1,
+        "unit_price_cents": 3850
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF02232775356",
+      "estimated_delivery": "2026-01-07",
+      "delivered_at": "2026-01-07"
+    }
+  },
+  "B-5617": {
+    "order_id": "B-5617",
+    "customer_id": "cust-5179",
+    "placed_at": "2024-12-08",
+    "status": "delivered",
+    "total_cents": 5099,
+    "items": [
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 2,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF23147344587",
+      "estimated_delivery": "2024-12-13",
+      "delivered_at": "2024-12-12"
+    }
+  },
+  "B-5620": {
+    "order_id": "B-5620",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-07-28",
+    "status": "shipped",
+    "total_cents": 5050,
+    "items": [
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF42010049382",
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "B-5621": {
+    "order_id": "B-5621",
+    "customer_id": "cust-8242",
+    "placed_at": "2025-03-29",
+    "status": "delivered",
+    "total_cents": 6800,
+    "items": [
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF57308990317",
+      "estimated_delivery": "2025-04-01",
+      "delivered_at": "2025-04-02"
+    }
+  },
+  "B-5623": {
+    "order_id": "B-5623",
+    "customer_id": "cust-4525",
+    "placed_at": "2026-06-07",
+    "status": "delivered",
+    "total_cents": 16800,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 2,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP483436836748",
+      "estimated_delivery": "2026-06-13",
+      "delivered_at": "2026-06-13"
+    }
+  },
+  "B-5626": {
+    "order_id": "B-5626",
+    "customer_id": "cust-6769",
+    "placed_at": "2025-06-03",
+    "status": "delivered",
+    "total_cents": 1899,
+    "items": [
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF52525060747",
+      "estimated_delivery": "2025-06-07",
+      "delivered_at": "2025-06-07"
+    }
+  },
+  "B-5627": {
+    "order_id": "B-5627",
+    "customer_id": "cust-2071",
+    "placed_at": "2026-07-28",
+    "status": "shipped",
+    "total_cents": 11300,
+    "items": [
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 1,
+        "unit_price_cents": 8400
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP493413039001",
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "B-5628": {
+    "order_id": "B-5628",
+    "customer_id": "cust-3379",
+    "placed_at": "2025-09-26",
+    "status": "delivered",
+    "total_cents": 22800,
+    "items": [
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 2,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF32247768699",
+      "estimated_delivery": "2025-10-05",
+      "delivered_at": "2025-10-03"
+    }
+  },
+  "B-5636": {
+    "order_id": "B-5636",
+    "customer_id": "cust-2851",
+    "placed_at": "2025-04-29",
+    "status": "delivered",
+    "total_cents": 2600,
+    "items": [
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF17577102880",
+      "estimated_delivery": "2025-05-02",
+      "delivered_at": "2025-05-03"
+    }
+  },
+  "B-5637": {
+    "order_id": "B-5637",
+    "customer_id": "cust-5179",
+    "placed_at": "2026-07-28",
+    "status": "shipped",
+    "total_cents": 2100,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF59419496986",
+      "estimated_delivery": "2026-08-03",
+      "delivered_at": null
+    }
+  },
+  "B-5638": {
+    "order_id": "B-5638",
+    "customer_id": "cust-7777",
+    "placed_at": "2026-07-28",
+    "status": "shipped",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP943813273142",
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "B-5643": {
+    "order_id": "B-5643",
+    "customer_id": "cust-5179",
+    "placed_at": "2024-09-08",
+    "status": "delivered",
+    "total_cents": 4950,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      },
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF97471613261",
+      "estimated_delivery": "2024-09-14",
+      "delivered_at": "2024-09-15"
+    }
+  },
+  "B-5646": {
+    "order_id": "B-5646",
+    "customer_id": "cust-4893",
+    "placed_at": "2025-12-08",
+    "status": "delivered",
+    "total_cents": 16597,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      },
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 3,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF89051355555",
+      "estimated_delivery": "2025-12-12",
+      "delivered_at": "2025-12-12"
+    }
+  },
+  "B-5647": {
+    "order_id": "B-5647",
+    "customer_id": "cust-5847",
+    "placed_at": "2026-06-13",
+    "status": "delivered",
+    "total_cents": 6898,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 1,
+        "unit_price_cents": 4999
+      },
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP748576507066",
+      "estimated_delivery": "2026-06-23",
+      "delivered_at": "2026-06-21"
+    }
+  },
+  "B-5648": {
+    "order_id": "B-5648",
+    "customer_id": "cust-3307",
+    "placed_at": "2026-04-02",
+    "status": "delivered",
+    "total_cents": 24150,
+    "items": [
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 1,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      },
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      },
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 1,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF08384515200",
+      "estimated_delivery": "2026-04-05",
+      "delivered_at": "2026-04-05"
+    }
+  },
+  "B-5649": {
+    "order_id": "B-5649",
+    "customer_id": "cust-3059",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 2,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-03",
+      "delivered_at": null
+    }
+  },
+  "B-5658": {
+    "order_id": "B-5658",
+    "customer_id": "cust-1660",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 4800,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 3,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "B-5662": {
+    "order_id": "B-5662",
+    "customer_id": "cust-1736",
+    "placed_at": "2025-03-07",
+    "status": "delivered",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF59942467560",
+      "estimated_delivery": "2025-03-14",
+      "delivered_at": "2025-03-14"
+    }
+  },
+  "B-5670": {
+    "order_id": "B-5670",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-04-02",
+    "status": "delivered",
+    "total_cents": 9900,
+    "items": [
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF40825446381",
+      "estimated_delivery": "2026-04-06",
+      "delivered_at": "2026-04-07"
+    }
+  },
+  "B-5686": {
+    "order_id": "B-5686",
+    "customer_id": "cust-5774",
+    "placed_at": "2026-01-18",
+    "status": "delivered",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP033142763985",
+      "estimated_delivery": "2026-01-25",
+      "delivered_at": "2026-01-25"
+    }
+  },
+  "B-5690": {
+    "order_id": "B-5690",
+    "customer_id": "cust-4525",
+    "placed_at": "2026-07-25",
+    "status": "processing",
+    "total_cents": 13300,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 2,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-04",
+      "delivered_at": null
+    }
+  },
+  "B-5698": {
+    "order_id": "B-5698",
+    "customer_id": "cust-5847",
+    "placed_at": "2024-09-12",
+    "status": "delivered",
+    "total_cents": 8450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 3,
+        "unit_price_cents": 1450
+      },
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF36288477119",
+      "estimated_delivery": "2024-09-15",
+      "delivered_at": "2024-09-15"
+    }
+  },
+  "C-7600": {
+    "order_id": "C-7600",
+    "customer_id": "cust-7391",
+    "placed_at": "2026-06-20",
+    "status": "delivered",
+    "total_cents": 4999,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 1,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF10393865595",
+      "estimated_delivery": "2026-06-23",
+      "delivered_at": "2026-06-23"
+    }
+  },
+  "C-7605": {
+    "order_id": "C-7605",
+    "customer_id": "cust-6769",
+    "placed_at": "2026-05-17",
+    "status": "delivered",
+    "total_cents": 23600,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      },
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 2,
+        "unit_price_cents": 6400
+      },
+      {
+        "sku": "NG-3245",
+        "name": "Folding Camp Stool",
+        "quantity": 1,
+        "unit_price_cents": 3600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP910627312271",
+      "estimated_delivery": "2026-05-27",
+      "delivered_at": "2026-05-25"
+    }
+  },
+  "C-7606": {
+    "order_id": "C-7606",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-06-29",
+    "status": "delivered",
+    "total_cents": 66399,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 3,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-1836",
+        "name": "Linen Dish Towels",
+        "quantity": 1,
+        "unit_price_cents": 1899
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF80858073099",
+      "estimated_delivery": "2026-07-02",
+      "delivered_at": "2026-07-02"
+    }
+  },
+  "C-7607": {
+    "order_id": "C-7607",
+    "customer_id": "cust-6554",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 40500,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 3,
+        "unit_price_cents": 12800
+      },
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-06",
+      "delivered_at": null
+    }
+  },
+  "C-7610": {
+    "order_id": "C-7610",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-07-14",
+    "status": "in_transit",
+    "total_cents": 2750,
+    "items": [
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP412148173057",
+      "estimated_delivery": "2026-07-31",
+      "delivered_at": null
+    }
+  },
+  "C-7616": {
+    "order_id": "C-7616",
+    "customer_id": "cust-1274",
+    "placed_at": "2026-04-14",
+    "status": "delivered",
+    "total_cents": 28300,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 1,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF66859841362",
+      "estimated_delivery": "2026-04-21",
+      "delivered_at": "2026-04-21"
+    }
+  },
+  "C-7617": {
+    "order_id": "C-7617",
+    "customer_id": "cust-5749",
+    "placed_at": "2026-07-25",
+    "status": "shipped",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF47283471548",
+      "estimated_delivery": "2026-08-03",
+      "delivered_at": null
+    }
+  },
+  "C-7623": {
+    "order_id": "C-7623",
+    "customer_id": "cust-9982",
+    "placed_at": "2025-07-17",
+    "status": "delivered",
+    "total_cents": 9050,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      },
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF32586101567",
+      "estimated_delivery": "2025-07-24",
+      "delivered_at": "2025-07-25"
+    }
+  },
+  "C-7628": {
+    "order_id": "C-7628",
+    "customer_id": "cust-9982",
+    "placed_at": "2026-06-26",
+    "status": "delivered",
+    "total_cents": 15800,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      },
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF19102656946",
+      "estimated_delivery": "2026-07-03",
+      "delivered_at": "2026-07-04"
+    }
+  },
+  "C-7630": {
+    "order_id": "C-7630",
+    "customer_id": "cust-2851",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 7200,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "C-7632": {
+    "order_id": "C-7632",
+    "customer_id": "cust-4659",
+    "placed_at": "2026-05-20",
+    "status": "delivered",
+    "total_cents": 2900,
+    "items": [
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 1,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP387396100379",
+      "estimated_delivery": "2026-05-28",
+      "delivered_at": "2026-05-28"
+    }
+  },
+  "C-7633": {
+    "order_id": "C-7633",
+    "customer_id": "cust-7745",
+    "placed_at": "2026-06-24",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF06011008743",
+      "estimated_delivery": "2026-06-30",
+      "delivered_at": "2026-06-29"
+    }
+  },
+  "C-7636": {
+    "order_id": "C-7636",
+    "customer_id": "cust-7391",
+    "placed_at": "2026-07-16",
+    "status": "delivered",
+    "total_cents": 11400,
+    "items": [
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 1,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF32388948408",
+      "estimated_delivery": "2026-07-25",
+      "delivered_at": "2026-07-24"
+    }
+  },
+  "C-7637": {
+    "order_id": "C-7637",
+    "customer_id": "cust-3257",
+    "placed_at": "2024-09-27",
+    "status": "delivered",
+    "total_cents": 7900,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      },
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF37254149794",
+      "estimated_delivery": "2024-09-30",
+      "delivered_at": "2024-09-30"
+    }
+  },
+  "C-7638": {
+    "order_id": "C-7638",
+    "customer_id": "cust-2579",
+    "placed_at": "2026-07-07",
+    "status": "cancelled",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7642": {
+    "order_id": "C-7642",
+    "customer_id": "cust-5263",
+    "placed_at": "2026-04-12",
+    "status": "delivered",
+    "total_cents": 4200,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP649425395607",
+      "estimated_delivery": "2026-04-21",
+      "delivered_at": "2026-04-20"
+    }
+  },
+  "C-7644": {
+    "order_id": "C-7644",
+    "customer_id": "cust-7391",
+    "placed_at": "2025-04-05",
+    "status": "delivered",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 2,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP809645840611",
+      "estimated_delivery": "2025-04-11",
+      "delivered_at": "2025-04-11"
+    }
+  },
+  "C-7649": {
+    "order_id": "C-7649",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-07-02",
+    "status": "delivered",
+    "total_cents": 5500,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      },
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF66295972758",
+      "estimated_delivery": "2026-07-09",
+      "delivered_at": "2026-07-07"
+    }
+  },
+  "C-7650": {
+    "order_id": "C-7650",
+    "customer_id": "cust-8871",
+    "placed_at": "2025-11-30",
+    "status": "delivered",
+    "total_cents": 3850,
+    "items": [
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 1,
+        "unit_price_cents": 3850
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF61194478365",
+      "estimated_delivery": "2025-12-08",
+      "delivered_at": "2025-12-08"
+    }
+  },
+  "C-7651": {
+    "order_id": "C-7651",
+    "customer_id": "cust-1042",
+    "placed_at": "2025-10-21",
+    "status": "delivered",
+    "total_cents": 13900,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-2734",
+        "name": "Insulated Bottle",
+        "quantity": 3,
+        "unit_price_cents": 2900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF65664724449",
+      "estimated_delivery": "2025-10-27",
+      "delivered_at": "2025-10-27"
+    }
+  },
+  "C-7653": {
+    "order_id": "C-7653",
+    "customer_id": "cust-1042",
+    "placed_at": "2025-09-18",
+    "status": "delivered",
+    "total_cents": 9900,
+    "items": [
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP848946840912",
+      "estimated_delivery": "2025-09-26",
+      "delivered_at": "2025-09-26"
+    }
+  },
+  "C-7654": {
+    "order_id": "C-7654",
+    "customer_id": "cust-3059",
+    "placed_at": "2026-07-24",
+    "status": "shipped",
+    "total_cents": 5150,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 1,
+        "unit_price_cents": 3300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF49290002139",
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "C-7657": {
+    "order_id": "C-7657",
+    "customer_id": "cust-8801",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 22300,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      },
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-04",
+      "delivered_at": null
+    }
+  },
+  "C-7661": {
+    "order_id": "C-7661",
+    "customer_id": "cust-3266",
+    "placed_at": "2025-12-24",
+    "status": "delivered",
+    "total_cents": 15900,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF29617328671",
+      "estimated_delivery": "2025-12-31",
+      "delivered_at": "2025-12-29"
+    }
+  },
+  "C-7664": {
+    "order_id": "C-7664",
+    "customer_id": "cust-8242",
+    "placed_at": "2026-02-18",
+    "status": "delivered",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP075906239991",
+      "estimated_delivery": "2026-02-23",
+      "delivered_at": "2026-02-23"
+    }
+  },
+  "C-7666": {
+    "order_id": "C-7666",
+    "customer_id": "cust-3308",
+    "placed_at": "2026-06-15",
+    "status": "delivered",
+    "total_cents": 5500,
+    "items": [
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 2,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP277533841302",
+      "estimated_delivery": "2026-06-22",
+      "delivered_at": "2026-06-22"
+    }
+  },
+  "C-7667": {
+    "order_id": "C-7667",
+    "customer_id": "cust-8871",
+    "placed_at": "2026-06-14",
+    "status": "delivered",
+    "total_cents": 22700,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      },
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP084345112254",
+      "estimated_delivery": "2026-06-21",
+      "delivered_at": "2026-06-22"
+    }
+  },
+  "C-7670": {
+    "order_id": "C-7670",
+    "customer_id": "cust-7777",
+    "placed_at": "2026-06-19",
+    "status": "delivered",
+    "total_cents": 4100,
+    "items": [
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF22333217079",
+      "estimated_delivery": "2026-06-25",
+      "delivered_at": "2026-06-25"
+    }
+  },
+  "C-7675": {
+    "order_id": "C-7675",
+    "customer_id": "cust-4104",
+    "placed_at": "2026-01-31",
+    "status": "delivered",
+    "total_cents": 6000,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      },
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP701480245301",
+      "estimated_delivery": "2026-02-03",
+      "delivered_at": "2026-02-03"
+    }
+  },
+  "C-7679": {
+    "order_id": "C-7679",
+    "customer_id": "cust-3647",
+    "placed_at": "2025-11-06",
+    "status": "delivered",
+    "total_cents": 10950,
+    "items": [
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 2,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF48635734674",
+      "estimated_delivery": "2025-11-15",
+      "delivered_at": "2025-11-14"
+    }
+  },
+  "C-7681": {
+    "order_id": "C-7681",
+    "customer_id": "cust-6727",
+    "placed_at": "2025-11-17",
+    "status": "delivered",
+    "total_cents": 22700,
+    "items": [
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      },
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF70713237588",
+      "estimated_delivery": "2025-11-23",
+      "delivered_at": "2025-11-22"
+    }
+  },
+  "C-7683": {
+    "order_id": "C-7683",
+    "customer_id": "cust-2071",
+    "placed_at": "2026-07-16",
+    "status": "in_transit",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 2,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP443518274291",
+      "estimated_delivery": "2026-07-21",
+      "delivered_at": null
+    }
+  },
+  "C-7684": {
+    "order_id": "C-7684",
+    "customer_id": "cust-9468",
+    "placed_at": "2026-01-13",
+    "status": "delivered",
+    "total_cents": 59250,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 2,
+        "unit_price_cents": 21500
+      },
+      {
+        "sku": "NG-2140",
+        "name": "Packable Windbreaker",
+        "quantity": 1,
+        "unit_price_cents": 6800
+      },
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 3,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP637530000965",
+      "estimated_delivery": "2026-01-16",
+      "delivered_at": "2026-01-16"
+    }
+  },
+  "C-7686": {
+    "order_id": "C-7686",
+    "customer_id": "cust-5774",
+    "placed_at": "2025-04-01",
+    "status": "delivered",
+    "total_cents": 14400,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 2,
+        "unit_price_cents": 7200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP016168202209",
+      "estimated_delivery": "2025-04-08",
+      "delivered_at": "2025-04-06"
+    }
+  },
+  "C-7688": {
+    "order_id": "C-7688",
+    "customer_id": "cust-7777",
+    "placed_at": "2026-02-19",
+    "status": "delivered",
+    "total_cents": 12800,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF63379953511",
+      "estimated_delivery": "2026-02-28",
+      "delivered_at": "2026-02-27"
+    }
+  },
+  "C-7689": {
+    "order_id": "C-7689",
+    "customer_id": "cust-4104",
+    "placed_at": "2026-07-23",
+    "status": "cancelled",
+    "total_cents": 6400,
+    "items": [
+      {
+        "sku": "NG-4536",
+        "name": "Trekking Pole Pair",
+        "quantity": 1,
+        "unit_price_cents": 6400
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7690": {
+    "order_id": "C-7690",
+    "customer_id": "cust-8645",
+    "placed_at": "2025-08-04",
+    "status": "delivered",
+    "total_cents": 20850,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      },
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 2,
+        "unit_price_cents": 9900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF13441905326",
+      "estimated_delivery": "2025-08-08",
+      "delivered_at": "2025-08-08"
+    }
+  },
+  "C-7694": {
+    "order_id": "C-7694",
+    "customer_id": "cust-7391",
+    "placed_at": "2025-05-07",
+    "status": "delivered",
+    "total_cents": 22800,
+    "items": [
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 2,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF67743950918",
+      "estimated_delivery": "2025-05-14",
+      "delivered_at": "2025-05-14"
+    }
+  },
+  "C-7697": {
+    "order_id": "C-7697",
+    "customer_id": "cust-2579",
+    "placed_at": "2026-05-27",
+    "status": "cancelled",
+    "total_cents": 25900,
+    "items": [
+      {
+        "sku": "NG-2890",
+        "name": "Waxed Canvas Apron",
+        "quantity": 2,
+        "unit_price_cents": 5400
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      },
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7702": {
+    "order_id": "C-7702",
+    "customer_id": "cust-7777",
+    "placed_at": "2024-10-11",
+    "status": "delivered",
+    "total_cents": 5200,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF68508142751",
+      "estimated_delivery": "2024-10-16",
+      "delivered_at": "2024-10-16"
+    }
+  },
+  "C-7704": {
+    "order_id": "C-7704",
+    "customer_id": "cust-8871",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 1450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "C-7705": {
+    "order_id": "C-7705",
+    "customer_id": "cust-8801",
+    "placed_at": "2025-05-08",
+    "status": "delivered",
+    "total_cents": 4900,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF81395963721",
+      "estimated_delivery": "2025-05-12",
+      "delivered_at": "2025-05-12"
+    }
+  },
+  "C-7706": {
+    "order_id": "C-7706",
+    "customer_id": "cust-5847",
+    "placed_at": "2026-07-25",
+    "status": "shipped",
+    "total_cents": 1600,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF86682934721",
+      "estimated_delivery": "2026-07-29",
+      "delivered_at": null
+    }
+  },
+  "C-7708": {
+    "order_id": "C-7708",
+    "customer_id": "cust-4104",
+    "placed_at": "2026-06-18",
+    "status": "delivered",
+    "total_cents": 3750,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF50859608468",
+      "estimated_delivery": "2026-06-27",
+      "delivered_at": "2026-06-26"
+    }
+  },
+  "C-7712": {
+    "order_id": "C-7712",
+    "customer_id": "cust-5847",
+    "placed_at": "2026-02-27",
+    "status": "delivered",
+    "total_cents": 1500,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF32413789814",
+      "estimated_delivery": "2026-03-05",
+      "delivered_at": "2026-03-05"
+    }
+  },
+  "C-7719": {
+    "order_id": "C-7719",
+    "customer_id": "cust-3257",
+    "placed_at": "2026-07-27",
+    "status": "cancelled",
+    "total_cents": 43000,
+    "items": [
+      {
+        "sku": "NG-5013",
+        "name": "Storm Ridge Parka",
+        "quantity": 2,
+        "unit_price_cents": 21500
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7722": {
+    "order_id": "C-7722",
+    "customer_id": "cust-3307",
+    "placed_at": "2025-06-05",
+    "status": "delivered",
+    "total_cents": 12800,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP544648349823",
+      "estimated_delivery": "2025-06-12",
+      "delivered_at": "2025-06-11"
+    }
+  },
+  "C-7726": {
+    "order_id": "C-7726",
+    "customer_id": "cust-5847",
+    "placed_at": "2024-09-29",
+    "status": "delivered",
+    "total_cents": 1450,
+    "items": [
+      {
+        "sku": "NG-1224",
+        "name": "Fieldnote Journal",
+        "quantity": 1,
+        "unit_price_cents": 1450
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF80430446380",
+      "estimated_delivery": "2024-10-09",
+      "delivered_at": "2024-10-07"
+    }
+  },
+  "C-7728": {
+    "order_id": "C-7728",
+    "customer_id": "cust-2579",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 5400,
+    "items": [
+      {
+        "sku": "NG-2890",
+        "name": "Waxed Canvas Apron",
+        "quantity": 1,
+        "unit_price_cents": 5400
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-05",
+      "delivered_at": null
+    }
+  },
+  "C-7730": {
+    "order_id": "C-7730",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-06-30",
+    "status": "delivered",
+    "total_cents": 2199,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP388046556134",
+      "estimated_delivery": "2026-07-07",
+      "delivered_at": "2026-07-08"
+    }
+  },
+  "C-7734": {
+    "order_id": "C-7734",
+    "customer_id": "cust-5263",
+    "placed_at": "2026-07-28",
+    "status": "cancelled",
+    "total_cents": 4700,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7736": {
+    "order_id": "C-7736",
+    "customer_id": "cust-8871",
+    "placed_at": "2025-02-12",
+    "status": "delivered",
+    "total_cents": 39450,
+    "items": [
+      {
+        "sku": "NG-3390",
+        "name": "Cast Brass Compass",
+        "quantity": 1,
+        "unit_price_cents": 4700
+      },
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-1318",
+        "name": "Cast Iron Skillet",
+        "quantity": 2,
+        "unit_price_cents": 3850
+      },
+      {
+        "sku": "NG-3801",
+        "name": "Titanium Cook Set",
+        "quantity": 3,
+        "unit_price_cents": 8400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF51484407913",
+      "estimated_delivery": "2025-02-15",
+      "delivered_at": "2025-02-15"
+    }
+  },
+  "C-7740": {
+    "order_id": "C-7740",
+    "customer_id": "cust-4104",
+    "placed_at": "2025-09-04",
+    "status": "delivered",
+    "total_cents": 4850,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      },
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF52151923554",
+      "estimated_delivery": "2025-09-08",
+      "delivered_at": "2025-09-08"
+    }
+  },
+  "C-7741": {
+    "order_id": "C-7741",
+    "customer_id": "cust-5263",
+    "placed_at": "2026-07-18",
+    "status": "delivered",
+    "total_cents": 3200,
+    "items": [
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF85928984236",
+      "estimated_delivery": "2026-07-22",
+      "delivered_at": "2026-07-22"
+    }
+  },
+  "C-7743": {
+    "order_id": "C-7743",
+    "customer_id": "cust-9793",
+    "placed_at": "2025-03-26",
+    "status": "delivered",
+    "total_cents": 15900,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP070277840613",
+      "estimated_delivery": "2025-04-01",
+      "delivered_at": "2025-04-01"
+    }
+  },
+  "C-7744": {
+    "order_id": "C-7744",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-02-28",
+    "status": "delivered",
+    "total_cents": 8900,
+    "items": [
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP418819007744",
+      "estimated_delivery": "2026-03-05",
+      "delivered_at": "2026-03-06"
+    }
+  },
+  "C-7746": {
+    "order_id": "C-7746",
+    "customer_id": "cust-3307",
+    "placed_at": "2025-01-08",
+    "status": "cancelled",
+    "total_cents": 2199,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7747": {
+    "order_id": "C-7747",
+    "customer_id": "cust-4525",
+    "placed_at": "2025-08-19",
+    "status": "delivered",
+    "total_cents": 3400,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP841345450367",
+      "estimated_delivery": "2025-08-23",
+      "delivered_at": "2025-08-23"
+    }
+  },
+  "C-7748": {
+    "order_id": "C-7748",
+    "customer_id": "cust-3307",
+    "placed_at": "2026-07-10",
+    "status": "delivered",
+    "total_cents": 3400,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP155435461987",
+      "estimated_delivery": "2026-07-14",
+      "delivered_at": "2026-07-14"
+    }
+  },
+  "C-7750": {
+    "order_id": "C-7750",
+    "customer_id": "cust-9793",
+    "placed_at": "2026-07-18",
+    "status": "in_transit",
+    "total_cents": 18400,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 2,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      },
+      {
+        "sku": "NG-1402",
+        "name": "Merino Beanie",
+        "quantity": 2,
+        "unit_price_cents": 2400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF52656067722",
+      "estimated_delivery": "2026-07-30",
+      "delivered_at": null
+    }
+  },
+  "C-7762": {
+    "order_id": "C-7762",
+    "customer_id": "cust-3647",
+    "placed_at": "2026-01-30",
+    "status": "delivered",
+    "total_cents": 11400,
+    "items": [
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 1,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF09689182391",
+      "estimated_delivery": "2026-02-07",
+      "delivered_at": "2026-02-07"
+    }
+  },
+  "C-7766": {
+    "order_id": "C-7766",
+    "customer_id": "cust-8645",
+    "placed_at": "2025-12-01",
+    "status": "delivered",
+    "total_cents": 2100,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF65416215812",
+      "estimated_delivery": "2025-12-07",
+      "delivered_at": "2025-12-07"
+    }
+  },
+  "C-7767": {
+    "order_id": "C-7767",
+    "customer_id": "cust-7745",
+    "placed_at": "2026-01-21",
+    "status": "delivered",
+    "total_cents": 9300,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP978819659561",
+      "estimated_delivery": "2026-01-24",
+      "delivered_at": "2026-01-24"
+    }
+  },
+  "C-7770": {
+    "order_id": "C-7770",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-04-30",
+    "status": "delivered",
+    "total_cents": 5399,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      },
+      {
+        "sku": "NG-2477",
+        "name": "Ceramic Pour-Over",
+        "quantity": 1,
+        "unit_price_cents": 3200
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF28170482017",
+      "estimated_delivery": "2026-05-06",
+      "delivered_at": "2026-05-06"
+    }
+  },
+  "C-7775": {
+    "order_id": "C-7775",
+    "customer_id": "cust-7777",
+    "placed_at": "2025-06-08",
+    "status": "delivered",
+    "total_cents": 3900,
+    "items": [
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF16919571772",
+      "estimated_delivery": "2025-06-14",
+      "delivered_at": "2025-06-14"
+    }
+  },
+  "C-7776": {
+    "order_id": "C-7776",
+    "customer_id": "cust-3307",
+    "placed_at": "2024-10-02",
+    "status": "delivered",
+    "total_cents": 19600,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 2,
+        "unit_price_cents": 1850
+      },
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF70374314594",
+      "estimated_delivery": "2024-10-08",
+      "delivered_at": "2024-10-09"
+    }
+  },
+  "C-7777": {
+    "order_id": "C-7777",
+    "customer_id": "cust-8242",
+    "placed_at": "2026-03-31",
+    "status": "delivered",
+    "total_cents": 11500,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      },
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF88498427614",
+      "estimated_delivery": "2026-04-03",
+      "delivered_at": "2026-04-03"
+    }
+  },
+  "C-7778": {
+    "order_id": "C-7778",
+    "customer_id": "cust-3266",
+    "placed_at": "2026-04-29",
+    "status": "delivered",
+    "total_cents": 25600,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 2,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP886262586882",
+      "estimated_delivery": "2026-05-05",
+      "delivered_at": "2026-05-03"
+    }
+  },
+  "C-7780": {
+    "order_id": "C-7780",
+    "customer_id": "cust-4525",
+    "placed_at": "2026-07-15",
+    "status": "delivered",
+    "total_cents": 6700,
+    "items": [
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-4699",
+        "name": "Enamel Serving Bowl",
+        "quantity": 1,
+        "unit_price_cents": 2600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF88729769791",
+      "estimated_delivery": "2026-07-20",
+      "delivered_at": "2026-07-21"
+    }
+  },
+  "C-7781": {
+    "order_id": "C-7781",
+    "customer_id": "cust-2071",
+    "placed_at": "2026-07-26",
+    "status": "processing",
+    "total_cents": 2199,
+    "items": [
+      {
+        "sku": "NG-1907",
+        "name": "Enamel Camp Mug",
+        "quantity": 1,
+        "unit_price_cents": 2199
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "C-7782": {
+    "order_id": "C-7782",
+    "customer_id": "cust-6554",
+    "placed_at": "2026-07-25",
+    "status": "cancelled",
+    "total_cents": 13500,
+    "items": [
+      {
+        "sku": "NG-3572",
+        "name": "Rolltop Backpack",
+        "quantity": 1,
+        "unit_price_cents": 9900
+      },
+      {
+        "sku": "NG-3245",
+        "name": "Folding Camp Stool",
+        "quantity": 1,
+        "unit_price_cents": 3600
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7783": {
+    "order_id": "C-7783",
+    "customer_id": "cust-5847",
+    "placed_at": "2026-07-26",
+    "status": "processing",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-06",
+      "delivered_at": null
+    }
+  },
+  "C-7784": {
+    "order_id": "C-7784",
+    "customer_id": "cust-3257",
+    "placed_at": "2024-08-24",
+    "status": "delivered",
+    "total_cents": 1600,
+    "items": [
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP096837103829",
+      "estimated_delivery": "2024-08-26",
+      "delivered_at": "2024-08-27"
+    }
+  },
+  "C-7785": {
+    "order_id": "C-7785",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-01-04",
+    "status": "delivered",
+    "total_cents": 2750,
+    "items": [
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF34656544140",
+      "estimated_delivery": "2026-01-09",
+      "delivered_at": "2026-01-09"
+    }
+  },
+  "C-7786": {
+    "order_id": "C-7786",
+    "customer_id": "cust-2707",
+    "placed_at": "2026-06-18",
+    "status": "delivered",
+    "total_cents": 41300,
+    "items": [
+      {
+        "sku": "NG-3684",
+        "name": "Sherpa Overshirt",
+        "quantity": 1,
+        "unit_price_cents": 7200
+      },
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 2,
+        "unit_price_cents": 15900
+      },
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP265416510148",
+      "estimated_delivery": "2026-06-25",
+      "delivered_at": "2026-06-24"
+    }
+  },
+  "C-7787": {
+    "order_id": "C-7787",
+    "customer_id": "cust-6554",
+    "placed_at": "2025-10-21",
+    "status": "cancelled",
+    "total_cents": 26200,
+    "items": [
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 2,
+        "unit_price_cents": 11400
+      },
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7788": {
+    "order_id": "C-7788",
+    "customer_id": "cust-2851",
+    "placed_at": "2026-07-27",
+    "status": "processing",
+    "total_cents": 3900,
+    "items": [
+      {
+        "sku": "NG-3955",
+        "name": "Wide-Brim Field Hat",
+        "quantity": 1,
+        "unit_price_cents": 3900
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-06",
+      "delivered_at": null
+    }
+  },
+  "C-7791": {
+    "order_id": "C-7791",
+    "customer_id": "cust-8394",
+    "placed_at": "2026-07-18",
+    "status": "delivered",
+    "total_cents": 1850,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 1,
+        "unit_price_cents": 1850
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF45104719152",
+      "estimated_delivery": "2026-07-22",
+      "delivered_at": "2026-07-22"
+    }
+  },
+  "C-7793": {
+    "order_id": "C-7793",
+    "customer_id": "cust-6769",
+    "placed_at": "2026-05-26",
+    "status": "delivered",
+    "total_cents": 11400,
+    "items": [
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 1,
+        "unit_price_cents": 11400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF26473119652",
+      "estimated_delivery": "2026-06-03",
+      "delivered_at": "2026-06-03"
+    }
+  },
+  "C-7796": {
+    "order_id": "C-7796",
+    "customer_id": "cust-3257",
+    "placed_at": "2026-07-16",
+    "status": "delivered",
+    "total_cents": 15500,
+    "items": [
+      {
+        "sku": "NG-4410",
+        "name": "Ridgeline Duffel",
+        "quantity": 1,
+        "unit_price_cents": 8900
+      },
+      {
+        "sku": "NG-4188",
+        "name": "Leather Work Gloves",
+        "quantity": 2,
+        "unit_price_cents": 3300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP575972868536",
+      "estimated_delivery": "2026-07-20",
+      "delivered_at": "2026-07-20"
+    }
+  },
+  "C-7798": {
+    "order_id": "C-7798",
+    "customer_id": "cust-6769",
+    "placed_at": "2025-08-06",
+    "status": "delivered",
+    "total_cents": 8400,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 2,
+        "unit_price_cents": 4200
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP319528294148",
+      "estimated_delivery": "2025-08-10",
+      "delivered_at": "2025-08-11"
+    }
+  },
+  "C-7810": {
+    "order_id": "C-7810",
+    "customer_id": "cust-2707",
+    "placed_at": "2024-11-10",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP056542385814",
+      "estimated_delivery": "2024-11-18",
+      "delivered_at": "2024-11-18"
+    }
+  },
+  "C-7812": {
+    "order_id": "C-7812",
+    "customer_id": "cust-6727",
+    "placed_at": "2026-07-07",
+    "status": "delivered",
+    "total_cents": 9998,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 2,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF73871672555",
+      "estimated_delivery": "2026-07-13",
+      "delivered_at": "2026-07-14"
+    }
+  },
+  "C-7815": {
+    "order_id": "C-7815",
+    "customer_id": "cust-8242",
+    "placed_at": "2025-06-24",
+    "status": "delivered",
+    "total_cents": 12800,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF98013397872",
+      "estimated_delivery": "2025-06-30",
+      "delivered_at": "2025-06-30"
+    }
+  },
+  "C-7822": {
+    "order_id": "C-7822",
+    "customer_id": "cust-2851",
+    "placed_at": "2026-04-25",
+    "status": "delivered",
+    "total_cents": 10200,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 3,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP931797740207",
+      "estimated_delivery": "2026-05-03",
+      "delivered_at": "2026-05-03"
+    }
+  },
+  "C-7830": {
+    "order_id": "C-7830",
+    "customer_id": "cust-7777",
+    "placed_at": "2025-05-11",
+    "status": "delivered",
+    "total_cents": 21200,
+    "items": [
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 2,
+        "unit_price_cents": 10600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP089807465290",
+      "estimated_delivery": "2025-05-15",
+      "delivered_at": "2025-05-16"
+    }
+  },
+  "C-7832": {
+    "order_id": "C-7832",
+    "customer_id": "cust-9982",
+    "placed_at": "2025-07-08",
+    "status": "delivered",
+    "total_cents": 2750,
+    "items": [
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP479240823039",
+      "estimated_delivery": "2025-07-15",
+      "delivered_at": "2025-07-15"
+    }
+  },
+  "C-7833": {
+    "order_id": "C-7833",
+    "customer_id": "cust-3546",
+    "placed_at": "2026-06-15",
+    "status": "delivered",
+    "total_cents": 8700,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 2,
+        "unit_price_cents": 2300
+      },
+      {
+        "sku": "NG-2318",
+        "name": "Discontinued Fleece Vest",
+        "quantity": 1,
+        "unit_price_cents": 4100,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP605042880201",
+      "estimated_delivery": "2026-06-23",
+      "delivered_at": "2026-06-23"
+    }
+  },
+  "C-7834": {
+    "order_id": "C-7834",
+    "customer_id": "cust-1042",
+    "placed_at": "2026-07-23",
+    "status": "shipped",
+    "total_cents": 7000,
+    "items": [
+      {
+        "sku": "NG-2890",
+        "name": "Waxed Canvas Apron",
+        "quantity": 1,
+        "unit_price_cents": 5400
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP306769039287",
+      "estimated_delivery": "2026-08-01",
+      "delivered_at": null
+    }
+  },
+  "C-7836": {
+    "order_id": "C-7836",
+    "customer_id": "cust-3059",
+    "placed_at": "2025-01-26",
+    "status": "delivered",
+    "total_cents": 23200,
+    "items": [
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 2,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF27473103098",
+      "estimated_delivery": "2025-02-02",
+      "delivered_at": "2025-02-02"
+    }
+  },
+  "C-7858": {
+    "order_id": "C-7858",
+    "customer_id": "cust-6554",
+    "placed_at": "2026-06-30",
+    "status": "delivered",
+    "total_cents": 25600,
+    "items": [
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-4062",
+        "name": "Cabin Wool Blanket",
+        "quantity": 1,
+        "unit_price_cents": 11400
+      },
+      {
+        "sku": "NG-4750",
+        "name": "Quilted Liner Jacket",
+        "quantity": 1,
+        "unit_price_cents": 10600
+      },
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF85354663695",
+      "estimated_delivery": "2026-07-04",
+      "delivered_at": "2026-07-05"
+    }
+  },
+  "C-7859": {
+    "order_id": "C-7859",
+    "customer_id": "cust-2851",
+    "placed_at": "2024-12-28",
+    "status": "cancelled",
+    "total_cents": 10900,
+    "items": [
+      {
+        "sku": "NG-1673",
+        "name": "Stovetop Kettle",
+        "quantity": 1,
+        "unit_price_cents": 4200
+      },
+      {
+        "sku": "NG-3418",
+        "name": "Clearance Sun Hat",
+        "quantity": 1,
+        "unit_price_cents": 1500,
+        "final_sale": true
+      },
+      {
+        "sku": "NG-4271",
+        "name": "Last-Chance Rain Pants",
+        "quantity": 1,
+        "unit_price_cents": 5200,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7860": {
+    "order_id": "C-7860",
+    "customer_id": "cust-7391",
+    "placed_at": "2026-07-26",
+    "status": "in_transit",
+    "total_cents": 14997,
+    "items": [
+      {
+        "sku": "NG-1180",
+        "name": "Trailhead Daypack",
+        "quantity": 3,
+        "unit_price_cents": 4999
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF77000480688",
+      "estimated_delivery": "2026-07-30",
+      "delivered_at": null
+    }
+  },
+  "C-7861": {
+    "order_id": "C-7861",
+    "customer_id": "cust-7504",
+    "placed_at": "2025-03-12",
+    "status": "delivered",
+    "total_cents": 2750,
+    "items": [
+      {
+        "sku": "NG-1745",
+        "name": "Canvas Tote",
+        "quantity": 1,
+        "unit_price_cents": 2750
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP699936642030",
+      "estimated_delivery": "2025-03-22",
+      "delivered_at": "2025-03-20"
+    }
+  },
+  "C-7862": {
+    "order_id": "C-7862",
+    "customer_id": "cust-8801",
+    "placed_at": "2025-12-26",
+    "status": "delivered",
+    "total_cents": 1050,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF08062961675",
+      "estimated_delivery": "2025-12-31",
+      "delivered_at": "2025-12-31"
+    }
+  },
+  "C-7863": {
+    "order_id": "C-7863",
+    "customer_id": "cust-1660",
+    "placed_at": "2026-07-25",
+    "status": "shipped",
+    "total_cents": 3700,
+    "items": [
+      {
+        "sku": "NG-2509",
+        "name": "Wool Hiking Socks",
+        "quantity": 2,
+        "unit_price_cents": 1850
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP314046792517",
+      "estimated_delivery": "2026-08-03",
+      "delivered_at": null
+    }
+  },
+  "C-7868": {
+    "order_id": "C-7868",
+    "customer_id": "cust-7777",
+    "placed_at": "2025-12-24",
+    "status": "delivered",
+    "total_cents": 3700,
+    "items": [
+      {
+        "sku": "NG-4882",
+        "name": "Bench-Made Boot Care Kit",
+        "quantity": 1,
+        "unit_price_cents": 2100
+      },
+      {
+        "sku": "NG-2011",
+        "name": "Trail Runner Insoles",
+        "quantity": 1,
+        "unit_price_cents": 1600
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP159552857956",
+      "estimated_delivery": "2025-12-31",
+      "delivered_at": "2025-12-30"
+    }
+  },
+  "C-7870": {
+    "order_id": "C-7870",
+    "customer_id": "cust-5774",
+    "placed_at": "2024-08-11",
+    "status": "delivered",
+    "total_cents": 15900,
+    "items": [
+      {
+        "sku": "NG-3177",
+        "name": "Down Camp Quilt",
+        "quantity": 1,
+        "unit_price_cents": 15900
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF18400022684",
+      "estimated_delivery": "2024-08-17",
+      "delivered_at": "2024-08-17"
+    }
+  },
+  "C-7877": {
+    "order_id": "C-7877",
+    "customer_id": "cust-3546",
+    "placed_at": "2025-03-15",
+    "status": "delivered",
+    "total_cents": 10800,
+    "items": [
+      {
+        "sku": "NG-2890",
+        "name": "Waxed Canvas Apron",
+        "quantity": 2,
+        "unit_price_cents": 5400
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF30480061541",
+      "estimated_delivery": "2025-03-22",
+      "delivered_at": "2025-03-21"
+    }
+  },
+  "C-7879": {
+    "order_id": "C-7879",
+    "customer_id": "cust-8394",
+    "placed_at": "2026-01-20",
+    "status": "delivered",
+    "total_cents": 3400,
+    "items": [
+      {
+        "sku": "NG-2255",
+        "name": "Clearance Wool Throw",
+        "quantity": 1,
+        "unit_price_cents": 3400,
+        "final_sale": true
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF38031547765",
+      "estimated_delivery": "2026-01-26",
+      "delivered_at": "2026-01-26"
+    }
+  },
+  "C-7882": {
+    "order_id": "C-7882",
+    "customer_id": "cust-9287",
+    "placed_at": "2026-07-28",
+    "status": "processing",
+    "total_cents": 12800,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": "2026-08-02",
+      "delivered_at": null
+    }
+  },
+  "C-7887": {
+    "order_id": "C-7887",
+    "customer_id": "cust-6411",
+    "placed_at": "2025-10-31",
+    "status": "cancelled",
+    "total_cents": 12800,
+    "items": [
+      {
+        "sku": "NG-3090",
+        "name": "Harbor Rain Shell",
+        "quantity": 1,
+        "unit_price_cents": 12800
+      }
+    ],
+    "shipping": {
+      "carrier": null,
+      "tracking_number": null,
+      "estimated_delivery": null,
+      "delivered_at": null
+    }
+  },
+  "C-7889": {
+    "order_id": "C-7889",
+    "customer_id": "cust-3059",
+    "placed_at": "2024-08-07",
+    "status": "delivered",
+    "total_cents": 2300,
+    "items": [
+      {
+        "sku": "NG-2661",
+        "name": "Cedar Shoe Trees",
+        "quantity": 1,
+        "unit_price_cents": 2300
+      }
+    ],
+    "shipping": {
+      "carrier": "Cascade Parcel",
+      "tracking_number": "CP139012346959",
+      "estimated_delivery": "2024-08-13",
+      "delivered_at": "2024-08-13"
+    }
+  },
+  "C-7892": {
+    "order_id": "C-7892",
+    "customer_id": "cust-5774",
+    "placed_at": "2026-01-09",
+    "status": "delivered",
+    "total_cents": 1050,
+    "items": [
+      {
+        "sku": "NG-1560",
+        "name": "Cotton Crew Socks",
+        "quantity": 1,
+        "unit_price_cents": 1050
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF29754677994",
+      "estimated_delivery": "2026-01-16",
+      "delivered_at": "2026-01-14"
+    }
+  },
+  "C-7894": {
+    "order_id": "C-7894",
+    "customer_id": "cust-5179",
+    "placed_at": "2026-04-08",
+    "status": "delivered",
+    "total_cents": 10800,
+    "items": [
+      {
+        "sku": "NG-3245",
+        "name": "Folding Camp Stool",
+        "quantity": 3,
+        "unit_price_cents": 3600
+      }
+    ],
+    "shipping": {
+      "carrier": "Northline Freight",
+      "tracking_number": "NF95710303965",
+      "estimated_delivery": "2026-04-12",
+      "delivered_at": "2026-04-12"
+    }
+  }
+}

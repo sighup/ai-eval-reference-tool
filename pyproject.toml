@@ -1,0 +1,38 @@
+[project]
+name = "support-agent"
+version = "1.0.0"
+description = "Reference tool for the AI Evaluation Bootcamp: a retrieval-augmented support agent that emits evaluable traces."
+readme = "README.md"
+authors = [
+    { name = "Liatrio" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    # Pinned exactly. The trace schema is load-bearing for ten days of course
+    # content, and a new content-block type must arrive on a deliberate bump.
+    "anthropic==0.120.2",
+    "jsonschema>=4.26",
+    "python-dotenv>=1.2",
+]
+
+[project.scripts]
+support-agent = "support_agent.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1",
+    "ruff>=0.16",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
