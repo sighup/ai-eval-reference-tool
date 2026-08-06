@@ -1,0 +1,8 @@
+{
+  "name": "ai-eval-reference-tool",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:progress": "node --test .github/scripts/*.test.mjs"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "audit_record_version": 1,
+  "component": "support-agent",
+  "started_at": "2026-01-01T00:00:00Z",
+  "fixtures": [
+    {
+      "fixture_id": "refund-outside",
+      "scores": [
+        {"scorer_id": "schema_validity", "stage": "deterministic", "passed": true, "details": {}, "cites": ["F1"]}
+      ],
+      "skipped_judges": [],
+      "provider_error": null
+    }
+  ]
+}

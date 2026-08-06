@@ -1,0 +1,7 @@
+{
+  "component": "support-agent",
+  "calibrated_on": "2026-01-01",
+  "calibrator": "fixture",
+  "judge_config": {"judge_model_id": "test", "rubric_hash": "abc"},
+  "scorers": []
+}

@@ -1,0 +1,296 @@
+{
+  "chapters": [
+    {
+      "chapter": "setup",
+      "title": "Setup",
+      "courseSections": ["setup.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresent": [
+            "pyproject.toml",
+            "schema/trace-v1.json",
+            ".gitignore"
+          ],
+          "directoriesPresent": ["fixtures/starter", "traces/starter", "src/support_agent"],
+          "starterFixtureMinCount": 5,
+          "starterTraceMinCount": 5,
+          "gitignoreKeepsStarterTraces": true
+        }
+      }
+    },
+    {
+      "chapter": "1.2",
+      "title": "Scoring by Hand",
+      "courseSections": ["1-failure-taxonomy/1.2-scoring-by-hand.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": ["evals/criteria.md", "evals/labels.csv"],
+          "filesPresent": ["evals/criteria.md"]
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "2.1",
+      "title": "Threat Model",
+      "courseSections": ["2-threat-model-and-r1/2.1-threat-model.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/threat-model.md",
+            "evals/threat_model.md",
+            "evals/threat-model/README.md"
+          ]
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "2.2",
+      "title": "Fixtures Are Inputs",
+      "courseSections": ["2-threat-model-and-r1/2.2-fixtures-are-inputs.md"],
+      "checks": {
+        "deterministic": {
+          "harnessFixtures": {
+            "globs": ["evals/fixtures/**/*.json"],
+            "minCount": 1,
+            "requireLifecycle": true,
+            "requireCites": true
+          }
+        }
+      }
+    },
+    {
+      "chapter": "2.3",
+      "title": "Spend Control",
+      "courseSections": ["2-threat-model-and-r1/2.3-spend-control.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/spend-policy.md",
+            "evals/spend_policy.md",
+            "evals/harness/spend-policy.md"
+          ]
+        }
+      }
+    },
+    {
+      "chapter": "2.4",
+      "title": "Deterministic Scorers",
+      "courseSections": ["2-threat-model-and-r1/2.4-deterministic-scorers.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/harness/scorer_config.json",
+            "evals/scorer_config.json"
+          ],
+          "scorerConfig": {
+            "globs": [
+              "evals/harness/scorer_config.json",
+              "evals/scorer_config.json"
+            ],
+            "requiredDeterministic": [
+              "schema_validity",
+              "must_include_presence",
+              "must_not_include"
+            ]
+          },
+          "auditRecords": {
+            "globs": ["evals/out/**/*.json", "evals/audit/**/*.json"],
+            "minCount": 1
+          }
+        }
+      }
+    },
+    {
+      "chapter": "3.1",
+      "title": "The Naive Judge",
+      "courseSections": ["3-the-judge/3.1-the-naive-judge.md"],
+      "checks": {
+        "deterministic": {
+          "scorerConfig": {
+            "globs": [
+              "evals/harness/scorer_config.json",
+              "evals/scorer_config.json"
+            ],
+            "requireJudgeNonEmpty": true
+          }
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "3.2",
+      "title": "Quote-Grounded Verification",
+      "courseSections": ["3-the-judge/3.2-quote-grounded-verification.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/judge",
+            "evals/judge/README.md",
+            "evals/harness/judge.py",
+            "evals/scorers/field_faithfulness.py"
+          ]
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "4.3",
+      "title": "The Calibration Claim",
+      "courseSections": ["4-calibration-and-the-gate/4.3-the-calibration-claim.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/calibration/claim.md",
+            "evals/calibration/floor.md"
+          ]
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "4.5",
+      "title": "Calibration Records and Drift",
+      "courseSections": ["4-calibration-and-the-gate/4.5-calibration-records-and-drift.md"],
+      "checks": {
+        "deterministic": {
+          "calibrationRecords": {
+            "globs": [
+              "evals/calibration/record.json",
+              "evals/calibration/**/record.json"
+            ],
+            "minCount": 1
+          },
+          "harnessFixtures": {
+            "globs": ["evals/fixtures/**/*.json"],
+            "minCount": 1,
+            "requireLifecycle": true,
+            "requireLifecycleDisjoint": true
+          }
+        }
+      }
+    },
+    {
+      "chapter": "4.7",
+      "title": "The CI Gate",
+      "courseSections": ["4-calibration-and-the-gate/4.7-the-ci-gate-and-when-to-stop.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/harness/gate.py",
+            "evals/harness/gate.sh",
+            ".github/workflows/eval-gate.yml",
+            ".github/workflows/gate.yml"
+          ]
+        }
+      }
+    },
+    {
+      "chapter": "5.1",
+      "title": "Authorisation, Scope, Disclosure",
+      "courseSections": ["5-red-teaming/5.1-authorisation-scope-and-disclosure.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/red-team/scope.md",
+            "evals/red-team/roe.md",
+            "evals/red-team/README.md"
+          ]
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "5.3",
+      "title": "Attacking by Hand",
+      "courseSections": ["5-red-teaming/5.3-attacking-by-hand.md"],
+      "checks": {
+        "deterministic": {
+          "attackResults": {
+            "globs": [
+              "evals/red-team/attacks.jsonl",
+              "evals/red-team/**/attacks.jsonl"
+            ],
+            "minSut": 3,
+            "minJudge": 0
+          }
+        }
+      }
+    },
+    {
+      "chapter": "5.6",
+      "title": "Attacks Become Fixtures",
+      "courseSections": ["5-red-teaming/5.6-attacks-become-fixtures.md"],
+      "checks": {
+        "deterministic": {
+          "harnessFixtures": {
+            "globs": ["evals/fixtures/**/*.json"],
+            "minCount": 3,
+            "requireLifecycle": true,
+            "requireCites": true
+          },
+          "attackResults": {
+            "globs": [
+              "evals/red-team/attacks.jsonl",
+              "evals/red-team/**/attacks.jsonl"
+            ],
+            "minSut": 3,
+            "minJudge": 2
+          }
+        }
+      }
+    },
+    {
+      "chapter": "6.2",
+      "title": "Triage and Quarantine",
+      "courseSections": ["6-production/6.2-triage-and-quarantine.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/production/quarantine.md",
+            "evals/production/runbook.md",
+            "evals/quarantine.md"
+          ]
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "6.4",
+      "title": "Shipping a Gate Nobody Trusts",
+      "courseSections": ["6-production/6.4-shipping-a-gate-nobody-trusts.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresentAny": [
+            "evals/production/override-log.md",
+            "evals/production/overrides.md",
+            "evals/override-log.md"
+          ]
+        },
+        "ai": true
+      }
+    },
+    {
+      "chapter": "capstone",
+      "title": "Capstone",
+      "courseSections": ["capstone.md"],
+      "checks": {
+        "deterministic": {
+          "filesPresent": [
+            "evals/capstone/change.md",
+            "evals/capstone/trust-argument.md",
+            "evals/capstone/self-assessment.md"
+          ],
+          "filesPresentAny": [
+            "evals/harness/gate.py",
+            "evals/harness/gate.sh",
+            ".github/workflows/eval-gate.yml",
+            ".github/workflows/gate.yml"
+          ]
+        },
+        "ai": true
+      }
+    }
+  ]
+}

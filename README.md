@@ -17,6 +17,13 @@ The whole tool is about 900 lines and is meant to be read end to end in twenty
 minutes or so. Start with `src/support_agent/agent.py`; it is the only file that
 decides what happens next.
 
+## Check your progress
+
+Run **Actions → Check your progress** in this repo (or your fork) to score the current
+checkout against the chapter registry. Pick one chapter or **all chapters** for a
+full scorecard. It is deterministic (files, shapes, counts), never blocks merges, and
+never certifies — see [`.github/completion/README.md`](.github/completion/README.md).
+
 ## Setup
 
 You need [uv](https://docs.astral.sh/uv/) and an Anthropic API key. The key comes

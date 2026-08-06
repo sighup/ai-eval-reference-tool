@@ -1,0 +1,100 @@
+#!/usr/bin/env node
+/**
+ * Deterministic-check runner for the `check` job.
+ *
+ * Inputs:
+ *   GITHUB_ACTOR       Dispatching handle (for display / repo derivation)
+ *   CHAPTER            workflow input (`all chapters` or a chapter id)
+ *   LEARNER_REPO_DIR   Local harness root to score (fixture path or cloned fork)
+ */
+
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import {
+  loadChapterDescriptors,
+  normalizeChapterInput,
+  resolveChapterScope,
+} from './chapter-registry.mjs';
+import { requireEnv, writeGithubOutput, writeStepSummary } from './github-client.mjs';
+import {
+  evaluateChapterRow,
+  renderScorecardMarkdown,
+  selectAiEligibleChapters,
+} from './verify-chapter.mjs';
+
+export function runDeterministicCheck({
+  githubActor,
+  chapterRaw,
+  learnerRepoDir,
+  displayName,
+} = {}) {
+  const descriptors = loadChapterDescriptors();
+  const chapterId = normalizeChapterInput(chapterRaw);
+  const scope = resolveChapterScope(descriptors, chapterId);
+
+  const rows = scope.map((descriptor) => evaluateChapterRow(descriptor, learnerRepoDir));
+  const aiEligibleChapters = selectAiEligibleChapters(scope, {
+    harnessRoot: learnerRepoDir,
+    chapterId,
+  }).map((d) => d.chapter);
+
+  const name = displayName ?? githubActor;
+  const summary = renderScorecardMarkdown({
+    displayName: name,
+    githubActor,
+    chapterId,
+    rows,
+  });
+
+  return {
+    context: {
+      displayName: name,
+      githubActor,
+      chapterId,
+      rows,
+      aiEligibleChapters,
+      learnerRepoDir,
+    },
+    summary,
+    passedCount: rows.filter((r) => r.deterministicPassed).length,
+    total: rows.length,
+    aiEligibleChapters,
+  };
+}
+
+async function main() {
+  const githubActor = requireEnv('GITHUB_ACTOR', process.env.GITHUB_ACTOR);
+  const learnerRepoDir = resolve(requireEnv('LEARNER_REPO_DIR', process.env.LEARNER_REPO_DIR));
+  const chapterRaw = process.env.CHAPTER ?? '';
+
+  const result = runDeterministicCheck({
+    githubActor,
+    chapterRaw,
+    learnerRepoDir,
+    displayName: process.env.DISPLAY_NAME?.trim() || githubActor,
+  });
+
+  console.log(result.summary);
+  await writeStepSummary(result.summary);
+  await writeGithubOutput('deterministic_context', JSON.stringify(result.context));
+
+  console.log(
+    `Deterministic checks: ${result.passedCount}/${result.total} chapter(s) passed.`,
+  );
+  console.log(
+    `${result.aiEligibleChapters.length}/${result.total} chapter(s) eligible for AI review this run.`,
+  );
+
+  // Progress checks (and full runs) always exit 0 from `check` so `grade`/`certify`
+  // can still run and report. Certification decision owns the hard fail.
+}
+
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1]);
+
+if (isMain) {
+  main().catch((err) => {
+    console.error(`Deterministic check failed: ${err.message ?? String(err)}`);
+    process.exit(1);
+  });
+}
