@@ -24,8 +24,7 @@
       "courseSections": ["1-failure-taxonomy/1.2-scoring-by-hand.md"],
       "checks": {
         "deterministic": {
-          "filesPresentAny": ["evals/criteria.md", "evals/labels.csv"],
-          "filesPresent": ["evals/criteria.md"]
+          "filesPresent": ["evals/criteria.md", "evals/labels.csv"]
         },
         "ai": true
       }

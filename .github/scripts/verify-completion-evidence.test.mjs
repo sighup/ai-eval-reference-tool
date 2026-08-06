@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
-import { dirname, resolve } from 'node:path';
+import { mkdtempSync, mkdirSync, writeFileSync, cpSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 
-import { matchGlob, validateHarnessFixture, HARNESS_LIFECYCLES } from './verify-completion-evidence.mjs';
+import { matchGlob, validateHarnessFixture, HARNESS_LIFECYCLES, evaluateAuditRecords } from './verify-completion-evidence.mjs';
 import { runDeterministicCheck } from './check-deterministic.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -50,7 +52,6 @@ test('complete fixture harness passes all deterministic chapter checks', () => {
     learnerRepoDir: COMPLETE,
   });
   assert.equal(result.passedCount, result.total);
-  assert.ok(result.aiEligibleChapters.length > 0);
 });
 
 test('incomplete fixture harness fails setup gitignore and later chapters', () => {
@@ -64,7 +65,7 @@ test('incomplete fixture harness fails setup gitignore and later chapters', () =
   assert.equal(setup.deterministicPassed, false);
 });
 
-test('single-chapter progress check scopes to one row and never marks AI eligible', () => {
+test('single-chapter progress check scopes to one row', () => {
   const result = runDeterministicCheck({
     githubActor: 'fixture-complete',
     chapterRaw: '2.2',
@@ -72,5 +73,23 @@ test('single-chapter progress check scopes to one row and never marks AI eligibl
   });
   assert.equal(result.total, 1);
   assert.equal(result.context.rows[0].chapter, '2.2');
-  assert.deepEqual(result.aiEligibleChapters, []);
+});
+
+test('evaluateAuditRecords ignores unrelated JSON when a valid AuditRecord exists', () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'audit-extra-'));
+  try {
+    cpSync(COMPLETE, tmp, { recursive: true });
+    const outDir = join(tmp, 'evals', 'out');
+    mkdirSync(outDir, { recursive: true });
+    writeFileSync(join(outDir, 'unrelated.json'), JSON.stringify({ hello: 'world' }));
+    const result = evaluateAuditRecords(tmp, {
+      globs: ['evals/out/**/*.json'],
+      minCount: 1,
+    });
+    assert.equal(result.passed, true);
+    assert.ok(result.validCount >= 1);
+    assert.equal(result.reasons.length, 0);
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
 });

@@ -20,7 +20,6 @@ import { requireEnv, writeGithubOutput, writeStepSummary } from './github-client
 import {
   evaluateChapterRow,
   renderScorecardMarkdown,
-  selectAiEligibleChapters,
 } from './verify-chapter.mjs';
 
 export function runDeterministicCheck({
@@ -34,10 +33,6 @@ export function runDeterministicCheck({
   const scope = resolveChapterScope(descriptors, chapterId);
 
   const rows = scope.map((descriptor) => evaluateChapterRow(descriptor, learnerRepoDir));
-  const aiEligibleChapters = selectAiEligibleChapters(scope, {
-    harnessRoot: learnerRepoDir,
-    chapterId,
-  }).map((d) => d.chapter);
 
   const name = displayName ?? githubActor;
   const summary = renderScorecardMarkdown({
@@ -53,13 +48,11 @@ export function runDeterministicCheck({
       githubActor,
       chapterId,
       rows,
-      aiEligibleChapters,
       learnerRepoDir,
     },
     summary,
     passedCount: rows.filter((r) => r.deterministicPassed).length,
     total: rows.length,
-    aiEligibleChapters,
   };
 }
 
@@ -82,12 +75,11 @@ async function main() {
   console.log(
     `Deterministic checks: ${result.passedCount}/${result.total} chapter(s) passed.`,
   );
-  console.log(
-    `${result.aiEligibleChapters.length}/${result.total} chapter(s) eligible for AI review this run.`,
-  );
 
-  // Progress checks (and full runs) always exit 0 from `check` so `grade`/`certify`
-  // can still run and report. Certification decision owns the hard fail.
+  // Fail the job when any chapter fails so progress-check workflows show red.
+  if (result.passedCount < result.total) {
+    process.exitCode = 1;
+  }
 }
 
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1]);

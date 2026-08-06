@@ -269,40 +269,44 @@ export function evaluateAuditRecords(harnessRoot, config = {}) {
   const checklist = [];
   const minCount = config.minCount ?? 1;
 
-  if (files.length < minCount) {
-    reasons.push(`Found ${files.length} audit record(s); need at least ${minCount}.`);
-    checklist.push(checklistItem(`At least ${minCount} audit record JSON file(s)`, false, `found ${files.length}.`));
-    return { passed: false, reasons, checklist };
-  }
-
-  checklist.push(checklistItem(`At least ${minCount} audit record JSON file(s)`, true));
-
-  let anyValid = false;
+  let validCount = 0;
   for (const file of files) {
     let payload;
     try {
       payload = readJson(harnessRoot, file);
     } catch (err) {
-      reasons.push(`\`${file}\` is not valid JSON: ${err.message}`);
+      checklist.push(
+        checklistItem(`\`${file}\` skipped (not valid JSON)`, false, err.message),
+      );
       continue;
     }
     const okVersion = payload.audit_record_version === 1 || payload.audit_record_version === '1';
     const okFixtures = Array.isArray(payload.fixtures);
     if (okVersion && okFixtures) {
-      anyValid = true;
+      validCount += 1;
       checklist.push(checklistItem(`\`${file}\` looks like an AuditRecord`, true));
     } else {
-      reasons.push(
-        `\`${file}\` missing audit_record_version=1 and/or fixtures[] (not counted as an audit record).`,
+      checklist.push(
+        checklistItem(
+          `\`${file}\` skipped (not an AuditRecord envelope)`,
+          true,
+          'missing audit_record_version=1 and/or fixtures[]; ignored for minCount',
+        ),
       );
     }
   }
 
-  if (!anyValid) {
-    checklist.push(checklistItem('At least one file matches the AuditRecord envelope', false));
+  const labelCount = `At least ${minCount} valid AuditRecord(s) under ${globs.join(', ')}`;
+  if (validCount < minCount) {
+    reasons.push(
+      `Found ${validCount} valid AuditRecord(s); need at least ${minCount}.`,
+    );
+    checklist.push(checklistItem(labelCount, false, `found ${validCount}.`));
+  } else {
+    checklist.push(checklistItem(labelCount, true));
   }
 
-  return { passed: anyValid && reasons.length === 0, reasons, checklist };
+  return { passed: validCount >= minCount, reasons, checklist, validCount };
 }
 
 export function evaluateCalibrationRecords(harnessRoot, config = {}) {

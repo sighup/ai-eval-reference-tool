@@ -119,26 +119,14 @@ export function renderScorecardMarkdown({ displayName, githubActor, chapterId, r
     '',
     `**Learner:** ${displayName || githubActor} (@${githubActor})`,
     '',
-    '| Chapter | Deterministic | AI | OK |',
-    '| --- | --- | --- | --- |',
+    '| Chapter | Deterministic | OK |',
+    '| --- | --- | --- |',
   ];
 
   for (const row of rows) {
     const det = row.deterministicPassed ? 'Pass' : 'Fail';
-    const ai =
-      row.aiStatus === 'n/a'
-        ? 'n/a'
-        : row.aiStatus === 'skipped'
-          ? 'skipped'
-          : row.aiStatus === 'pass'
-            ? 'Pass'
-            : row.aiStatus === 'flagged'
-              ? 'Flagged'
-              : row.aiDeclared
-                ? '—'
-                : 'n/a';
-    const ok = row.ok === true ? 'yes' : row.ok === false ? 'no' : row.deterministicPassed ? 'yes*' : 'no';
-    lines.push(`| ${row.chapter} ${row.title} | ${det} | ${ai} | ${ok} |`);
+    const ok = row.ok === true ? 'yes' : row.ok === false ? 'no' : row.deterministicPassed ? 'yes' : 'no';
+    lines.push(`| ${row.chapter} ${row.title} | ${det} | ${ok} |`);
   }
 
   lines.push('');
