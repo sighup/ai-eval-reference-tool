@@ -53,14 +53,19 @@ function walkFiles(root, { match } = {}) {
 /** Minimal glob: supports `**` (any depth, including zero) and `*`. */
 export function matchGlob(path, glob) {
   const normalized = path.split('\\').join('/');
+  // Placeholders so the final `*` → `[^/]*` pass cannot corrupt `**` expansions.
+  const GS = '\0GS\0';
+  const G = '\0G\0';
   const pattern = glob
     .split('\\')
     .join('/')
     .replace(/[.+^${}()|[\]\\]/g, '\\$&')
     // `**/` may match zero directories so `dir/**/*.json` includes `dir/file.json`.
-    .replace(/\*\*\//g, '(?:.*/)?')
-    .replace(/\*\*/g, '.*')
-    .replace(/\*/g, '[^/]*');
+    .replace(/\*\*\//g, GS)
+    .replace(/\*\*/g, G)
+    .replace(/\*/g, '[^/]*')
+    .replaceAll(GS, '(?:.*/)?')
+    .replaceAll(G, '.*');
   return new RegExp(`^${pattern}$`).test(normalized);
 }
 
@@ -75,9 +80,49 @@ export function expandGlobs(harnessRoot, globs = []) {
   return [...matched].sort();
 }
 
+/** Like expandGlobs, but keeps first-match order from the registry's glob list. */
+export function expandGlobsInDeclaredOrder(harnessRoot, globs = []) {
+  const allFiles = walkFiles(harnessRoot);
+  const ordered = [];
+  const seen = new Set();
+  for (const glob of globs) {
+    for (const file of allFiles) {
+      if (!matchGlob(file, glob) || seen.has(file)) continue;
+      seen.add(file);
+      ordered.push(file);
+    }
+  }
+  return ordered;
+}
+
 export function pathExists(harnessRoot, relPath) {
   return existsSync(join(harnessRoot, relPath));
 }
+
+/** True only for regular files (empty dirs / dir-named-as-file do not count). */
+export function isPresentFile(harnessRoot, relPath) {
+  const full = join(harnessRoot, relPath);
+  try {
+    return existsSync(full) && statSync(full).isFile();
+  } catch {
+    return false;
+  }
+}
+
+/** Keys `evaluateChapterDeterministic` understands under `checks.deterministic`. */
+export const KNOWN_DETERMINISTIC_KEYS = new Set([
+  'filesPresent',
+  'directoriesPresent',
+  'filesPresentAny',
+  'starterFixtureMinCount',
+  'starterTraceMinCount',
+  'gitignoreKeepsStarterTraces',
+  'harnessFixtures',
+  'scorerConfig',
+  'auditRecords',
+  'calibrationRecords',
+  'attackResults',
+]);
 
 export function readText(harnessRoot, relPath) {
   return readFileSync(join(harnessRoot, relPath), 'utf8');
@@ -204,25 +249,22 @@ export function evaluateHarnessFixtures(harnessRoot, config = {}) {
   return { passed: reasons.length === 0, reasons, checklist, files };
 }
 
-export function evaluateScorerConfig(harnessRoot, config = {}) {
-  const globs = config.globs ?? ['evals/harness/scorer_config.json'];
-  const files = expandGlobs(harnessRoot, globs);
+export function evaluateOneScorerConfigFile(harnessRoot, file, config = {}) {
   const reasons = [];
   const checklist = [];
 
-  if (files.length === 0) {
-    reasons.push(`No scorer_config.json found (looked for ${globs.join(', ')}).`);
-    checklist.push(checklistItem('scorer_config.json is present', false, 'not found.'));
-    return { passed: false, reasons, checklist };
-  }
-
-  const file = files[0];
   let payload;
   try {
     payload = readJson(harnessRoot, file);
   } catch (err) {
     reasons.push(`\`${file}\` is not valid JSON: ${err.message}`);
     checklist.push(checklistItem(`\`${file}\` is valid JSON`, false, err.message));
+    return { passed: false, reasons, checklist };
+  }
+
+  if (payload === null || typeof payload !== 'object' || Array.isArray(payload)) {
+    reasons.push(`\`${file}\` must be a JSON object.`);
+    checklist.push(checklistItem(`\`${file}\` is a JSON object`, false));
     return { passed: false, reasons, checklist };
   }
 
@@ -262,6 +304,29 @@ export function evaluateScorerConfig(harnessRoot, config = {}) {
   return { passed: reasons.length === 0, reasons, checklist };
 }
 
+export function evaluateScorerConfig(harnessRoot, config = {}) {
+  const globs = config.globs ?? ['evals/harness/scorer_config.json'];
+  // Prefer registry glob order; pass if any matching file satisfies the contract
+  // so a leftover scaffold cannot shadow a valid alternate path.
+  const files = expandGlobsInDeclaredOrder(harnessRoot, globs);
+  const reasons = [];
+  const checklist = [];
+
+  if (files.length === 0) {
+    reasons.push(`No scorer_config.json found (looked for ${globs.join(', ')}).`);
+    checklist.push(checklistItem('scorer_config.json is present', false, 'not found.'));
+    return { passed: false, reasons, checklist };
+  }
+
+  let bestFail = null;
+  for (const file of files) {
+    const result = evaluateOneScorerConfigFile(harnessRoot, file, config);
+    if (result.passed) return result;
+    if (!bestFail) bestFail = result;
+  }
+  return bestFail;
+}
+
 export function evaluateAuditRecords(harnessRoot, config = {}) {
   const globs = config.globs ?? ['evals/out/**/*.json'];
   const files = expandGlobs(harnessRoot, globs);
@@ -275,8 +340,19 @@ export function evaluateAuditRecords(harnessRoot, config = {}) {
     try {
       payload = readJson(harnessRoot, file);
     } catch (err) {
+      reasons.push(`\`${file}\` is not valid JSON: ${err.message}`);
       checklist.push(
         checklistItem(`\`${file}\` skipped (not valid JSON)`, false, err.message),
+      );
+      continue;
+    }
+    if (payload === null || typeof payload !== 'object' || Array.isArray(payload)) {
+      checklist.push(
+        checklistItem(
+          `\`${file}\` skipped (not an AuditRecord envelope)`,
+          true,
+          'JSON null/non-object; ignored for minCount',
+        ),
       );
       continue;
     }
@@ -332,6 +408,11 @@ export function evaluateCalibrationRecords(harnessRoot, config = {}) {
       checklist.push(checklistItem(`\`${file}\` is valid JSON`, false, err.message));
       continue;
     }
+    if (payload === null || typeof payload !== 'object' || Array.isArray(payload)) {
+      reasons.push(`\`${file}\` must be a JSON object.`);
+      checklist.push(checklistItem(`\`${file}\` is a JSON object`, false));
+      continue;
+    }
     const missing = requiredKeys.filter((key) => payload[key] === undefined);
     if (missing.length) {
       reasons.push(`\`${file}\` missing keys: ${missing.join(', ')}`);
@@ -361,20 +442,25 @@ export function evaluateAttackResults(harnessRoot, config = {}) {
   let sut = 0;
   let judge = 0;
   for (const file of files) {
-    const lines = readText(harnessRoot, file)
-      .split(/\r?\n/)
-      .map((l) => l.trim())
-      .filter(Boolean);
-    for (const line of lines) {
+    const rawLines = readText(harnessRoot, file).split(/\r?\n/);
+    let reportedBadLine = false;
+    for (let i = 0; i < rawLines.length; i += 1) {
+      const line = rawLines[i].trim();
+      if (!line) continue;
       let row;
       try {
         row = JSON.parse(line);
       } catch {
-        reasons.push(`\`${file}\` contains a non-JSON line.`);
+        if (!reportedBadLine) {
+          reasons.push(`\`${file}\` contains a non-JSON line (line ${i + 1}).`);
+          reportedBadLine = true;
+        }
         continue;
       }
-      if (row.target === 'sut') sut += 1;
-      if (row.target === 'judge') judge += 1;
+      if (row && typeof row === 'object' && !Array.isArray(row)) {
+        if (row.target === 'sut') sut += 1;
+        if (row.target === 'judge') judge += 1;
+      }
     }
   }
 
@@ -405,11 +491,17 @@ export function evaluateGitignoreKeepsStarterTraces(harnessRoot) {
     checklist.push(checklistItem('`.gitignore` keeps `traces/starter/`', false, 'file missing.'));
     return { passed: false, reasons, checklist };
   }
-  const text = readText(harnessRoot, '.gitignore');
-  const hasNegation =
-    text.includes('!traces/starter/') ||
-    text.includes('!./traces/starter/') ||
-    /!\s*traces\/starter\//.test(text);
+  const gitignore = readText(harnessRoot, '.gitignore');
+  const hasNegation = gitignore.split(/\r?\n/).some((raw) => {
+    const line = raw.trim();
+    if (!line || line.startsWith('#')) return false;
+    return (
+      line === '!traces/starter/' ||
+      line === '!./traces/starter/' ||
+      line === '!/traces/starter/' ||
+      line === '!/./traces/starter/'
+    );
+  });
   if (!hasNegation) {
     reasons.push('`.gitignore` must un-ignore `traces/starter/` (load-bearing negation).');
     checklist.push(checklistItem('`.gitignore` keeps `traces/starter/`', false, 'negation missing.'));
@@ -442,6 +534,16 @@ export function evaluateChapterDeterministic(descriptor, harnessRoot) {
   const reasons = [];
   const checklist = [];
 
+  const unknownKeys = Object.keys(config).filter((key) => !KNOWN_DETERMINISTIC_KEYS.has(key));
+  if (unknownKeys.length) {
+    reasons.push(
+      `Unknown deterministic check key(s): ${unknownKeys.map((k) => `"${k}"`).join(', ')}.`,
+    );
+    checklist.push(
+      checklistItem('deterministic check keys are recognized', false, unknownKeys.join(', ')),
+    );
+  }
+
   for (const path of config.filesPresent ?? []) {
     const present = pathExists(harnessRoot, path);
     const label = `\`${path}\` is present`;
@@ -467,11 +569,11 @@ export function evaluateChapterDeterministic(descriptor, harnessRoot) {
 
   const filesPresentAny = config.filesPresentAny ?? [];
   if (filesPresentAny.length > 0) {
-    const anyPresent = filesPresentAny.some((path) => pathExists(harnessRoot, path));
+    const anyPresent = filesPresentAny.some((path) => isPresentFile(harnessRoot, path));
     const pathList = filesPresentAny.map((path) => `\`${path}\``).join(' or ');
-    const label = `One of ${pathList} is present`;
+    const label = `One of ${pathList} is present as a file`;
     if (!anyPresent) {
-      reasons.push(`None of ${pathList} is present.`);
+      reasons.push(`None of ${pathList} is present as a file.`);
       checklist.push(checklistItem(label, false, 'none present.'));
     } else {
       checklist.push(checklistItem(label, true));

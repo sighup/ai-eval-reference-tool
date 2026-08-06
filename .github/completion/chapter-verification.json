@@ -125,7 +125,6 @@
       "checks": {
         "deterministic": {
           "filesPresentAny": [
-            "evals/judge",
             "evals/judge/README.md",
             "evals/harness/judge.py",
             "evals/scorers/field_faithfulness.py"

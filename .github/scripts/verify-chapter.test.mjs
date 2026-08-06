@@ -5,6 +5,7 @@ import {
   decideCertification,
   evaluateModuleCompletionReview,
   mergeAiIntoRows,
+  renderScorecardMarkdown,
 } from './verify-chapter.mjs';
 
 test('mergeAiIntoRows skips AI when deterministic failed', () => {
@@ -44,4 +45,27 @@ test('decideCertification requires all chapters ok for full run', () => {
     { chapterId: null },
   );
   assert.equal(decision.certify, false);
+});
+
+test('renderScorecardMarkdown shows AI pending when criteria missing', () => {
+  const rows = mergeAiIntoRows(
+    [
+      {
+        chapter: '1.2',
+        title: 'Scoring',
+        deterministicPassed: true,
+        aiDeclared: true,
+      },
+    ],
+    [],
+  );
+  assert.equal(rows[0].aiStatus, 'missing');
+  assert.equal(rows[0].ok, false);
+  const md = renderScorecardMarkdown({
+    displayName: 't',
+    githubActor: 't',
+    chapterId: null,
+    rows,
+  });
+  assert.ok(md.includes('AI pending'));
 });

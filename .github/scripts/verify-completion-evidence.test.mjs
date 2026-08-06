@@ -5,7 +5,17 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 
-import { matchGlob, validateHarnessFixture, HARNESS_LIFECYCLES, evaluateAuditRecords } from './verify-completion-evidence.mjs';
+import {
+  matchGlob,
+  validateHarnessFixture,
+  HARNESS_LIFECYCLES,
+  evaluateAuditRecords,
+  evaluateScorerConfig,
+  evaluateAttackResults,
+  evaluateGitignoreKeepsStarterTraces,
+  evaluateChapterDeterministic,
+  isPresentFile,
+} from './verify-completion-evidence.mjs';
 import { runDeterministicCheck } from './check-deterministic.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -15,6 +25,7 @@ const INCOMPLETE = resolve(HERE, '__fixtures__/incomplete');
 test('matchGlob treats ** as zero-or-more directories', () => {
   assert.equal(matchGlob('evals/fixtures/a.json', 'evals/fixtures/**/*.json'), true);
   assert.equal(matchGlob('evals/fixtures/nested/a.json', 'evals/fixtures/**/*.json'), true);
+  assert.equal(matchGlob('evals/fixtures/sub/deep/a.json', 'evals/fixtures/**/*.json'), true);
   assert.equal(matchGlob('evals/other/a.json', 'evals/fixtures/**/*.json'), false);
 });
 
@@ -89,6 +100,124 @@ test('evaluateAuditRecords ignores unrelated JSON when a valid AuditRecord exist
     assert.equal(result.passed, true);
     assert.ok(result.validCount >= 1);
     assert.equal(result.reasons.length, 0);
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('evaluateScorerConfig prefers a valid alternate over a scaffold', () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'scorer-shadow-'));
+  try {
+    mkdirSync(join(tmp, 'evals', 'harness'), { recursive: true });
+    mkdirSync(join(tmp, 'evals'), { recursive: true });
+    writeFileSync(join(tmp, 'evals', 'harness', 'scorer_config.json'), JSON.stringify({ deterministic: [] }));
+    writeFileSync(
+      join(tmp, 'evals', 'scorer_config.json'),
+      JSON.stringify({ deterministic: ['schema_validity'], judge: ['field_faithfulness'] }),
+    );
+    const result = evaluateScorerConfig(tmp, {
+      globs: ['evals/harness/scorer_config.json', 'evals/scorer_config.json'],
+      requiredDeterministic: ['schema_validity'],
+      requireJudgeNonEmpty: true,
+    });
+    assert.equal(result.passed, true);
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('evaluateAuditRecords fails closed on invalid JSON and ignores null payloads', () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'audit-null-'));
+  try {
+    const outDir = join(tmp, 'evals', 'out');
+    mkdirSync(outDir, { recursive: true });
+    writeFileSync(join(outDir, 'bad.json'), '{not-json');
+    writeFileSync(join(outDir, 'null.json'), 'null');
+    writeFileSync(
+      join(outDir, 'good.json'),
+      JSON.stringify({ audit_record_version: 1, fixtures: [] }),
+    );
+    const withGood = evaluateAuditRecords(tmp, { globs: ['evals/out/**/*.json'], minCount: 1 });
+    assert.equal(withGood.passed, true);
+    assert.ok(withGood.reasons.some((r) => r.includes('not valid JSON')));
+
+    rmSync(join(outDir, 'good.json'));
+    const onlyBad = evaluateAuditRecords(tmp, { globs: ['evals/out/**/*.json'], minCount: 1 });
+    assert.equal(onlyBad.passed, false);
+    assert.ok(onlyBad.reasons.some((r) => r.includes('not valid JSON')));
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('evaluateGitignoreKeepsStarterTraces accepts root-anchored negation', () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'gitignore-'));
+  try {
+    writeFileSync(join(tmp, '.gitignore'), '.env\ntraces/*\n!/traces/starter/\n');
+    const result = evaluateGitignoreKeepsStarterTraces(tmp);
+    assert.equal(result.passed, true);
+
+    writeFileSync(join(tmp, '.gitignore'), '.env\n# !traces/starter/\ntraces/*\n');
+    const commented = evaluateGitignoreKeepsStarterTraces(tmp);
+    assert.equal(commented.passed, false);
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('filesPresentAny rejects empty directories', () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'files-any-'));
+  try {
+    mkdirSync(join(tmp, 'evals', 'judge'), { recursive: true });
+    assert.equal(isPresentFile(tmp, 'evals/judge'), false);
+    const result = evaluateChapterDeterministic(
+      {
+        checks: {
+          deterministic: {
+            filesPresentAny: ['evals/judge', 'evals/judge/README.md'],
+          },
+        },
+      },
+      tmp,
+    );
+    assert.equal(result.passed, false);
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('unknown deterministic keys fail the chapter', () => {
+  const result = evaluateChapterDeterministic(
+    { checks: { deterministic: { filePresentAny: ['x.md'] } } },
+    process.cwd(),
+  );
+  assert.equal(result.passed, false);
+  assert.ok(result.reasons.some((r) => r.includes('filePresentAny')));
+});
+
+test('evaluateAttackResults reports one malformed-line reason with line number', () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'attacks-'));
+  try {
+    mkdirSync(join(tmp, 'evals', 'red-team'), { recursive: true });
+    writeFileSync(
+      join(tmp, 'evals', 'red-team', 'attacks.jsonl'),
+      [
+        JSON.stringify({ target: 'sut' }),
+        'not-json',
+        'also-bad',
+        JSON.stringify({ target: 'sut' }),
+        JSON.stringify({ target: 'judge' }),
+      ].join('\n'),
+    );
+    const result = evaluateAttackResults(tmp, {
+      globs: ['evals/red-team/attacks.jsonl'],
+      minSut: 2,
+      minJudge: 1,
+    });
+    assert.equal(result.passed, false);
+    const malformed = result.reasons.filter((r) => r.includes('non-JSON'));
+    assert.equal(malformed.length, 1);
+    assert.ok(malformed[0].includes('line 2'));
   } finally {
     rmSync(tmp, { recursive: true, force: true });
   }

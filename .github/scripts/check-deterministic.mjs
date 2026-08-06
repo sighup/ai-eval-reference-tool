@@ -19,6 +19,7 @@ import {
 import { requireEnv, writeGithubOutput, writeStepSummary } from './github-client.mjs';
 import {
   evaluateChapterRow,
+  mergeAiIntoRows,
   renderScorecardMarkdown,
 } from './verify-chapter.mjs';
 
@@ -32,7 +33,10 @@ export function runDeterministicCheck({
   const chapterId = normalizeChapterInput(chapterRaw);
   const scope = resolveChapterScope(descriptors, chapterId);
 
-  const rows = scope.map((descriptor) => evaluateChapterRow(descriptor, learnerRepoDir));
+  const baseRows = scope.map((descriptor) => evaluateChapterRow(descriptor, learnerRepoDir));
+  // Progress checks never call an AI reviewer; merge empty criteria so declared
+  // AI chapters surface as aiStatus=missing / ok=false instead of a silent Pass.
+  const rows = mergeAiIntoRows(baseRows, []);
 
   const name = displayName ?? githubActor;
   const summary = renderScorecardMarkdown({

@@ -125,7 +125,11 @@ export function renderScorecardMarkdown({ displayName, githubActor, chapterId, r
 
   for (const row of rows) {
     const det = row.deterministicPassed ? 'Pass' : 'Fail';
-    const ok = row.ok === true ? 'yes' : row.ok === false ? 'no' : row.deterministicPassed ? 'yes' : 'no';
+    let ok;
+    if (row.ok === true) ok = 'yes';
+    else if (row.aiStatus === 'missing') ok = 'AI pending';
+    else if (row.ok === false) ok = 'no';
+    else ok = row.deterministicPassed ? 'yes' : 'no';
     lines.push(`| ${row.chapter} ${row.title} | ${det} | ${ok} |`);
   }
 
@@ -133,6 +137,11 @@ export function renderScorecardMarkdown({ displayName, githubActor, chapterId, r
   lines.push(
     '> Deterministic checks cover files, shapes, and counts only. They cannot tell human judgement from agent-authored prose that satisfies the same schema.',
   );
+  if (rows.some((r) => r.aiStatus === 'missing')) {
+    lines.push(
+      '> Chapters marked **AI pending** declare an AI review that this progress Action does not run — deterministic Pass is not a full certification.',
+    );
+  }
 
   const failing = rows.filter((r) => !r.deterministicPassed);
   if (failing.length) {
