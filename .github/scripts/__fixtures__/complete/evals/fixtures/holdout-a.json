@@ -1,0 +1,22 @@
+{
+  "fixture_id": "holdout-a",
+  "customer_id": "c1",
+  "session_id": "s1",
+  "message": "hello",
+  "expected": {
+    "must_include_presence": {
+      "case_insensitive": true,
+      "fields": {}
+    },
+    "must_not_include": {
+      "case_insensitive": true,
+      "fields": {}
+    }
+  },
+  "metadata": {
+    "lifecycle": "calibration_holdout",
+    "cites": [
+      "F2"
+    ]
+  }
+}

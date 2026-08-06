@@ -1,0 +1,23 @@
+{
+  "fixture_id": "reg-a",
+  "customer_id": "c1",
+  "session_id": "s1",
+  "message": "hello",
+  "expected": {
+    "must_include_presence": {
+      "case_insensitive": true,
+      "fields": {}
+    },
+    "must_not_include": {
+      "case_insensitive": true,
+      "fields": {}
+    }
+  },
+  "metadata": {
+    "lifecycle": "regression",
+    "cites": [
+      "F3",
+      "T2"
+    ]
+  }
+}

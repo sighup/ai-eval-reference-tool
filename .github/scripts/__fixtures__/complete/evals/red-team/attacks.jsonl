@@ -1,0 +1,5 @@
+{"attack_id":"a1","target":"sut","cites":["T1"],"technique":"direct","goal":"x","success":true}
+{"attack_id":"a2","target":"sut","cites":["T1"],"technique":"direct","goal":"x","success":true}
+{"attack_id":"a3","target":"sut","cites":["T2"],"technique":"direct","goal":"x","success":false}
+{"attack_id":"a4","target":"judge","cites":["F1"],"technique":"packet","goal":"flip","success":true}
+{"attack_id":"a5","target":"judge","cites":["F1"],"technique":"packet","goal":"flip","success":false}

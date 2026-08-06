@@ -1,0 +1,5 @@
+{
+  "component": "support-agent",
+  "deterministic": ["schema_validity", "must_include_presence", "must_not_include"],
+  "judge": ["field_faithfulness"]
+}
