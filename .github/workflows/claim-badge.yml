@@ -1,0 +1,180 @@
+name: Claim your completion badge
+
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: Your Liatrio work email. Must match your PeopleOps Compass record.
+        required: true
+        type: string
+      dry_run:
+        description: Verify only — log the Compass request without sending it.
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: claim-badge-${{ github.actor }}
+  cancel-in-progress: false
+
+jobs:
+  # Clones and scores the learner's fork. Holds the read token, never the badge key.
+  verify:
+    if: github.repository == 'liatrio-forge/ai-eval-reference-tool'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Validate email
+        env:
+          EMAIL: ${{ inputs.email }}
+        run: |
+          set -euo pipefail
+          if ! printf '%s' "$EMAIL" | grep -Eq '^[^[:space:]@]+@liatrio\.com$'; then
+            echo "::error::'$EMAIL' is not a Liatrio work email. Expected the form you@liatrio.com."
+            exit 1
+          fi
+          echo "Email accepted: $EMAIL"
+
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Test scorecard scripts
+        run: node --test .github/scripts/*.test.mjs
+
+      - name: Derive learner fork name
+        id: fork
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+        run: |
+          set -euo pipefail
+          name="$(node .github/scripts/learner-repo.mjs)"
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+          echo "Learner fork: liatrio-forge/$name"
+
+      - name: Exchange OCTO-STS token
+        id: sts
+        uses: octo-sts/action@v1.1.1
+        with:
+          scope: liatrio-forge
+          identity: verify-ai-eval-completion
+
+      - name: Clone learner fork
+        env:
+          TOKEN: ${{ steps.sts.outputs.token }}
+          FORK: ${{ steps.fork.outputs.name }}
+        run: |
+          set -euo pipefail
+          # Suppress git's own output: a failing clone can echo the tokenful URL.
+          if ! git clone --depth 1 \
+              "https://x-access-token:$TOKEN@github.com/liatrio-forge/$FORK.git" \
+              /tmp/learner-repo >/dev/null 2>&1; then
+            echo "::error::Could not clone liatrio-forge/$FORK. Your harness fork must be named ai-eval-harness-<your-github-handle> — rename it to liatrio-forge/$FORK and re-run."
+            exit 1
+          fi
+          # Drop the credential from the on-disk remote immediately.
+          git -C /tmp/learner-repo remote set-url origin "https://github.com/liatrio-forge/$FORK.git"
+
+      - name: Score learner fork
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          CHAPTER: "all chapters"
+          LEARNER_REPO_DIR: /tmp/learner-repo
+        run: node .github/scripts/check-deterministic.mjs
+
+  # Calls Compass. Holds only the badge key; never checks out learner content.
+  grant:
+    if: github.repository == 'liatrio-forge/ai-eval-reference-tool'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - name: Grant Compass badge
+        env:
+          EMAIL: ${{ inputs.email }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          BADGE_ID: ${{ vars.COMPASS_BADGE_ID }}
+          BASE_URL: ${{ vars.COMPASS_BASE_URL }}
+          API_KEY: ${{ secrets.COMPASS_BADGE_API_KEY }}
+        run: |
+          set -euo pipefail
+
+          base_url="${BASE_URL:-https://compass.liatr.io}"
+          if [ -z "${BADGE_ID:-}" ]; then
+            echo "::error::Repository variable COMPASS_BADGE_ID is not set. A course admin must set it to the Compass badge id."
+            exit 1
+          fi
+
+          encoded="$(jq -rn --arg e "$EMAIL" '$e|@uri')"
+          url="$base_url/api/v1/badges/$BADGE_ID/members/$encoded"
+
+          if [ "$DRY_RUN" = "true" ]; then
+            if [ -n "${API_KEY:-}" ]; then
+              key_note="*** (${#API_KEY} chars)"
+            else
+              key_note="(not set)"
+            fi
+            echo "Dry run — no request sent."
+            echo "  PUT $url"
+            echo "  Authorization: Bearer $key_note"
+            {
+              echo "### Dry run"
+              echo
+              echo "Would grant the badge to \`$EMAIL\`. No request was sent."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          if [ -z "${API_KEY:-}" ]; then
+            echo "::error::Secret COMPASS_BADGE_API_KEY is not set. A course admin must add the bdg_… key to this repository."
+            exit 1
+          fi
+
+          # PUT is idempotent and promotes a pending row to approved. Never DELETE:
+          # completion is a historical fact.
+          status="$(curl -sS -o /tmp/compass-response.json -w '%{http_code}' \
+            -X PUT "$url" \
+            -H "Authorization: Bearer $API_KEY" \
+            -H 'Accept: application/json')"
+
+          case "$status" in
+            200)
+              echo "Badge granted to $EMAIL."
+              {
+                echo "### Badge granted 🎉"
+                echo
+                echo "\`$EMAIL\` is now a member of the AI Evaluation Bootcamp badge."
+                echo
+                echo "[View the badge]($base_url/badges/$BADGE_ID)"
+              } >> "$GITHUB_STEP_SUMMARY"
+              ;;
+            401)
+              echo "::error::Compass rejected the API key (401). COMPASS_BADGE_API_KEY is missing, wrong, or not scoped to badge $BADGE_ID — this is a course-admin problem, not yours."
+              exit 1
+              ;;
+            404)
+              echo "::error::Compass has no active employee for '$EMAIL' (404). The email must match your PeopleOps Compass record exactly."
+              exit 1
+              ;;
+            400)
+              echo "::error::Compass rejected the request as malformed (400). This indicates an email-encoding bug in this workflow, not a problem with your claim."
+              exit 1
+              ;;
+            500)
+              echo "::error::Compass failed upstream (500). This is retryable — re-run this workflow shortly."
+              exit 1
+              ;;
+            *)
+              echo "::error::Unexpected response from Compass (HTTP $status)."
+              cat /tmp/compass-response.json || true
+              exit 1
+              ;;
+          esac
