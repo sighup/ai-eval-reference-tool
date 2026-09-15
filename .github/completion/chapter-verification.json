@@ -60,20 +60,6 @@
       }
     },
     {
-      "chapter": "2.3",
-      "title": "Spend Control",
-      "courseSections": ["2-threat-model-and-r1/2.3-spend-control.md"],
-      "checks": {
-        "deterministic": {
-          "filesPresentAny": [
-            "evals/spend-policy.md",
-            "evals/spend_policy.md",
-            "evals/harness/spend-policy.md"
-          ]
-        }
-      }
-    },
-    {
       "chapter": "2.4",
       "title": "Deterministic Scorers",
       "courseSections": ["2-threat-model-and-r1/2.4-deterministic-scorers.md"],
