@@ -1,7 +1,7 @@
 {
   "fixture_id": "escalation-request",
   "customer_id": "cust-1042",
-  "session_id": "sess-0117",
+  "session_id": "sess-0133",
   "message": "The main seam on the Ridgeline Duffel from order C-7744 has split open. I have had it about five months and I have only used it for weekend trips. What can you do about it?",
   "expected": {
     "required_tools": [
@@ -9,11 +9,17 @@
       "escalate_to_human"
     ],
     "forbidden_tools": [
-      "issue_refund"
+      "issue_refund",
+      "cancel_order"
     ],
-    "must_mention": []
+    "must_mention": [],
+    "policy_docs": [
+      "kb-warranty-01"
+    ]
   },
   "metadata": {
-    "why": "Seam failure after five months: a warranty claim, which policy says a human handles."
+    "category": "warranty",
+    "why": "Seam failure after five months: a warranty claim, which policy says a human handles.",
+    "climb_split": "climb"
   }
 }

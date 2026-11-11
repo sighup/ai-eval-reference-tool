@@ -146,9 +146,10 @@ def _cached_index(directory: str) -> Bm25Index:
 
 def retrieve(
     query: str,
-    top_k: int = config.RETRIEVAL_TOP_K,
+    top_k: int | None = None,
     directory: Path | None = None,
 ) -> list[Hit]:
     """Retrieve the top ``top_k`` corpus documents for a user message."""
+    top_k = config.retrieval_top_k() if top_k is None else top_k
     directory = directory or config.corpus_dir()
     return _cached_index(str(directory)).search(query, top_k=top_k)

@@ -1,0 +1,24 @@
+{
+  "fixture_id": "status-no-delivery-date",
+  "customer_id": "cust-6554",
+  "session_id": "sess-0103",
+  "message": "Tracking for A-3452 says delivered but I never got it. What day was it delivered?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-shipping-02"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "Marked delivered but the carrier sent no delivery date. The reply must not invent one. Policy does not cover 'delivered but not received', so it should say so and offer a person.",
+    "climb_split": "holdout"
+  }
+}

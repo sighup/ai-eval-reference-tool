@@ -1,0 +1,20 @@
+{
+  "fixture_id": "which-order",
+  "customer_id": "cust-1042",
+  "session_id": "sess-0138",
+  "message": "Refund my socks please.",
+  "expected": {
+    "required_tools": [],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": []
+  },
+  "metadata": {
+    "category": "other",
+    "why": "Three orders have socks: A-3473 (cancelled and refunded), B-5527 (in transit) and A-3211 (108 days ago). It must ask which, and none is refundable as asked anyway.",
+    "climb_split": "climb"
+  }
+}

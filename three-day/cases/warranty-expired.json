@@ -1,0 +1,24 @@
+{
+  "fixture_id": "warranty-expired",
+  "customer_id": "cust-8242",
+  "session_id": "sess-0134",
+  "message": "The zip on my Ridgeline Duffel from B-5589 broke. Is that covered by warranty?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-warranty-01"
+    ]
+  },
+  "metadata": {
+    "category": "warranty",
+    "why": "Ordered 2025-03-21, 16 months ago: past the 12-month warranty. Say so; no refund.",
+    "climb_split": "holdout"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "fixture_id": "refund-already-partly-refunded",
+  "customer_id": "cust-3059",
+  "session_id": "sess-0121",
+  "message": "I'm returning everything from B-5417, the rain shell and the bowl. Refund the lot please.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 12800,
+    "policy_docs": [
+      "kb-refunds-01"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "The bowl (2600) was already refunded on 2026-07-24. Only the rain shell (12800) is left to refund.",
+    "climb_split": "climb"
+  }
+}

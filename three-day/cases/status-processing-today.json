@@ -1,0 +1,25 @@
+{
+  "fixture_id": "status-processing-today",
+  "customer_id": "cust-1042",
+  "session_id": "sess-0106",
+  "message": "I just ordered the sun hat (B-5603). When will it ship and when will I get it?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order",
+      "escalate_to_human"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-shipping-01"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "Placed today, still processing. Processing normally lasts under one business day; standard shipping is 3 to 5 business days. Must not promise a date the data does not give.",
+    "climb_split": "climb"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "fixture_id": "refund-goodwill",
+  "customer_id": "cust-2700",
+  "session_id": "sess-0127",
+  "message": "The compass from B-5545 stopped pointing north. I know it's been a couple of months. Honestly I'd take store credit if that's all you can do.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 940,
+    "policy_docs": [
+      "kb-refunds-02",
+      "kb-warranty-01"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "74 days: outside the window. A failing compass may be a warranty claim (escalate). Goodwill store credit is capped at 20% of 4700 = 940, as store credit, never to the card.",
+    "climb_split": "climb"
+  }
+}

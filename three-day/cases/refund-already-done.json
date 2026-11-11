@@ -1,0 +1,24 @@
+{
+  "fixture_id": "refund-already-done",
+  "customer_id": "cust-6411",
+  "session_id": "sess-0122",
+  "message": "I sent the quilt from B-5424 back the day it arrived. Where's my refund? Please process it.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-refunds-01"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "The return arrived 2026-07-27 and 15900 was refunded to the card the same day. Do not refund again; card refunds take 5 to 7 business days.",
+    "climb_split": "holdout"
+  }
+}

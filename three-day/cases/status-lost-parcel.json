@@ -1,0 +1,24 @@
+{
+  "fixture_id": "status-lost-parcel",
+  "customer_id": "cust-2700",
+  "session_id": "sess-0104",
+  "message": "My daypack from A-3275 was supposed to come weeks ago. Can you just send me another one or give me my money back?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 4999,
+    "policy_docs": [
+      "kb-shipping-02"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "Due 2026-07-08, still in transit on 2026-07-28: 14 business days late, past the 10 for lost. Entitled to a replacement or a full refund (4999). Refunding or escalating for a replacement both pass.",
+    "climb_split": "climb"
+  }
+}

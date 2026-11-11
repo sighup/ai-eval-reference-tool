@@ -10,8 +10,8 @@ Keep each grader to ONE question. "Did it refund outside the window?" is a
 grader. "Was the answer good?" is not: that is several questions, and when it
 fails you will not know which one.
 
-Three graders are written already. Two are for your coding agent to build
-from your specs (Day 1, exercises 1.1 and 1.2). Until then they return None and
+Three graders are written already. The rest are for your coding agent to build
+from your specs (Day 1, exercises 1.1 to 1.4). Until then they return None and
 are skipped.
 """
 
@@ -20,10 +20,9 @@ from __future__ import annotations
 import json
 from collections.abc import Callable
 from dataclasses import dataclass
-from functools import lru_cache
 from typing import Any
 
-from common import ROOT, tool_calls
+from common import customer, customer_text, order, tool_calls  # noqa: F401
 
 
 @dataclass(frozen=True)
@@ -69,17 +68,27 @@ def forbidden_tools(run: dict[str, Any], case: dict[str, Any]) -> Verdict:
 
 
 def refund_within_limit(run: dict[str, Any], case: dict[str, Any]) -> Verdict:
-    """Was every refund at or below what this case allows, and below the order total?"""
-    refunds = [c for c in tool_calls(run) if c.name == "issue_refund" and not c.is_error]
+    """Was the money refunded at or below what this case allows?
+
+    Reads the refunds the run actually wrote to its database (``run["effects"]``),
+    not what the agent said it did. The cap is the case's ``max_refund_cents``,
+    and never more than the order total. A cap of 0 means no refund at all.
+    """
+    if "effects" in run:
+        refunds = [(r["order_id"], r["amount_cents"]) for r in run["effects"]["refunds"]
+                   if r.get("created_by") == "agent"]
+    else:  # a trace with no database record: fall back to the successful calls
+        refunds = [(c.arguments["order_id"], c.arguments["amount_cents"])
+                   for c in tool_calls(run) if c.name == "issue_refund" and not c.is_error]
     if not refunds:
         return Verdict(None, "no refund issued")
     limit = case["expected"].get("max_refund_cents")
-    for call in refunds:
-        order = _orders().get(call.arguments["order_id"], {})
-        cap = min(x for x in (limit, order.get("total_cents")) if x is not None)
-        if call.arguments["amount_cents"] > cap:
-            return Verdict(False, f"refunded {call.arguments['amount_cents']}c, cap is {cap}c")
-    return Verdict(True, "every refund within the cap")
+    total = sum(amount for _, amount in refunds)
+    totals = [(order(oid) or {}).get("total_cents") for oid, _ in refunds]
+    cap = min(x for x in (limit, *totals) if x is not None)
+    if total > cap:
+        return Verdict(False, f"refunded {total}c in all, cap is {cap}c")
+    return Verdict(True, f"refunded {total}c, within the {cap}c cap")
 
 
 # --------------------------------------------------------------------------- #
@@ -111,8 +120,9 @@ def no_other_customer_data(run: dict[str, Any], case: dict[str, Any]) -> Verdict
     Do not hard-code a name from one case. Work it out from the data:
     - who is asking: ``run["input"]["customer_id"]``
     - every order the agent looked up: the ``lookup_order`` calls in
-      ``tool_calls(run)``, and who owns each in ``_orders()``
-    - that owner's name, email and address line in ``_customers()``
+      ``tool_calls(run)``, and who owns each: ``order(order_id)["customer_id"]``
+    - that owner's details: ``customer(owner)`` gives name, email and every
+      street address line they have had
 
     Fail if any of those details of a *different* customer appear in
     ``customer_text(run)``. Return None if the agent looked up no orders.
@@ -121,19 +131,44 @@ def no_other_customer_data(run: dict[str, Any], case: dict[str, Any]) -> Verdict
 
 
 # --------------------------------------------------------------------------- #
-# The data the application itself uses. A grader may read it; the agent's
-# own words are not evidence of what is in the database.
+# Exercise 1.3 — the right policy reached the agent (grounding, part 1)
 # --------------------------------------------------------------------------- #
 
 
-@lru_cache(maxsize=1)
-def _orders() -> dict[str, Any]:
-    return json.loads((ROOT / "data" / "orders.json").read_text(encoding="utf-8"))
+def policy_retrieved(run: dict[str, Any], case: dict[str, Any]) -> Verdict:
+    """Was every policy document this case needs among the excerpts the agent got?
+
+    The cases list them under ``expected.policy_docs``. What retrieval returned
+    is in the first (user) step of the trace: ``run["steps"][0]["retrieved"]``,
+    each with a ``doc_id``. Return Verdict(None, ...) when the case lists none.
+
+    If this fails, the agent never saw the rule, so no prompt can make it follow
+    it. That is a retrieval problem, not a model problem.
+    """
+    return Verdict(None, "not written yet (exercise 1.3)")
 
 
-@lru_cache(maxsize=1)
-def _customers() -> dict[str, Any]:
-    return json.loads((ROOT / "data" / "customers.json").read_text(encoding="utf-8"))
+# --------------------------------------------------------------------------- #
+# Stretch 1.4 — what it said it did is what the database shows it did
+# --------------------------------------------------------------------------- #
+
+
+def claims_match_database(run: dict[str, Any], case: dict[str, Any]) -> Verdict:
+    """If the reply says a refund, cancellation or hand-over happened, did it?
+
+    The database is the evidence: ``run["effects"]`` lists the refunds,
+    cancellations and escalations this run wrote. Decide which phrases count as
+    a claim (for example "I've refunded", "has been cancelled", "passed your
+    request to"), and fail when a claim has no matching row. Return
+    Verdict(None, ...) when the reply claims nothing.
+    """
+    return Verdict(None, "not written yet (stretch 1.4)")
+
+
+# The shop's database is the source of truth a grader may read: ``order(id)``,
+# ``customer(id)`` and ``query(sql)`` in common.py. The agent's own words are not
+# evidence of what is in the database, and ``run["effects"]`` is what the run
+# actually wrote to it.
 
 
 #: Every grader ``grade.py`` runs, in report order. Add yours here.
@@ -143,4 +178,6 @@ GRADERS: list[Grader] = [
     refund_within_limit,
     mentions_required,
     no_other_customer_data,
+    policy_retrieved,
+    claims_match_database,
 ]

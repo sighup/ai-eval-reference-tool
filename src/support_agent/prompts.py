@@ -47,7 +47,7 @@ class UnrenderedPlaceholder(ValueError):
 
 
 def template_path(name: str) -> Path:
-    return config.project_root() / "prompts" / name
+    return config.agent_dir() / "prompts" / name
 
 
 def load_template(name: str) -> str:

@@ -11,7 +11,9 @@ import csv
 import glob
 import json
 import math
+import sqlite3
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -21,7 +23,7 @@ ROOT = COURSE.parent  # the repository root
 CASES_DIR = COURSE / "cases"
 WORK = COURSE / "work"
 RESULTS = WORK / "results"
-DEFAULT_TRACES = "traces/starter/*.jsonl"
+DEFAULT_TRACES = "three-day/traces/baseline.jsonl"
 
 
 # --------------------------------------------------------------------------- #
@@ -48,26 +50,96 @@ def resolve(pattern: str) -> list[Path]:
 
 
 def load_runs(*patterns: str) -> list[dict[str, Any]]:
-    """Every run in every JSONL file matching the patterns, in a stable order."""
+    """Every run in every JSONL file matching the patterns, in a stable order.
+
+    If a trace file has an ``<name>.effects.jsonl`` beside it (``record.py``
+    writes one), each run gets ``run["effects"]``: the refunds, cancellations
+    and escalations the run wrote to its database.
+    """
     runs = []
     for pattern in patterns or (DEFAULT_TRACES,):
         for path in resolve(pattern):
+            if path.name.endswith(".effects.jsonl"):
+                continue
+            effects = {}
+            sidecar = path.with_name(path.stem + ".effects.jsonl")
+            if sidecar.is_file():
+                for line in sidecar.read_text(encoding="utf-8").splitlines():
+                    if line.strip():
+                        row = json.loads(line)
+                        effects[row["run_id"]] = row
             for line in path.read_text(encoding="utf-8").splitlines():
                 if line.strip():
-                    runs.append(json.loads(line))
+                    run = json.loads(line)
+                    if run["run_id"] in effects:
+                        run["effects"] = effects[run["run_id"]]
+                    runs.append(run)
     return sorted(runs, key=lambda r: r["run_id"])
 
 
-def split_of(run_id: str) -> str:
-    """``dev`` or ``test``, fixed by the run's number so it never changes.
+# --------------------------------------------------------------------------- #
+# The shop's database (the seed every run starts from). Read-only here.
+# --------------------------------------------------------------------------- #
 
-    Runs numbered 01 and 02 are dev: look at them as much as you like while you
-    write a judge. Runs 03 and up are test: score them once, at the end. The
-    split is by run rather than by case so both halves hold every case, which
-    with five cases is the only way either half means anything.
+SEED_DB = COURSE / "db" / "northwind.db"
+
+
+@lru_cache(maxsize=1)
+def _db() -> sqlite3.Connection:
+    if not SEED_DB.is_file():
+        raise SystemExit("No database yet. Build it with: uv run python three-day/db/seed.py")
+    db = sqlite3.connect(f"file:{SEED_DB}?mode=ro", uri=True, check_same_thread=False)
+    db.row_factory = sqlite3.Row
+    return db
+
+
+def order(order_id: str) -> dict[str, Any] | None:
+    """An order as the database holds it, with its owner's customer_id. None if unknown."""
+    row = _db().execute("SELECT * FROM orders WHERE order_id = ?", (order_id,)).fetchone()
+    return dict(row) if row else None
+
+
+def customer(customer_id: str) -> dict[str, Any] | None:
+    """A customer's name, email and every street address they have had."""
+    row = _db().execute(
+        "SELECT * FROM customers WHERE customer_id = ?", (customer_id,)
+    ).fetchone()
+    if row is None:
+        return None
+    lines = [
+        r["line1"]
+        for r in _db().execute(
+            "SELECT line1 FROM addresses WHERE customer_id = ? ORDER BY valid_from",
+            (customer_id,),
+        )
+    ]
+    return {"customer_id": customer_id, "name": row["name"], "email": row["email"],
+            "address_lines": lines}
+
+
+def query(sql: str, *params: Any) -> list[dict[str, Any]]:
+    """Run a read-only SQL query against the seed database."""
+    return [dict(r) for r in _db().execute(sql, params)]
+
+
+def split_of(run_id: str) -> str:
+    """``dev``, ``test`` or ``rest``, fixed by the run's number so it never changes.
+
+    Every case was run five times. You label two of them:
+
+    * run 01 of every case is **dev**: label it on Day 2, and look at it as much
+      as you like while you build a judge;
+    * run 02 of every case is **test**: label it on Day 3, then score the judge
+      on it once, at the end;
+    * runs 03 and up are the **rest**: nobody labels them. They stand in for the
+      traffic you will never have time to read, which is what a judge is for.
+
+    The split is by run rather than by case so every half holds every case.
     """
     tail = run_id.rsplit("-", 1)[-1]
-    return "dev" if tail.isdigit() and int(tail) <= 2 else "test"
+    if not tail.isdigit():
+        return "rest"
+    return {1: "dev", 2: "test"}.get(int(tail), "rest")
 
 
 # --------------------------------------------------------------------------- #
@@ -127,8 +199,8 @@ def customer_name(customer_id: str) -> str:
 
     A reviewer needs it to notice when a reply describes somebody else.
     """
-    customers = json.loads((ROOT / "data" / "customers.json").read_text(encoding="utf-8"))
-    return customers.get(customer_id, {}).get("name") or "name unknown"
+    found = customer(customer_id)
+    return found["name"] if found else "name unknown"
 
 
 def render(run: dict[str, Any], *, policies: bool = True) -> str:

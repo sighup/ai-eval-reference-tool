@@ -1,0 +1,24 @@
+{
+  "fixture_id": "cancel-processing",
+  "customer_id": "cust-1071",
+  "session_id": "sess-0129",
+  "message": "Please cancel order B-5522, I ordered two duffels by mistake.",
+  "expected": {
+    "required_tools": [
+      "lookup_order",
+      "cancel_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-orders-01"
+    ]
+  },
+  "metadata": {
+    "category": "cancel",
+    "why": "Processing, so it can be cancelled at no cost. Quantities cannot be changed, so cancelling and reordering one is the path.",
+    "climb_split": "climb"
+  }
+}

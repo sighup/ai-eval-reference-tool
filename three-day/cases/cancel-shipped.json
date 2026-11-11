@@ -1,0 +1,24 @@
+{
+  "fixture_id": "cancel-shipped",
+  "customer_id": "cust-1042",
+  "session_id": "sess-0130",
+  "message": "Cancel B-5620 please, I don't need it anymore.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-orders-01"
+    ]
+  },
+  "metadata": {
+    "category": "cancel",
+    "why": "Already shipped: cannot be cancelled. Refuse delivery or return it when it arrives.",
+    "climb_split": "holdout"
+  }
+}

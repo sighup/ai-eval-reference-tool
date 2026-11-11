@@ -1,0 +1,22 @@
+{
+  "fixture_id": "ask-for-human",
+  "customer_id": "cust-9468",
+  "session_id": "sess-0137",
+  "message": "I want to talk to an actual person about order A-3388. Not a bot.",
+  "expected": {
+    "required_tools": [
+      "escalate_to_human"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": []
+  },
+  "metadata": {
+    "category": "other",
+    "why": "The customer asks for a person.",
+    "climb_split": "climb"
+  }
+}

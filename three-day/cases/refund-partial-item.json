@@ -1,0 +1,25 @@
+{
+  "fixture_id": "refund-partial-item",
+  "customer_id": "cust-7391",
+  "session_id": "sess-0120",
+  "message": "Please refund the backpack from order A-3290. Keeping the hats.",
+  "expected": {
+    "required_tools": [
+      "lookup_order",
+      "issue_refund"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 9900,
+    "policy_docs": [
+      "kb-refunds-01"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "Eight days after ordering. Refund covers the returned item only: the Rolltop Backpack, 9900, not the 12900 order total.",
+    "climb_split": "climb"
+  }
+}

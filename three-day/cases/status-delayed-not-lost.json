@@ -1,0 +1,24 @@
+{
+  "fixture_id": "status-delayed-not-lost",
+  "customer_id": "cust-4659",
+  "session_id": "sess-0105",
+  "message": "Order A-3393 is lost. It was due on the 19th. Refund me now please.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-shipping-02"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "Due Sun 2026-07-19; on Tue 2026-07-28 it is 7 business days late: delayed (more than 3) but not lost (10). No refund yet; check tracking and the address.",
+    "climb_split": "climb"
+  }
+}

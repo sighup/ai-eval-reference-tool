@@ -30,11 +30,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import shutil
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
+import claude_cli
 from common import (
     RESULTS,
     ROOT,
@@ -92,12 +95,62 @@ def load_cache() -> dict[str, dict[str, Any]]:
     return {e["key"]: e for e in entries}
 
 
-def make_client() -> Any:
-    """The real API client. Uses the same key, from the same ``.env``, as the agent."""
-    sys.path.insert(0, str(ROOT / "src"))
-    import anthropic  # noqa: PLC0415
+class ClaudeCodeJudge:
+    """Asks the judge through Claude Code (``claude -p``) instead of the API.
 
+    No API key needed: it uses whatever Claude Code is signed in with. Claude
+    Code's own system prompt and tools are switched off, so the judge sees only
+    your rubric, and ``--json-schema`` enforces the same critique-then-verdict
+    shape as the API path. Cost is what Claude Code reports, which includes a
+    little of its own overhead.
+    """
+
+    SYSTEM = (
+        "You are an evaluator. Read the rubric and the run in the user's message and "
+        "answer only in the required structured format."
+    )
+
+    def ask(self, model: str, prompt: str, effort: str) -> dict[str, Any]:
+        cmd = claude_cli.base_command(model, system=["--system-prompt", self.SYSTEM])
+        cmd += [
+            "--tools", "",
+            "--effort", effort,
+            "--json-schema", json.dumps(SCHEMA),
+            "--output-format", "json",
+        ]
+        proc = claude_cli.run(cmd, prompt)
+        try:
+            out = json.loads(proc.stdout)
+        except json.JSONDecodeError:
+            return {
+                "verdict": None,
+                "critique": f"claude -p failed: {(proc.stderr or proc.stdout)[-300:]}",
+                "cost_usd": 0.0,
+            }
+        cost = float(out.get("total_cost_usd") or 0.0)
+        answer = out.get("structured_output")
+        if not isinstance(answer, dict) or answer.get("verdict") not in {"pass", "fail"}:
+            text = str(out.get("result", ""))[:200]
+            return {"verdict": None, "critique": f"no structured answer: {text}", "cost_usd": cost}
+        return {"verdict": answer["verdict"], "critique": answer["critique"], "cost_usd": cost}
+
+
+def make_client(via: str = "auto") -> Any:
+    """Who answers the judge: the API (needs a key) or Claude Code (does not).
+
+    ``auto`` uses the API when ``ANTHROPIC_API_KEY`` is set, otherwise Claude Code.
+    """
+    sys.path.insert(0, str(ROOT / "src"))
     from support_agent import config  # noqa: PLC0415 - only needed for live calls
+
+    if via == "auto":
+        config.load_env()
+        has_key = bool(os.environ.get("ANTHROPIC_API_KEY", "").strip())
+        via = "api" if has_key or not shutil.which("claude") else "claude"
+    if via == "claude":
+        return ClaudeCodeJudge()
+
+    import anthropic  # noqa: PLC0415
 
     return anthropic.Anthropic(api_key=config.api_key())
 
@@ -109,6 +162,8 @@ def ask_judge(client: Any, model: str, prompt: str, effort: str) -> dict[str, An
     declines; a judge reading support transcripts should never trip that, but a
     red-team transcript one day might.
     """
+    if isinstance(client, ClaudeCodeJudge):
+        return client.ask(model, prompt, effort)
     extra: dict[str, Any] = {}
     if "haiku" not in model:  # Haiku has no server-side fallback
         extra = {"betas": ["server-side-fallback-2026-07-01"], "fallbacks": "default"}
@@ -144,13 +199,14 @@ def judge_runs(
     effort: str = "medium",
     client: Any = None,
     workers: int = 4,
+    via: str = "auto",
 ) -> dict[str, dict[str, Any]]:
     """Judge every run, using the cache where it can. ``{run_id: result}``."""
     cache = load_cache()
     prompts = {r["run_id"]: build_prompt(template, r) for r in runs}
     todo = [rid for rid, p in prompts.items() if cache_key(model, p) not in cache]
     if todo:
-        client = client or make_client()
+        client = client or make_client(via)
         print(f"Judging {len(todo)} runs with {model} ({len(runs) - len(todo)} cached)...")
 
         def one(run_id: str) -> dict[str, Any]:
@@ -176,13 +232,20 @@ def main() -> None:
         description=__doc__, formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("prompt", type=Path, help="judge prompt (Markdown with {{run}})")
-    parser.add_argument("traces", nargs="*", help="trace globs (default: traces/starter/*.jsonl)")
-    parser.add_argument("--split", choices=["dev", "test", "all"], default="dev")
+    parser.add_argument("traces", nargs="*", help="trace globs (default: three-day/traces/baseline.jsonl)")
+    parser.add_argument("--split", choices=["dev", "test", "rest", "all"], default="dev")
     parser.add_argument("--labels", type=Path, default=WORK / "labels.csv", help="your labels")
     parser.add_argument("--mode", help="compare against one failure mode, not the overall label")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument(
         "--effort", default="medium", choices=["low", "medium", "high", "xhigh", "max"]
+    )
+    parser.add_argument(
+        "--via",
+        default="auto",
+        choices=["auto", "api", "claude"],
+        help="api needs ANTHROPIC_API_KEY; claude uses Claude Code (claude -p). "
+        "auto: api if a key is set, else claude",
     )
     parser.add_argument(
         "--tpr", type=float, help="judge TPR measured on labelled data, for correction"
@@ -217,7 +280,9 @@ def main() -> None:
         return
 
     try:
-        results = judge_runs(runs, template, model=args.model, effort=args.effort)
+        results = judge_runs(
+            runs, template, model=args.model, effort=args.effort, via=args.via
+        )
     except RuntimeError as exc:  # support_agent.config.MissingCredential
         raise SystemExit(f"{exc}\n(--dry-run works without a key.)") from None
     stem = args.prompt.stem

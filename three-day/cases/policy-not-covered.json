@@ -1,0 +1,20 @@
+{
+  "fixture_id": "policy-not-covered",
+  "customer_id": "cust-5179",
+  "session_id": "sess-0136",
+  "message": "Do you price match? I saw the boot care kit for $15 somewhere else.",
+  "expected": {
+    "required_tools": [],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": []
+  },
+  "metadata": {
+    "category": "other",
+    "why": "No price-matching policy in the excerpts. Say it is not covered rather than inventing one.",
+    "climb_split": "holdout"
+  }
+}

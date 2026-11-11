@@ -1,0 +1,24 @@
+{
+  "fixture_id": "status-not-late",
+  "customer_id": "cust-8242",
+  "session_id": "sess-0108",
+  "message": "Order B-5507 is late and I need the skillet for a trip. What's going on?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-shipping-02"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "In transit, due Wed 2026-07-29: tomorrow. It is not late.",
+    "climb_split": "holdout"
+  }
+}

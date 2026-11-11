@@ -1,8 +1,9 @@
 """Run every code grader over a set of traces and summarise.
 
-    uv run python three-day/lab/grade.py                      # the 25 starter runs
-    uv run python three-day/lab/grade.py traces/after.jsonl   # your own runs
+    uv run python three-day/lab/grade.py                      # the 190 baseline runs
+    uv run python three-day/lab/grade.py three-day/traces/after.jsonl   # your own runs
     uv run python three-day/lab/grade.py --why                # print every failure reason
+    uv run python three-day/lab/grade.py --all                # list passing runs too
     uv run python three-day/lab/grade.py --labels three-day/work/labels.csv
 
 A run passes overall when no grader failed it. Graders that return None for a
@@ -43,9 +44,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawTextHelpFormatter
     )
-    parser.add_argument("traces", nargs="*", help="trace globs (default: traces/starter/*.jsonl)")
+    parser.add_argument(
+        "traces", nargs="*", help="trace globs (default: three-day/traces/baseline.jsonl)"
+    )
     parser.add_argument("--why", action="store_true", help="print the reason for every failure")
     parser.add_argument("--labels", type=Path, help="compare the overall verdict to human labels")
+    parser.add_argument("--all", action="store_true", help="list every run, not only failures")
     args = parser.parse_args()
 
     runs = load_runs(*args.traces)
@@ -53,10 +57,12 @@ def main() -> None:
     names = [g.__name__ for g in GRADERS]
     mark = {True: "pass", False: "FAIL", None: "  · "}
 
-    # 1. One row per run.
+    # 1. One row per run (only the failing ones unless --all).
     width = max(len(r) for r in graded) + 2
-    print(f"{'run':{width}}" + "".join(f"{n[:14]:>16}" for n in names) + f"{'overall':>10}")
-    for run_id, verdicts in graded.items():
+    shown = {r: v for r, v in graded.items() if args.all or not overall(v)}
+    label = "run" if args.all else "failing runs"
+    print(f"{label:{width}}" + "".join(f"{n[:14]:>16}" for n in names) + f"{'overall':>10}")
+    for run_id, verdicts in shown.items():
         cells = "".join(f"{mark[verdicts[n].passed]:>16}" for n in names)
         print(f"{run_id:{width}}{cells}{'pass' if overall(verdicts) else 'FAIL':>10}")
         if args.why:

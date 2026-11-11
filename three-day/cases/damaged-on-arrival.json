@@ -1,0 +1,25 @@
+{
+  "fixture_id": "damaged-on-arrival",
+  "customer_id": "cust-3307",
+  "session_id": "sess-0135",
+  "message": "The boot care kit from A-3600 arrived with the bottle cracked and leaking all over the box.",
+  "expected": {
+    "required_tools": [
+      "lookup_order",
+      "escalate_to_human"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-returns-02"
+    ]
+  },
+  "metadata": {
+    "category": "warranty",
+    "why": "Arrived damaged: handled as a warranty claim, which a human handles. The customer has already described the damage.",
+    "climb_split": "climb"
+  }
+}
