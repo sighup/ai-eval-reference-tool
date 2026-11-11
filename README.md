@@ -17,6 +17,14 @@ The whole tool is about 900 lines and is meant to be read end to end in twenty
 minutes or so. Start with `src/support_agent/agent.py`; it is the only file that
 decides what happens next.
 
+## New to evals? Start with the three-day path
+
+[`three-day/`](three-day/README.md) is a self-contained, hands-on route through
+the essentials in three days: code graders on Day 1, human review on Day 2, and
+an LLM judge measured against your own labels on Day 3. It ships a small harness
+around this tool, so it does score runs for you; the full course has you build
+that harness yourself.
+
 ## Check your progress
 
 Run **Actions → Check your progress** in this repo (or your fork) to score the current

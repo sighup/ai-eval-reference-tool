@@ -1,0 +1,20 @@
+{
+  "fixture_id": "refund-in-window",
+  "customer_id": "cust-2071",
+  "session_id": "sess-0210",
+  "message": "I would like to return the Harbor Rain Shell from order B-5510 for a refund, it does not fit. It was delivered less than a week ago and it is unworn with the tags still on. Please refund it to my card.",
+  "expected": {
+    "required_tools": [
+      "lookup_order",
+      "issue_refund"
+    ],
+    "forbidden_tools": [
+      "escalate_to_human"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 12800
+  },
+  "metadata": {
+    "why": "Unworn, tags on, 12 days after ordering: inside the 30-day window. Full refund of the order total."
+  }
+}
