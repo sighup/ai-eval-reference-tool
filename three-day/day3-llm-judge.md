@@ -42,6 +42,13 @@ The rules this course follows:
 - **Report TPR and TNR, not accuracy.** A judge that passes everything agrees
   with you every time the agent was right.
 
+Your agent will write the judge prompts and run them. What you bring is the
+rubric's content (from `criteria.md`), and the discipline of the split. Read
+concepts [8](concepts.md#8-llm-judge), [9](concepts.md#9-dev-and-test-split) and
+[10](concepts.md#10-calibration-and-the-corrected-pass-rate) before you start:
+an agent told to "make the judge agree with my labels" will do exactly that,
+using every run it can see, including the ones you meant to hold back.
+
 ## Exercise 3.1 — the naive judge
 
 [`judges/naive.md`](judges/naive.md) is the judge most people write first: "was
@@ -71,12 +78,7 @@ followed the course, `wrong_fact` (the business-day miscount) or `says_vs_does`
 choices: neither shows up as a wrong tool call, so code cannot see it without a
 grader narrow enough to break on the next phrasing.
 
-```bash
-mkdir -p three-day/work/judges
-cp three-day/judges/naive.md three-day/work/judges/wrong-fact.md
-```
-
-Rewrite it. A rubric that works usually has:
+A rubric that works usually has:
 
 1. **One question**, stated first, with the failure mode's name.
 2. **The sources of truth**: what the judge should treat as correct (tool
@@ -90,7 +92,15 @@ Rewrite it. A rubric that works usually has:
    runs for everything else it notices.
 6. `{{run}}` where the run goes.
 
-Run it against just that failure mode:
+Ask your coding agent for exactly that, built from your `criteria.md`:
+
+> Draft a judge prompt at `three-day/work/judges/wrong-fact.md` for the
+> `wrong_fact` failure mode in my `criteria.md`. Structure: the one question; the
+> sources of truth; the steps to check, including [how you checked it yesterday];
+> pass and fail defined from my criteria; what is out of scope; `{{run}}` at the
+> end. Use no facts from any particular run. Show me the prompt before running it.
+
+Read it before it runs. Then have it run against just that failure mode:
 
 ```bash
 uv run python three-day/lab/judge.py three-day/work/judges/wrong-fact.md \
@@ -98,10 +108,17 @@ uv run python three-day/lab/judge.py three-day/work/judges/wrong-fact.md \
 ```
 
 With `--mode`, a run counts as a reference fail only if you failed it with that
-tag. Iterate: read each disagreement, change the rubric for a reason that would
-hold on runs you have not seen, and run again. Do not paste facts from a
-particular run into the rubric ("the B-5527 order is 2 business days late"):
-that is the judge learning the test, and it will not survive the test split.
+tag. Now iterate, and keep the agent on a short lead:
+
+> For each disagreement on the dev split, show me the judge's critique and my
+> note side by side, and propose one general change to the rubric. Don't apply
+> it yet, and don't run the test split.
+
+Accept a change only if it would hold on runs you have not seen. The tell of a
+bad one is a fact from a particular run in the rubric ("the B-5527 order is 2
+business days late"): that is the judge learning the answers, and it will not
+survive the test split. Agents reach for this fix because it works on the runs in
+front of them, so read every edit.
 
 **Done when** the judge agrees with you on every dev run, or you can explain each
 remaining disagreement. Be honest about the numbers: the dev split has ten runs,
@@ -112,6 +129,8 @@ Stuck? Two reference rubrics are in
 [`answer-key/judges/`](answer-key/judges/). Read them after your own attempt.
 
 ## Exercise 3.3 — the test split, once
+
+Tell your coding agent this is the one test run, and that the rubric is frozen after it:
 
 ```bash
 uv run python three-day/lab/judge.py three-day/work/judges/wrong-fact.md \
@@ -135,9 +154,9 @@ for case in three-day/cases/*.json; do
 done
 ```
 
-Pick the failure mode with the most failures in your labels and fix its cause.
-The agent has three surfaces you can change, and the right one depends on the
-failure:
+Pick the failure mode with the most failures in your labels and decide how to
+fix its cause. Deciding is yours; making the change is your coding agent's. The
+support agent has three surfaces, and the right one depends on the failure:
 
 - [`prompts/system.md`](../prompts/system.md) changes what the agent is *told*.
   A miscount might be fixed by telling it how to count.
@@ -147,7 +166,9 @@ failure:
   prompt that asks nicely.
 - [`corpus/`](../corpus/) changes the policies it reads.
 
-Change one thing. Then record "after" and compare, with your judge included:
+Tell your coding agent the one change to make, and why
+([concept 11](concepts.md#11-before-and-after)). Then record "after" and compare,
+with your judge included:
 
 ```bash
 for case in three-day/cases/*.json; do

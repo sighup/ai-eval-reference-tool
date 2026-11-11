@@ -10,8 +10,9 @@ Keep each grader to ONE question. "Did it refund outside the window?" is a
 grader. "Was the answer good?" is not: that is several questions, and when it
 fails you will not know which one.
 
-Three graders are written for you. Two are yours to write (Day 1, exercises
-1.1 and 1.2). Until you write them they return None and are skipped.
+Three graders are written already. Two are for your coding agent to build
+from your specs (Day 1, exercises 1.1 and 1.2). Until then they return None and
+are skipped.
 """
 
 from __future__ import annotations

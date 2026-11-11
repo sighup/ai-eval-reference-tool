@@ -49,6 +49,11 @@ builders say teams skip most and regret most. It has two parts:
 
 ## Exercise 2.1 — label 25 runs
 
+This is the one exercise your coding agent stays out of. If it labels the runs,
+you have a judge nobody has measured, not ground truth
+([concept 5](concepts.md#5-human-labels)). Run the labeller in your own terminal,
+not through the agent, because it asks you questions as it goes:
+
 ```bash
 uv run python three-day/lab/label.py
 ```
@@ -61,16 +66,32 @@ will tidy them in 2.2), and write the one sentence. It saves after each run, so
 Budget about four minutes a run. Some take one. The order-status runs take
 longer than they look.
 
-**Done when** the tool says 25 labelled.
+**Done when** the tool says 25 labelled. Then commit the file, so any later change
+to it shows up in `git diff`:
+
+```bash
+git add three-day/work/labels.csv && git commit -m "My Day 2 labels"
+```
 
 ## Exercise 2.2 — name the failure modes
 
-Open `three-day/work/labels.csv` in a spreadsheet or editor. Read every failure
-note, and merge tags that mean the same thing. Aim for three to six modes, each
-named for what went wrong (`privacy_leak`, not `bad_answer`). A run can carry two
-tags, separated by `;`.
+Read every failure note yourself first. Then let your coding agent do the sorting
+([concept 6](concepts.md#6-failure-modes-and-criteria)):
 
-Then write `three-day/work/criteria.md`. For each failure mode:
+> Read my failure notes in `three-day/work/labels.csv` and propose three to six
+> failure modes, each named for what went wrong (`privacy_leak`, not
+> `bad_answer`), with the run ids in each. Don't change the file yet.
+
+Push back on any grouping that hides a difference you care about. When the modes
+are right, have it write them into the `failure_mode` column (a run can carry two,
+separated by `;`) and then check that it changed nothing else:
+
+```bash
+git diff three-day/work/labels.csv
+```
+
+Then have it draft `three-day/work/criteria.md`, leaving the owner for you. For
+each failure mode it should look like this:
 
 ```markdown
 ## privacy_leak
@@ -88,12 +109,18 @@ The last line matters most. For each mode, decide who should check it:
 - **person**, if it is rare, high stakes, or you cannot yet write down what
   passing means.
 
+Read each definition and ask: could a colleague label a new run from this alone?
+If not, rewrite it. These definitions become the specs for tomorrow's judges, so
+whatever is vague here will be vague in the judge.
+
 **Done when** every failure in your labels has a mode, and every mode has an
 owner.
 
 ## Exercise 2.3 — how good were your graders?
 
-Now compare yesterday's code graders against you:
+Now compare yesterday's code graders against you
+([concept 7](concepts.md#7-agreement-tpr-tnr-and-kappa)). Run it yourself or ask
+your coding agent to; either way, read the table:
 
 ```bash
 uv run python three-day/lab/grade.py --labels three-day/work/labels.csv
@@ -112,8 +139,8 @@ You get a two-by-two table and four numbers. Treat *pass* as the positive class:
   same pass rates would reach by luck. 0 is chance and 1 is perfect.
 
 Below the table is the list of failures your graders waved through. For each,
-look at your criteria: is it owned by code (then the grader has a gap), or by a
-judge (then it is tomorrow's work)?
+look at your criteria: is it owned by code (then the grader has a gap, so write a
+spec and have your coding agent close it), or by a judge (then it is tomorrow's work)?
 
 ## Exercise 2.4 — a second opinion
 
@@ -135,7 +162,8 @@ now, after your own labels are final.
 uv run python three-day/lab/agree.py three-day/work/labels.csv three-day/answer-key/labels.csv
 ```
 
-Read every disagreement and both notes. For each, decide one of three things:
+Read every disagreement and both notes yourself. Your agent can lay them side by
+side, but the decision is yours. For each, decide one of three things:
 one of you missed something (fix the label), the criterion was ambiguous (rewrite
 it in `criteria.md`), or it is a genuine judgement call (write down which way you
 decided, and why). The answer key's own notes flag two of these: refunding before
