@@ -196,7 +196,9 @@ a guardrail beside `refund_within_limit` (the `GUARDRAILS` list in
 `lab/score.py`).
 
 **Record a baseline**, three runs of each climb case, and of each holdout case.
-Do not score the holdout yet. Recording costs a few cents:
+Do not score the holdout yet. The support agent runs on Claude Haiku, so
+recording is cheap by either route: about $0.001 a run, under $0.10 for the 78
+climb runs:
 
 ```bash
 uv run python three-day/lab/record.py --cases climb --repeat 3 --start 3 \
@@ -242,7 +244,11 @@ anything, so the log's commit means something.)
 5. **Keep or revert.** `score.py` compares with your baseline and the best so
    far, and lists the cases that now pass more or less often. Keep the change
    (commit it) when it is not WORSE than the best, no guardrail got worse, and
-   the cases it moved are the ones you meant it to move. Otherwise revert it.
+   the case you aimed at passes more often. Then read a run of every case that
+   passes *less* often. With three runs a case, some will drop by chance; if the
+   run shows your change caused it, revert. Do the same if the case you aimed at
+   still fails: read why. Sometimes the change worked and the grader is now
+   raising a false alarm, and the fix belongs in the grader, not the agent.
 
 One round on its own will usually say `can't tell from noise`: 78 runs give an
 interval about 20 points wide, and one change typically fixes two or three

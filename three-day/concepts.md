@@ -253,7 +253,8 @@ something no source supports, and confirm the judge fails it for that reason.
 
 **The idea.** Score the system, change one thing, score again, and keep the
 change only if the score did not get worse, no guardrail got worse, and it moved
-the cases you meant it to. Repeat. The agent has three kinds of lever: what it is
+the case you aimed at, and any case that dropped was read and the drop was not
+caused by the change. Repeat. The agent has three kinds of lever: what it is
 told (the prompt), what it reads (retrieval and the documents), and what it can
 see and do (the tools and their database queries). Two rules keep the climb
 honest: climb on one set of cases and check the result once on a **holdout** set

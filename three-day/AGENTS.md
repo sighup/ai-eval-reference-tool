@@ -68,8 +68,10 @@ show the worst cases and two failing runs, propose which lever (prompt in
 queries in `src/support_agent/sqlite_store.py`) would fix the cause, and wait
 for the learner to choose. Then make exactly that one change, record the climb
 cases (`record.py --cases climb --repeat 3 --start 3`), run `score.py` with a
-`--note` saying what changed, and show the whole output. Commit a kept change;
-revert one the learner rejects.
+`--note` saying what changed, and show the whole output. For every case that
+passes less often, read a run and say whether the change caused the drop; if
+the targeted case still fails, say whether the agent or the grader is now wrong.
+Commit a kept change; revert one the learner rejects.
 
 - Fix causes, not cases. A document padded with the words from one case's
   message, or a prompt line about one customer or order, is the climb fitting its
@@ -89,7 +91,8 @@ revert one the learner rejects.
 `judge.py`, `record.py` and `score.py --judge` call a model and cost money,
 through the API or the learner's Claude Code. Before a call over more than a
 handful of runs, give the estimate (`judge.py --dry-run` prints one; a recorded
-run of the support agent is about $0.001, a judged run about $0.02–0.04) and
+run of the support agent is about $0.001 through either `--via`, because it
+runs on Haiku; 78 runs cost under $0.10; a judged run about $0.02–0.04) and
 wait for a yes if it is over about $2.
 
 ## Leave alone unless asked

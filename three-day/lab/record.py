@@ -24,7 +24,9 @@ records them without the prefix), and Claude Code's loop runs instead of
 ``--via api`` runs ``support_agent.agent`` with the Anthropic API. It needs
 ``ANTHROPIC_API_KEY``.
 
-Both write the same trace format, so every grader and judge reads either.
+Both write the same trace format, so every grader and judge reads either. With
+the default model (Haiku) a run costs about $0.001 either way; the total is
+printed at the end.
 """
 
 from __future__ import annotations

@@ -22,7 +22,9 @@ an interval about 20 points wide. So keep a change when
 
 1. it is not WORSE than the best, beyond the noise,
 2. no guardrail got worse, and
-3. the cases it moved are the ones you meant it to move.
+3. the case you aimed at passes more often, and every case that passes less
+   often has been read and its drop is not caused by the change (with three
+   runs a case, some drop by chance).
 
 The climb as a whole should beat the baseline beyond the noise. Then score the
 holdout cases once.
