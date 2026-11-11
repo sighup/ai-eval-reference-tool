@@ -79,11 +79,16 @@ def effects_path(out: Path) -> Path:
 def claude_command(system_file: Path, mcp_file: Path, model: str, effort: str | None) -> list:
     cmd = claude_cli.base_command(model, system=["--system-prompt-file", str(system_file)])
     cmd += [
-        "--tools", "",
-        "--mcp-config", str(mcp_file),
-        "--allowedTools", f"{PREFIX}*",
-        "--max-turns", str(MAX_TURNS),
-        "--output-format", "stream-json",
+        "--tools",
+        "",
+        "--mcp-config",
+        str(mcp_file),
+        "--allowedTools",
+        f"{PREFIX}*",
+        "--max-turns",
+        str(MAX_TURNS),
+        "--output-format",
+        "stream-json",
         "--verbose",
     ]
     if effort:
@@ -113,10 +118,14 @@ def run_claude(case: dict, run_id: str, model: str, effort: str | None) -> dict[
                         "command": sys.executable,
                         "args": [
                             str(server),
-                            "--run-id", run_id,
-                            "--customer", fixture.customer_id,
-                            "--session", fixture.session_id,
-                            "--as-of", as_of,
+                            "--run-id",
+                            run_id,
+                            "--customer",
+                            fixture.customer_id,
+                            "--session",
+                            fixture.session_id,
+                            "--as-of",
+                            as_of,
                         ],
                         "env": {"SUPPORT_AGENT_BACKEND": "sqlite"},
                     }
@@ -134,8 +143,7 @@ def run_claude(case: dict, run_id: str, model: str, effort: str | None) -> dict[
     if not any(e.get("type") == "result" for e in events):
         raise RuntimeError(f"{run_id}: claude -p gave no result.\n{proc.stderr[-2000:]}")
 
-    return to_trace(events, fixture, run_id, as_of, system, schemas, retrieved, rendered,
-                    effort)
+    return to_trace(events, fixture, run_id, as_of, system, schemas, retrieved, rendered, effort)
 
 
 def to_trace(
@@ -260,10 +268,10 @@ def run_api(case: dict, run_id: str, model: str, effort: str | None) -> dict[str
     from support_agent.model import LiveProvider
 
     fixture = agent.Fixture.from_dict(case)
-    provider = LiveProvider(model=model, max_tokens=config.MAX_TOKENS,
-                            temperature=config.TEMPERATURE)
-    return agent.run(fixture, provider, run_id=run_id,
-                     as_of=case.get("as_of", config.AS_OF_DATE))
+    provider = LiveProvider(
+        model=model, max_tokens=config.MAX_TOKENS, temperature=config.TEMPERATURE
+    )
+    return agent.run(fixture, provider, run_id=run_id, as_of=case.get("as_of", config.AS_OF_DATE))
 
 
 # --------------------------------------------------------------------------- #
@@ -273,7 +281,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--case", action="append", help="fixture id (repeatable); default all")
     parser.add_argument(
-        "--cases", choices=["all", "climb", "holdout"], default="all",
+        "--cases",
+        choices=["all", "climb", "holdout"],
+        default="all",
         help="climb: the cases you hill-climb on; holdout: the ones you check once at the end",
     )
     parser.add_argument("--repeat", type=int, default=5)
@@ -291,7 +301,8 @@ def main(argv: list[str] | None = None) -> int:
 
     cases = load_cases()
     chosen = args.case or sorted(
-        c for c in cases
+        c
+        for c in cases
         if args.cases == "all" or cases[c]["metadata"].get("climb_split") == args.cases
     )
     unknown = [c for c in chosen if c not in cases]
@@ -325,8 +336,10 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             done.append((built, fx))
             cost += built["cost_usd"]
-            print(f"  {built['run_id']:<40} {built['stop_reason']:<10} "
-                  f"{len(built['steps']):>2} steps  ${built['cost_usd']:.4f}")
+            print(
+                f"  {built['run_id']:<40} {built['stop_reason']:<10} "
+                f"{len(built['steps']):>2} steps  ${built['cost_usd']:.4f}"
+            )
 
     for built, fx in sorted(done, key=lambda pair: pair[0]["run_id"]):
         trace.write(built, out)

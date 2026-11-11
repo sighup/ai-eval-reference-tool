@@ -27,10 +27,11 @@ write, and it is where most of an eval's value comes from.
 
 **Ask for it like this.**
 
-> Add a case to `three-day/cases/` for a customer asking to cancel order X. A
-> correct run must call `lookup_order`, must not call `issue_refund`, and must
-> mention that shipped orders cannot be cancelled. Follow the shape of the
-> existing cases.
+> Add a case to `three-day/cases/` for a customer asking to cancel an order
+> that has already shipped. Pick a real shipped order from the database for a
+> customer who owns it. A correct run must call `lookup_order` and must not call
+> `cancel_order` or `issue_refund`, and needs `kb-orders-01`. Follow the shape of
+> the existing cases, including `metadata.why` and `metadata.climb_split`.
 
 **Check it yourself.** Read the `expected` block. Every line in it should be
 something you would fail a run for. If you would not fail a run over it, take it
@@ -44,7 +45,7 @@ said. Everything you grade, you grade from the trace.
 
 **Ask for it like this.**
 
-> Show me run `run-order-status-01` with `label.py --show`, then tell me in two
+> Show me run `run-status-split-shipment-01` with `label.py --show`, then tell me in two
 > sentences what the support agent did and what it told the customer.
 
 **Check it yourself.** Read at least one run of every case in full yourself,
@@ -68,7 +69,7 @@ look for.
 > 3. Read the summary and the looked-up order ids from the trace's tool calls. Do
 >    not hard-code any order id.
 > 4. If the run did not escalate, return `Verdict(None, ...)` so it is skipped.
-> 5. I expect every escalation in the starter runs to pass. Run `grade.py --why`
+> 5. I expect every escalation in the recorded runs to pass. Run `grade.py --why`
 >    and show me the output.
 
 **Check it yourself.** Three checks, every time:
@@ -87,8 +88,9 @@ overlap cannot yet be told apart.
 
 **Ask for it like this.**
 
-> Run every case in `three-day/cases/` five times into `traces/before.jsonl`, then
-> run `grade.py` on that file and show me the per-case table with intervals.
+> Record every case in `three-day/cases/` five times with `record.py` into
+> `three-day/traces/before.jsonl`, then run `grade.py` on that file and show me
+> the per-case table with intervals.
 
 **Check it yourself.** Every case should show `n/5`, not `n/1`. When your coding agent says a change "fixed" something, ask for the before and after intervals. If they
 overlap, it has not shown that yet.
@@ -154,12 +156,12 @@ reasoning written before the verdict.
 
 **Ask for it like this.**
 
-> Draft a judge prompt at `three-day/work/judges/wrong-fact.md` for the
+> Draft a judge prompt at `three-day/work/judges/grounded.md` for the
 > `wrong_fact` failure mode in my `criteria.md`. Structure: the one question; the
-> sources of truth (tool results, policy excerpts, today's date); the steps to
-> check, including writing out each date with its weekday when counting business
-> days; pass and fail defined; what is out of scope; `{{run}}` at the end. Use no
-> facts from any particular run.
+> sources of truth (tool results including whose order it is, policy excerpts,
+> today's date, who is signed in); the steps to check, starting with listing
+> every factual claim in the reply; pass and fail defined; what is out of scope;
+> `{{run}}` at the end. Use no facts from any particular run.
 
 **Check it yourself.** Read the rubric before it runs. Could it pass a run you
 failed? Does it mention a specific order, date or name? If so, it has been
@@ -167,8 +169,8 @@ written to the examples.
 
 ## 9. Dev and test split
 
-**The idea.** Tune on some runs (dev: numbered 01 and 02), report on others you
-never tuned on (test: 03 to 05). A judge adjusted until it agrees with you on the
+**The idea.** Tune on some runs (dev: run 01 of every case), report on others you
+never tuned on (test: run 02). Runs 03 and up are never labelled. A judge adjusted until it agrees with you on the
 runs it was adjusted on proves nothing. A coding agent asked to "make the judge
 agree with my labels" will, if you let it, use the test runs to get there.
 
@@ -195,9 +197,9 @@ correct its pass rate on new runs to estimate the real one.
 **Ask for it like this.**
 
 > Record the judge's test TPR and TNR, the model, and today's date in
-> `criteria.md`. Then run it on `traces/after.jsonl` with `--split all` and those
-> numbers as `--tpr` and `--tnr`, and show me the observed and corrected pass
-> rates.
+> `criteria.md`. Then run it on `three-day/traces/holdout-after.jsonl` with
+> `--split all` and those numbers as `--tpr` and `--tnr`, and show me the
+> observed and corrected pass rates.
 
 **Check it yourself.** If TPR + TNR is not comfortably above 1, the judge is
 close to a coin flip and its numbers mean nothing. The tool will say so.
@@ -207,14 +209,70 @@ close to a coin flip and its numbers mean nothing. The tool will say so.
 **The idea.** A change is only an improvement if the eval shows it: the target
 failure went down, its interval separated from the before interval, and nothing
 else got worse. Change one thing at a time, or you will not know which change did
-it.
+it. Concept 13 turns this into a loop.
 
 **Ask for it like this.**
 
-> Record a baseline: every case five times into `traces/before.jsonl`. Then make
-> one change: [the fix you decided on]. Record `traces/after.jsonl` the same way,
-> and run `compare.py` on the two with my judge. Show me every row, including the
-> ones I wasn't trying to fix.
+> Make one change: [the fix you decided on]. Record the climb cases again with
+> `record.py`, run `score.py` on the new file with a note saying what changed,
+> and show me the whole output, including the cases that pass less often.
 
-**Check it yourself.** You decided the fix, from your failure modes. Your coding agent made one change, and you can say which. The compare output says `better` for your
-target, and nothing says `WORSE`.
+**Check it yourself.** You decided the fix, from your failure modes. Your coding
+agent made one change, and you can say which. Nothing says `WORSE`, and no
+guardrail got worse.
+
+## 12. Grounding: retrieval and faithfulness
+
+**The idea.** An agent that answers from documents can go wrong in two separate
+places, and each needs its own check. **Retrieval**: was it handed the right
+sources? That is a code grader, because each case can list the documents a
+correct answer needs, and the trace records which ones it got. **Faithfulness**:
+did the reply stick to the sources it had, or did it state things they do not
+support? That takes reading, so it is a judge. Keep them apart. A judge that
+also fails runs for missing documents is checking two things, and when it fails
+you will not know which.
+
+**Ask for it like this.**
+
+> Implement `policy_retrieved`: fail when the agent was not given a document the
+> case lists under `expected.policy_docs`, naming the missing one; skip cases
+> that list none.
+
+and, separately,
+
+> Draft a faithfulness judge: every fact the reply states must come from a tool
+> result, a policy excerpt or the customer's message. Tell it that whether the
+> right documents were retrieved is out of scope.
+
+**Check it yourself.** For a run that fails retrieval, read the reply: did the
+missing document change the answer? Sometimes it does not, and that is a false
+alarm you decide about. For the judge, find one run where the reply says
+something no source supports, and confirm the judge fails it for that reason.
+
+## 13. Hill-climbing
+
+**The idea.** Score the system, change one thing, score again, and keep the
+change only if the score did not get worse, no guardrail got worse, and it moved
+the cases you meant it to. Repeat. The agent has three kinds of lever: what it is
+told (the prompt), what it reads (retrieval and the documents), and what it can
+see and do (the tools and their database queries). Two rules keep the climb
+honest: climb on one set of cases and check the result once on a **holdout** set
+the climb never saw, and fix the score's false alarms before you start, because
+the climb will chase them.
+
+**Ask for it like this.**
+
+> Score `three-day/traces/climb-00.jsonl` with `score.py` and show me the cases
+> with the most failures. For the worst one, show me two failing runs and tell me
+> which lever (prompt, retrieval or database query) you think would fix the
+> cause, and why. Don't change anything yet.
+
+Then, once you have decided:
+
+> Make that one change. Record the climb cases with `record.py --cases climb
+> --repeat 3 --start 3`, score them with a note, and tell me whether my keep rule
+> says keep or revert.
+
+**Check it yourself.** `three-day/work/results/climb-log.csv` has one row per
+change, each with a note you recognise. Nothing was tuned on the holdout cases.
+And the final holdout score is the number you report, not the climb score.

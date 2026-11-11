@@ -21,10 +21,12 @@ decides what happens next.
 
 [`three-day/`](three-day/README.md) is a self-contained, hands-on route through
 the essentials in three days, for a learner who directs a coding agent rather than
-writing code: code graders on Day 1, human review on Day 2, and an LLM judge
-measured against your own labels on Day 3. It ships a small harness
-around this tool, so it does score runs for you; the full course has you build
-that harness yourself.
+writing code: code graders on Day 1, human review on Day 2, and on Day 3 an LLM
+judge measured against your own labels, then a hill-climb on the agent's prompt,
+retrieval and database queries, checked on holdout cases. It runs the support
+agent against its own SQLite shop database, and ships a small harness around this
+tool, so it does score runs for you; the full course has you build that harness
+yourself.
 
 ## Check your progress
 

@@ -3,6 +3,7 @@
     uv run python three-day/lab/grade.py                      # the 190 baseline runs
     uv run python three-day/lab/grade.py three-day/traces/after.jsonl   # your own runs
     uv run python three-day/lab/grade.py --why                # print every failure reason
+    uv run python three-day/lab/grade.py --split dev          # only runs numbered 01
     uv run python three-day/lab/grade.py --all                # list passing runs too
     uv run python three-day/lab/grade.py --labels three-day/work/labels.csv
 
@@ -18,7 +19,16 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from common import RESULTS, agreement, fmt_rate, load_cases, load_runs, print_agreement, read_labels
+from common import (
+    RESULTS,
+    agreement,
+    fmt_rate,
+    load_cases,
+    load_runs,
+    print_agreement,
+    read_labels,
+    split_of,
+)
 from graders import GRADERS, Grader, Verdict
 
 
@@ -50,9 +60,21 @@ def main() -> None:
     parser.add_argument("--why", action="store_true", help="print the reason for every failure")
     parser.add_argument("--labels", type=Path, help="compare the overall verdict to human labels")
     parser.add_argument("--all", action="store_true", help="list every run, not only failures")
+    parser.add_argument(
+        "--split",
+        choices=["dev", "test", "rest", "all"],
+        default="all",
+        help="only runs in this split (dev = 01, test = 02, rest = 03 and up)",
+    )
     args = parser.parse_args()
 
-    runs = load_runs(*args.traces)
+    runs = [
+        r
+        for r in load_runs(*args.traces)
+        if args.split == "all" or split_of(r["run_id"]) == args.split
+    ]
+    if not runs:
+        raise SystemExit(f"no runs in the {args.split} split")
     graded = grade_runs(runs)
     names = [g.__name__ for g in GRADERS]
     mark = {True: "pass", False: "FAIL", None: "  · "}

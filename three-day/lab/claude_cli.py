@@ -21,20 +21,42 @@ import tempfile
 
 #: Environment variables passed through to ``claude``. Everything else is dropped.
 KEEP = {
-    "HOME", "PATH", "USER", "LOGNAME", "SHELL", "LANG", "LC_ALL", "TERM", "TMPDIR",
-    "USERPROFILE", "APPDATA", "LOCALAPPDATA", "SYSTEMROOT", "COMSPEC", "PATHEXT",
-    "XDG_CONFIG_HOME", "XDG_DATA_HOME", "CLAUDE_CONFIG_DIR", "CLAUDE_CODE_OAUTH_TOKEN",
+    "HOME",
+    "PATH",
+    "USER",
+    "LOGNAME",
+    "SHELL",
+    "LANG",
+    "LC_ALL",
+    "TERM",
+    "TMPDIR",
+    "USERPROFILE",
+    "APPDATA",
+    "LOCALAPPDATA",
+    "SYSTEMROOT",
+    "COMSPEC",
+    "PATHEXT",
+    "XDG_CONFIG_HOME",
+    "XDG_DATA_HOME",
+    "CLAUDE_CONFIG_DIR",
+    "CLAUDE_CODE_OAUTH_TOKEN",
     "CLAUDE_SESSION_INGRESS_TOKEN_FILE",
-    "HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY", "http_proxy", "https_proxy", "no_proxy",
-    "NODE_EXTRA_CA_CERTS", "SSL_CERT_FILE", "SSL_CERT_DIR", "REQUESTS_CA_BUNDLE",
+    "HTTP_PROXY",
+    "HTTPS_PROXY",
+    "NO_PROXY",
+    "http_proxy",
+    "https_proxy",
+    "no_proxy",
+    "NODE_EXTRA_CA_CERTS",
+    "SSL_CERT_FILE",
+    "SSL_CERT_DIR",
+    "REQUESTS_CA_BUNDLE",
 }
 KEEP_PREFIXES = ("ANTHROPIC_",)
 
 
 def clean_env() -> dict[str, str]:
-    return {
-        k: v for k, v in os.environ.items() if k in KEEP or k.startswith(KEEP_PREFIXES)
-    }
+    return {k: v for k, v in os.environ.items() if k in KEEP or k.startswith(KEEP_PREFIXES)}
 
 
 def base_command(model: str, *, system: list[str]) -> list[str]:
@@ -44,16 +66,23 @@ def base_command(model: str, *, system: list[str]) -> list[str]:
         "-p",
         *system,
         "--strict-mcp-config",
-        "--setting-sources", "",
+        "--setting-sources",
+        "",
         "--disable-slash-commands",
         "--no-session-persistence",
-        "--model", model,
+        "--model",
+        model,
     ]
 
 
 def run(cmd: list[str], stdin: str, timeout: int = 600) -> subprocess.CompletedProcess:
     with tempfile.TemporaryDirectory(prefix="claude-p-") as cwd:
         return subprocess.run(
-            cmd, input=stdin, capture_output=True, text=True, cwd=cwd,
-            env=clean_env(), timeout=timeout,
+            cmd,
+            input=stdin,
+            capture_output=True,
+            text=True,
+            cwd=cwd,
+            env=clean_env(),
+            timeout=timeout,
         )

@@ -219,8 +219,7 @@ MESS: list[tuple[str, str, tuple]] = [
     ),
     (
         "B-5424: the quilt was sent back the day it arrived, and refunded yesterday.",
-        "INSERT INTO returns VALUES ('R-0912', 'B-5424', 'NG-3177', '2026-07-25', "
-        "'2026-07-27')",
+        "INSERT INTO returns VALUES ('R-0912', 'B-5424', 'NG-3177', '2026-07-25', '2026-07-27')",
         (),
     ),
     (

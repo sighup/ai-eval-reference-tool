@@ -126,6 +126,8 @@ def tool_schemas() -> list[dict[str, Any]]:
 
         return sqlite_store.tool_schemas(TOOL_SCHEMAS)
     return TOOL_SCHEMAS
+
+
 _SCHEMA_BY_NAME = {schema["name"]: schema["input_schema"] for schema in TOOL_SCHEMAS}
 
 
@@ -187,9 +189,7 @@ def customers() -> dict[str, Any]:
 def run_dir(run_id: str) -> Path:
     """Resolve ``runs/<run_id>/``, refusing path escape."""
     if not run_id or run_id in {".", ".."} or Path(run_id).name != run_id:
-        raise ValueError(
-            f"run_id must be a single path segment, got {run_id!r}"
-        )
+        raise ValueError(f"run_id must be a single path segment, got {run_id!r}")
 
     root = config.runs_dir().resolve()
     directory = (root / run_id).resolve()

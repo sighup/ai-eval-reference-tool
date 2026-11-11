@@ -113,10 +113,14 @@ class ClaudeCodeJudge:
     def ask(self, model: str, prompt: str, effort: str) -> dict[str, Any]:
         cmd = claude_cli.base_command(model, system=["--system-prompt", self.SYSTEM])
         cmd += [
-            "--tools", "",
-            "--effort", effort,
-            "--json-schema", json.dumps(SCHEMA),
-            "--output-format", "json",
+            "--tools",
+            "",
+            "--effort",
+            effort,
+            "--json-schema",
+            json.dumps(SCHEMA),
+            "--output-format",
+            "json",
         ]
         proc = claude_cli.run(cmd, prompt)
         try:
@@ -232,7 +236,9 @@ def main() -> None:
         description=__doc__, formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("prompt", type=Path, help="judge prompt (Markdown with {{run}})")
-    parser.add_argument("traces", nargs="*", help="trace globs (default: three-day/traces/baseline.jsonl)")
+    parser.add_argument(
+        "traces", nargs="*", help="trace globs (default: three-day/traces/baseline.jsonl)"
+    )
     parser.add_argument("--split", choices=["dev", "test", "rest", "all"], default="dev")
     parser.add_argument("--labels", type=Path, default=WORK / "labels.csv", help="your labels")
     parser.add_argument("--mode", help="compare against one failure mode, not the overall label")
@@ -280,9 +286,7 @@ def main() -> None:
         return
 
     try:
-        results = judge_runs(
-            runs, template, model=args.model, effort=args.effort, via=args.via
-        )
+        results = judge_runs(runs, template, model=args.model, effort=args.effort, via=args.via)
     except RuntimeError as exc:  # support_agent.config.MissingCredential
         raise SystemExit(f"{exc}\n(--dry-run works without a key.)") from None
     stem = args.prompt.stem

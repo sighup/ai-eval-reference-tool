@@ -66,7 +66,11 @@ def main() -> int:
             )
         elif method == "tools/list":
             listed = [
-                {"name": s["name"], "description": s["description"], "inputSchema": s["input_schema"]}
+                {
+                    "name": s["name"],
+                    "description": s["description"],
+                    "inputSchema": s["input_schema"],
+                }
                 for s in schemas
             ]
             send({"jsonrpc": "2.0", "id": mid, "result": {"tools": listed}})

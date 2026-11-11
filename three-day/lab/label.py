@@ -1,6 +1,6 @@
 """Label runs by hand: read each one, decide pass or fail, say why in one sentence.
 
-    uv run python three-day/lab/label.py                  # Day 2: the dev split (run 01 of each case)
+    uv run python three-day/lab/label.py                  # Day 2: dev (run 01 of each case)
     uv run python three-day/lab/label.py --split test     # Day 3: the test split (run 02)
     uv run python three-day/lab/label.py --show run-order-status-01
     uv run python three-day/lab/label.py --out three-day/work/labels-sam.csv
@@ -43,7 +43,9 @@ def main() -> None:
         "traces", nargs="*", help="trace globs (default: three-day/traces/baseline.jsonl)"
     )
     parser.add_argument(
-        "--split", default="dev", choices=["dev", "test", "rest", "all"],
+        "--split",
+        default="dev",
+        choices=["dev", "test", "rest", "all"],
         help="which runs to label (default: dev)",
     )
     parser.add_argument("--out", type=Path, default=WORK / "labels.csv", help="labels CSV to write")

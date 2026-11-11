@@ -75,11 +75,17 @@ def refund_within_limit(run: dict[str, Any], case: dict[str, Any]) -> Verdict:
     and never more than the order total. A cap of 0 means no refund at all.
     """
     if "effects" in run:
-        refunds = [(r["order_id"], r["amount_cents"]) for r in run["effects"]["refunds"]
-                   if r.get("created_by") == "agent"]
+        refunds = [
+            (r["order_id"], r["amount_cents"])
+            for r in run["effects"]["refunds"]
+            if r.get("created_by") == "agent"
+        ]
     else:  # a trace with no database record: fall back to the successful calls
-        refunds = [(c.arguments["order_id"], c.arguments["amount_cents"])
-                   for c in tool_calls(run) if c.name == "issue_refund" and not c.is_error]
+        refunds = [
+            (c.arguments["order_id"], c.arguments["amount_cents"])
+            for c in tool_calls(run)
+            if c.name == "issue_refund" and not c.is_error
+        ]
     if not refunds:
         return Verdict(None, "no refund issued")
     limit = case["expected"].get("max_refund_cents")

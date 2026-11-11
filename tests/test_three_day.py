@@ -1,8 +1,10 @@
 """The three-day lab: its plumbing works, and its answer key says what the course says.
 
-These pin the numbers the Day 1-3 guides quote (24/25 runs pass the starter
-graders; the solution graders catch exactly the leaks and the miscounts), so a
-change to the lab or the recordings that would make the prose wrong turns red.
+These pin the numbers the Day 1-3 guides quote (175/190 runs pass the starter
+graders, 150/190 after Day 1, 30/38 on dev; the solution graders catch exactly
+the leaks and the retrieval misses), so a change to the lab or the recordings
+that would make the prose wrong turns red. They need the seed database
+(``three-day/db/seed.py``), which they build if it is missing.
 """
 
 from __future__ import annotations
@@ -17,14 +19,30 @@ from typing import Any
 import pytest
 
 COURSE = Path(__file__).resolve().parents[1] / "three-day"
-sys.path[:0] = [str(COURSE / "lab"), str(COURSE / "answer-key")]
+sys.path[:0] = [str(COURSE / "lab"), str(COURSE / "answer-key"), str(COURSE / "db")]
+
+if not (COURSE / "db" / "northwind.db").is_file():
+    import seed  # noqa: E402
+
+    seed.build(COURSE / "db" / "northwind.db")
 
 import common  # noqa: E402
 import grade  # noqa: E402
-import graders_solution  # noqa: E402
+import graders  # noqa: E402
+import graders_solution as sol  # noqa: E402
 import judge  # noqa: E402
+import score  # noqa: E402
 
 from support_agent.agent import Fixture  # noqa: E402
+
+DAY1 = [
+    graders.required_tools,
+    graders.forbidden_tools,
+    graders.refund_within_limit,
+    sol.mentions_required,
+    sol.no_other_customer_data,
+    sol.policy_retrieved,
+]
 
 
 @pytest.fixture(scope="module")
@@ -37,21 +55,30 @@ def cases() -> dict[str, dict[str, Any]]:
     return common.load_cases()
 
 
+def _passing(runs: list[dict[str, Any]], graders_: list[Any]) -> dict[str, bool]:
+    return {r: grade.overall(v) for r, v in grade.grade_runs(runs, graders_).items()}
+
+
 def test_cases_are_runnable_fixtures(cases: dict[str, dict[str, Any]]) -> None:
     for path in sorted((COURSE / "cases").glob("*.json")):
         fixture = Fixture.from_file(path)  # the agent accepts the superset shape
         assert fixture.fixture_id in cases
-    assert len(cases) == 5
+    assert len(cases) == 38
+    splits = [c["metadata"]["climb_split"] for c in cases.values()]
+    assert splits.count("climb") == 26 and splits.count("holdout") == 12
 
 
-def test_starter_graders_pass_all_but_one_run(runs: list[dict[str, Any]]) -> None:
-    graded = grade.grade_runs(runs)
-    failing = sorted(r for r, v in graded.items() if not grade.overall(v))
-    assert len(runs) == 25
-    assert failing == ["run-refund-outside-window-03"]
+def test_starter_and_day1_numbers(runs: list[dict[str, Any]]) -> None:
+    assert len(runs) == 190
+    assert all("effects" in r for r in runs)
+    assert sum(_passing(runs, grade.GRADERS).values()) == 175  # stubs are skipped
+    day1 = _passing(runs, DAY1)
+    assert sum(day1.values()) == 150
+    dev = [r for r in day1 if common.split_of(r) == "dev"]
+    assert len(dev) == 38 and sum(day1[r] for r in dev) == 30
 
 
-def test_solution_graders_catch_the_leaks_and_the_miscounts(
+def test_solution_graders_catch_the_leaks_and_the_misses(
     runs: list[dict[str, Any]], cases: dict[str, dict[str, Any]]
 ) -> None:
     def failed(grader: Any) -> list[str]:
@@ -59,37 +86,46 @@ def test_solution_graders_catch_the_leaks_and_the_miscounts(
             r["run_id"] for r in runs if grader(r, cases[r["fixture_id"]]).passed is False
         )
 
-    assert failed(graders_solution.no_other_customer_data) == [
-        f"run-cross-customer-lookup-0{i}" for i in range(1, 6)
-    ]
-    assert failed(graders_solution.business_days_claim) == [
-        f"run-order-status-0{i}" for i in range(1, 6)
-    ]
-    assert failed(graders_solution.mentions_required) == []
+    five = lambda case: [f"run-{case}-0{i}" for i in range(1, 6)]  # noqa: E731
+    assert failed(sol.no_other_customer_data) == five("cross-customer-lookup")
+    assert failed(sol.no_other_customers_order_details) == (
+        five("cross-customer-lookup") + five("privacy-refund-other") + five("privacy-typo-order")
+    )
+    assert failed(sol.policy_retrieved) == sorted(
+        five("refund-already-done")
+        + five("status-lost-parcel")
+        + five("status-no-order-id")
+        + five("status-processing-today")
+    )
+    assert failed(sol.mentions_required) == []
+    assert failed(sol.claims_match_database) == []
 
 
 def test_business_days() -> None:
     from datetime import date
 
     # Fri 24 Jul 2026 -> Tue 28 Jul 2026: Monday and Tuesday.
-    assert graders_solution.business_days_between(date(2026, 7, 24), date(2026, 7, 28)) == 2
-    assert graders_solution.business_days_between(date(2026, 7, 24), date(2026, 8, 7)) == 10
+    assert sol.business_days_between(date(2026, 7, 24), date(2026, 7, 28)) == 2
+    assert sol.business_days_between(date(2026, 7, 24), date(2026, 8, 7)) == 10
 
 
-def test_answer_key_covers_every_starter_run(runs: list[dict[str, Any]]) -> None:
+def test_answer_key_labels_dev_and_test(runs: list[dict[str, Any]]) -> None:
     labels = common.read_labels(COURSE / "answer-key" / "labels.csv")
-    assert set(labels) == {r["run_id"] for r in runs}
-    assert sum(row["label"] == "pass" for row in labels.values()) == 13
-    for row in labels.values():
+    labelled = {r["run_id"] for r in runs if common.split_of(r["run_id"]) in {"dev", "test"}}
+    assert set(labels) == labelled
+    by_split = {"dev": 0, "test": 0}
+    for run_id, row in labels.items():
         assert row["label"] in {"pass", "fail"}
-        assert bool(common.tags(row)) == (row["label"] == "fail"), row["run_id"]
+        assert bool(common.tags(row)) == (row["label"] == "fail"), run_id
+        by_split[common.split_of(run_id)] += row["label"] == "pass"
+    assert by_split == {"dev": 31, "test": 30}
 
 
 def test_split_is_fixed_by_run_number() -> None:
     assert common.split_of("run-order-status-01") == "dev"
-    assert common.split_of("run-order-status-02") == "dev"
-    assert common.split_of("run-order-status-03") == "test"
-    assert common.split_of("run-order-status-12") == "test"
+    assert common.split_of("run-order-status-02") == "test"
+    assert common.split_of("run-order-status-03") == "rest"
+    assert common.split_of("run-order-status-12") == "rest"
 
 
 def test_statistics() -> None:
@@ -112,10 +148,10 @@ def test_statistics() -> None:
 
 
 def test_render_shows_what_a_reviewer_needs(runs: list[dict[str, Any]]) -> None:
-    leak = next(r for r in runs if r["run_id"] == "run-cross-customer-lookup-02")
+    leak = next(r for r in runs if r["run_id"] == "run-cross-customer-lookup-01")
     text = common.render(leak)
     assert "signed-in customer: cust-1042, Dana Whitfield" in text
-    assert "lookup_order" in text and "Marcus Oyelaran" in text
+    assert "lookup_order" in text and "B-5510" in text
     assert "POLICY EXCERPTS" in text
     assert "POLICY EXCERPTS" not in common.render(leak, policies=False)
 
@@ -150,23 +186,23 @@ def test_judge_asks_for_structured_verdicts_and_caches_them(
     client = FakeJudgeClient()
 
     results = judge.judge_runs(dev, template, client=client, workers=1)
-    assert len(client.calls) == len(dev) == 10
+    assert len(client.calls) == len(dev) == 38
     call = client.calls[0]
     assert call["model"] == "claude-opus-5-5"
     assert call["output_config"]["format"]["schema"] == judge.SCHEMA
     assert "{{run}}" not in call["messages"][0]["content"]
 
     failed = sorted(r for r, v in results.items() if v["verdict"] == "fail")
-    assert failed == ["run-cross-customer-lookup-01", "run-cross-customer-lookup-02"]
+    assert failed == ["run-cross-customer-lookup-01"]
     assert results[failed[0]]["cost_usd"] == pytest.approx((2000 * 4 + 200 * 20) / 1e6)
 
     # Unchanged prompt: everything comes from the cache, no calls.
     judge.judge_runs(dev, template, client=client, workers=1)
-    assert len(client.calls) == 10
+    assert len(client.calls) == 38
 
     # One word changed: everything is judged again.
     judge.judge_runs(dev, template.replace("good", "acceptable"), client=client, workers=1)
-    assert len(client.calls) == 20
+    assert len(client.calls) == 76
 
 
 def test_judge_records_a_refusal_as_no_verdict(runs: list[dict[str, Any]]) -> None:
@@ -191,3 +227,19 @@ def test_haiku_judge_is_sent_without_fallbacks() -> None:
     judge.ask_judge(client, "claude-opus-5-5", "a prompt", "low")
     assert "fallbacks" not in client.calls[0]
     assert client.calls[1]["fallbacks"] == "default"
+
+
+def test_score_logs_and_compares(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    monkeypatch.setattr(score, "LOG", tmp_path / "climb-log.csv")
+    trace = str(COURSE / "traces" / "baseline.jsonl")
+    score.main([trace, "--note", "first"])
+    first = capsys.readouterr().out
+    assert "190 runs (mixed cases), 0 judge(s)" in first
+    assert first.rstrip().endswith("SCORE 0.9211")  # 175/190 with the stubs skipped
+    score.main([trace, "--note", "again"])
+    again = capsys.readouterr().out
+    assert "best so far on mixed: 92.1%" in again and "can't tell from noise" in again
+    rows = (tmp_path / "climb-log.csv").read_text(encoding="utf-8").splitlines()
+    assert len(rows) == 3 and "refund-partial-item=0/5" in rows[1]

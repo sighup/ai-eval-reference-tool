@@ -65,15 +65,22 @@ def _turns_refund(order_id: str, amount: int):
 
 def test_agent_py_runs_against_the_database_and_records_effects(monkeypatch, tmp_path):
     import record
+
     from support_agent import model, trace
 
     case = json.loads((ROOT / "three-day/cases/refund-in-window.json").read_text())
-    monkeypatch.setattr(model, "LiveProvider", lambda **_: ScriptedProvider(_turns_refund("B-5510", 12800)))
+    monkeypatch.setattr(
+        model, "LiveProvider", lambda **_: ScriptedProvider(_turns_refund("B-5510", 12800))
+    )
     monkeypatch.setattr(record, "load_cases", lambda: {"refund-in-window": case})
     out = tmp_path / "t.jsonl"
 
-    assert record.main(["--via", "api", "--case", "refund-in-window", "--repeat", "1",
-                        "--out", str(out)]) == 0
+    assert (
+        record.main(
+            ["--via", "api", "--case", "refund-in-window", "--repeat", "1", "--out", str(out)]
+        )
+        == 0
+    )
 
     run = trace.read(out)[0]
     names = [s["name"] for s in run["prompt"]["tools"]]
@@ -90,7 +97,9 @@ def test_each_run_starts_from_a_fresh_database():
 
     session = tools.Session("t-fresh", "cust-2071", "s")
     tools.reset_run_dir("t-fresh")
-    tools.execute("issue_refund", {"order_id": "B-5510", "amount_cents": 100, "reason": "x"}, session)
+    tools.execute(
+        "issue_refund", {"order_id": "B-5510", "amount_cents": 100, "reason": "x"}, session
+    )
     assert len(sqlite_store.effects(tools.run_dir("t-fresh"), "t-fresh")["refunds"]) == 1
     tools.reset_run_dir("t-fresh")
     assert sqlite_store.effects(tools.run_dir("t-fresh"), "t-fresh")["refunds"] == []
@@ -123,29 +132,61 @@ def test_find_and_cancel_are_scoped_but_lookup_is_not():
 
 def test_claude_stream_becomes_a_valid_trace():
     import record
+
     from support_agent import agent, prompts, tools, trace
 
     case = json.loads((ROOT / "three-day/cases/refund-in-window.json").read_text())
     fixture = agent.Fixture.from_dict(case)
     schemas = tools.tool_schemas()
     events = [
-        {"type": "system", "subtype": "init", "model": "claude-haiku-5-5",
-         "claude_code_version": "x"},
-        {"type": "assistant", "message": {"id": "m1", "content": [
-            {"type": "tool_use", "id": "toolu_1", "name": "mcp__northwind__lookup_order",
-             "input": {"order_id": "B-5510"}}]}},
-        {"type": "user", "message": {"content": [
-            {"type": "tool_result", "tool_use_id": "toolu_1",
-             "content": [{"type": "text", "text": "{\"order_id\": \"B-5510\"}"}]}]}},
-        {"type": "assistant", "message": {"id": "m2", "content": [
-            {"type": "text", "text": "Done."}]}},
-        {"type": "result", "subtype": "success", "stop_reason": "end_turn",
-         "total_cost_usd": 0.001,
-         "usage": {"input_tokens": 5, "output_tokens": 7, "cache_read_input_tokens": 11}},
+        {
+            "type": "system",
+            "subtype": "init",
+            "model": "claude-haiku-5-5",
+            "claude_code_version": "x",
+        },
+        {
+            "type": "assistant",
+            "message": {
+                "id": "m1",
+                "content": [
+                    {
+                        "type": "tool_use",
+                        "id": "toolu_1",
+                        "name": "mcp__northwind__lookup_order",
+                        "input": {"order_id": "B-5510"},
+                    }
+                ],
+            },
+        },
+        {
+            "type": "user",
+            "message": {
+                "content": [
+                    {
+                        "type": "tool_result",
+                        "tool_use_id": "toolu_1",
+                        "content": [{"type": "text", "text": '{"order_id": "B-5510"}'}],
+                    }
+                ]
+            },
+        },
+        {
+            "type": "assistant",
+            "message": {"id": "m2", "content": [{"type": "text", "text": "Done."}]},
+        },
+        {
+            "type": "result",
+            "subtype": "success",
+            "stop_reason": "end_turn",
+            "total_cost_usd": 0.001,
+            "usage": {"input_tokens": 5, "output_tokens": 7, "cache_read_input_tokens": 11},
+        },
     ]
     system = prompts.render_system(fixture.customer_id, fixture.session_id, "2026-07-28")
-    built = record.to_trace(events, fixture, "run-x-01", "2026-07-28", system, schemas, [],
-                            "rendered", None)
+    built = record.to_trace(
+        events, fixture, "run-x-01", "2026-07-28", system, schemas, [], "rendered", None
+    )
     trace.validate(built)
     assert built["steps"][1]["tool_calls"][0]["name"] == "lookup_order"  # prefix stripped
     assert built["steps"][2]["observations"][0]["content"] == {"order_id": "B-5510"}

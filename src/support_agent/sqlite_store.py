@@ -120,8 +120,7 @@ def seed_path() -> Path:
         path = config.project_root() / path
     if not path.is_file():
         raise FileNotFoundError(
-            f"No seed database at {path}. Build it with: "
-            "uv run python three-day/db/seed.py"
+            f"No seed database at {path}. Build it with: uv run python three-day/db/seed.py"
         )
     return path
 
@@ -321,8 +320,15 @@ def issue_refund(db, args, session) -> tuple[dict[str, Any], bool]:
     cur = db.execute(
         "INSERT INTO refunds (order_id, amount_cents, method, reason, created_at, "
         "created_by, run_id, session_customer_id) VALUES (?, ?, ?, ?, ?, 'agent', ?, ?)",
-        (order_id, amount, method, args["reason"], session.as_of, session.run_id,
-         session.customer_id),
+        (
+            order_id,
+            amount,
+            method,
+            args["reason"],
+            session.as_of,
+            session.run_id,
+            session.customer_id,
+        ),
     )
     _log(db, session.run_id, "issue_refund", order_id, True)
     return {
@@ -366,12 +372,22 @@ def escalate_to_human(db, args, session) -> tuple[dict[str, Any], bool]:
     cur = db.execute(
         "INSERT INTO escalations (run_id, customer_id, session_id, reason, summary, "
         "priority, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        (session.run_id, session.customer_id, session.session_id, args["reason"],
-         args["summary"], args["priority"], session.as_of),
+        (
+            session.run_id,
+            session.customer_id,
+            session.session_id,
+            args["reason"],
+            args["summary"],
+            args["priority"],
+            session.as_of,
+        ),
     )
     _log(db, session.run_id, "escalate_to_human", None, True)
-    return {"escalated": True, "ticket": f"ESC-{cur.lastrowid:05d}",
-            "priority": args["priority"]}, False
+    return {
+        "escalated": True,
+        "ticket": f"ESC-{cur.lastrowid:05d}",
+        "priority": args["priority"],
+    }, False
 
 
 HANDLERS = {

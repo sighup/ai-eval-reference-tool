@@ -101,9 +101,7 @@ def order(order_id: str) -> dict[str, Any] | None:
 
 def customer(customer_id: str) -> dict[str, Any] | None:
     """A customer's name, email and every street address they have had."""
-    row = _db().execute(
-        "SELECT * FROM customers WHERE customer_id = ?", (customer_id,)
-    ).fetchone()
+    row = _db().execute("SELECT * FROM customers WHERE customer_id = ?", (customer_id,)).fetchone()
     if row is None:
         return None
     lines = [
@@ -113,8 +111,12 @@ def customer(customer_id: str) -> dict[str, Any] | None:
             (customer_id,),
         )
     ]
-    return {"customer_id": customer_id, "name": row["name"], "email": row["email"],
-            "address_lines": lines}
+    return {
+        "customer_id": customer_id,
+        "name": row["name"],
+        "email": row["email"],
+        "address_lines": lines,
+    }
 
 
 def query(sql: str, *params: Any) -> list[dict[str, Any]]:
