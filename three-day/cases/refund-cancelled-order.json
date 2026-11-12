@@ -1,0 +1,24 @@
+{
+  "fixture_id": "refund-cancelled-order",
+  "customer_id": "cust-2071",
+  "session_id": "sess-0123",
+  "message": "I cancelled A-3408 yesterday but I was still charged. I want my money back.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-refunds-01"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "Cancelled 2026-07-27 and refunded in full the same day. Do not refund again; explain the 5 to 7 business days.",
+    "climb_split": "climb"
+  }
+}

@@ -71,8 +71,28 @@ def project_root() -> Path:
     )
 
 
+def agent_dir() -> Path:
+    """Where the support agent's editable surfaces live: ``prompts/`` and ``corpus/``.
+
+    The project root by default. ``SUPPORT_AGENT_DIR`` points it elsewhere, so the
+    three-day course can tune its own copy (``three-day/agent/``) without
+    touching the reference tool's.
+    """
+    raw = os.environ.get("SUPPORT_AGENT_DIR", "").strip()
+    if not raw:
+        return project_root()
+    path = Path(raw)
+    return path if path.is_absolute() else project_root() / path
+
+
+def retrieval_top_k() -> int:
+    """How many policy excerpts retrieval returns. ``SUPPORT_AGENT_TOP_K`` overrides."""
+    raw = os.environ.get("SUPPORT_AGENT_TOP_K", "").strip()
+    return int(raw) if raw else RETRIEVAL_TOP_K
+
+
 def corpus_dir() -> Path:
-    return project_root() / "corpus"
+    return agent_dir() / "corpus"
 
 
 def data_dir() -> Path:
@@ -85,6 +105,18 @@ def traces_dir() -> Path:
 
 def runs_dir() -> Path:
     return project_root() / "runs"
+
+
+def backend() -> str:
+    """Which data the tools read: ``files`` (``data/*.json``, the default) or ``sqlite``.
+
+    ``sqlite`` is the three-day course's database; see ``support_agent.sqlite_store``.
+    """
+    load_env()
+    value = os.environ.get("SUPPORT_AGENT_BACKEND", "files").strip() or "files"
+    if value not in {"files", "sqlite"}:
+        raise ValueError(f"SUPPORT_AGENT_BACKEND must be 'files' or 'sqlite', got {value!r}")
+    return value
 
 
 def schema_path() -> Path:

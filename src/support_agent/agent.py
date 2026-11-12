@@ -87,7 +87,7 @@ def run(
     without leaving a file behind, and so the decision about which file a run
     accumulates into stays with the CLI.
     """
-    tool_schemas = tools.TOOL_SCHEMAS if tool_schemas is None else tool_schemas
+    tool_schemas = tools.tool_schemas() if tool_schemas is None else tool_schemas
     tools.reset_run_dir(run_id)
 
     session = tools.Session(

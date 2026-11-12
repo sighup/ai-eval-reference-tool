@@ -1,0 +1,25 @@
+{
+  "fixture_id": "refund-lookup-retry",
+  "customer_id": "cust-8394",
+  "session_id": "sess-0125",
+  "message": "Please refund A-3509, the insoles were the wrong size. Unused, still in the packet.",
+  "expected": {
+    "required_tools": [
+      "lookup_order",
+      "issue_refund"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 3200,
+    "policy_docs": [
+      "kb-returns-01"
+    ]
+  },
+  "metadata": {
+    "category": "tool-failure",
+    "why": "The first lookup times out (service_unavailable). Retrying works. 17 days after ordering: refund 3200.",
+    "climb_split": "climb"
+  }
+}

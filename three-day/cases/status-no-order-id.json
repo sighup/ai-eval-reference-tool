@@ -1,0 +1,25 @@
+{
+  "fixture_id": "status-no-order-id",
+  "customer_id": "cust-5847",
+  "session_id": "sess-0107",
+  "message": "My overshirt still hasn't come. Where is it?",
+  "expected": {
+    "required_tools": [
+      "find_orders",
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-shipping-02"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "No order id given. find_orders shows A-3270 (Sherpa Overshirt), in transit, due Sat 2026-07-25: 2 business days late (Mon 27, Tue 28). Not yet delayed (more than 3).",
+    "climb_split": "climb"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "fixture_id": "refund-window-from-order-date",
+  "customer_id": "cust-1670",
+  "session_id": "sess-0118",
+  "message": "The wool blanket from A-3201 arrived 23 days ago and it sheds everywhere. I'd like to return it for a refund.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 0,
+    "policy_docs": [
+      "kb-returns-01"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "Placed 2026-06-27, 31 days ago. The window runs from the order date, not delivery, so it closed yesterday. No refund.",
+    "climb_split": "holdout"
+  }
+}

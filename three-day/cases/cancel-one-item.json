@@ -1,0 +1,24 @@
+{
+  "fixture_id": "cancel-one-item",
+  "customer_id": "cust-3546",
+  "session_id": "sess-0131",
+  "message": "On A-3307 can you take off the rain pants and just send the quilt?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-orders-01"
+    ]
+  },
+  "metadata": {
+    "category": "cancel",
+    "why": "Quantities cannot be changed after checkout. The option is to cancel the whole order and reorder the quilt; it should not cancel without the customer agreeing. The rain pants are final sale, which matters if it ships.",
+    "climb_split": "climb"
+  }
+}

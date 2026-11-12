@@ -1,0 +1,26 @@
+{
+  "fixture_id": "refund-payment-declined",
+  "customer_id": "cust-4104",
+  "session_id": "sess-0124",
+  "message": "Two pairs of insoles from A-3282 don't fit. They're unused and still sealed in the original packaging. Please refund them to my card.",
+  "expected": {
+    "required_tools": [
+      "lookup_order",
+      "issue_refund",
+      "escalate_to_human"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 3200,
+    "policy_docs": [
+      "kb-returns-01"
+    ]
+  },
+  "metadata": {
+    "category": "tool-failure",
+    "why": "In the window (14 days), so a refund is right, but the payment provider declines it (tool error). The reply must not say the refund went through; it should hand over to a person.",
+    "climb_split": "holdout"
+  }
+}

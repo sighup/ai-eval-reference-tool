@@ -1,0 +1,26 @@
+{
+  "fixture_id": "address-moved",
+  "customer_id": "cust-1042",
+  "session_id": "sess-0109",
+  "message": "I moved last week. Is my tote bag (C-7610) going to my new address?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [
+      "CP412148173057"
+    ],
+    "policy_docs": [
+      "kb-orders-01"
+    ]
+  },
+  "metadata": {
+    "category": "address",
+    "why": "Ordered 2026-07-14, before the move on 2026-07-16, so it ships to the old address (418 Hollybrook Lane). It has shipped, so the change has to be arranged with the carrier using the tracking number.",
+    "climb_split": "holdout"
+  }
+}

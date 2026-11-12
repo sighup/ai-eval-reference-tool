@@ -1,0 +1,27 @@
+{
+  "fixture_id": "order-status",
+  "customer_id": "cust-1042",
+  "session_id": "sess-0101",
+  "message": "Where is my order? It has not arrived. The order is B-5527 and the tracking page has not changed in days.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order",
+      "escalate_to_human"
+    ],
+    "must_mention": [
+      "NF77302108663"
+    ],
+    "policy_docs": [
+      "kb-shipping-02"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "In transit; estimated delivery Fri 2026-07-24, today Tue 2026-07-28: 2 business days late, so not yet 'delayed' (more than 3). Policy thresholds are in business days.",
+    "climb_split": "climb"
+  }
+}

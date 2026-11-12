@@ -117,6 +117,17 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
 ]
 
 TOOL_NAMES = tuple(schema["name"] for schema in TOOL_SCHEMAS)
+
+
+def tool_schemas() -> list[dict[str, Any]]:
+    """The schemas for the configured backend. ``TOOL_SCHEMAS`` for the default."""
+    if config.backend() == "sqlite":
+        from . import sqlite_store
+
+        return sqlite_store.tool_schemas(TOOL_SCHEMAS)
+    return TOOL_SCHEMAS
+
+
 _SCHEMA_BY_NAME = {schema["name"]: schema["input_schema"] for schema in TOOL_SCHEMAS}
 
 
@@ -178,9 +189,7 @@ def customers() -> dict[str, Any]:
 def run_dir(run_id: str) -> Path:
     """Resolve ``runs/<run_id>/``, refusing path escape."""
     if not run_id or run_id in {".", ".."} or Path(run_id).name != run_id:
-        raise ValueError(
-            f"run_id must be a single path segment, got {run_id!r}"
-        )
+        raise ValueError(f"run_id must be a single path segment, got {run_id!r}")
 
     root = config.runs_dir().resolve()
     directory = (root / run_id).resolve()
@@ -201,6 +210,10 @@ def reset_run_dir(run_id: str) -> Path:
     if directory.exists():
         shutil.rmtree(directory)
     directory.mkdir(parents=True)
+    if config.backend() == "sqlite":
+        from . import sqlite_store
+
+        sqlite_store.fresh_copy(directory)
     return directory
 
 
@@ -331,6 +344,9 @@ def execute(name: str, arguments: dict[str, Any], session: Session) -> ToolResul
     arguments that do not match the schema come back as an error result, so the
     model gets a chance to correct itself and the trace records what happened.
     """
+    if config.backend() == "sqlite":
+        return _execute_sqlite(name, arguments, session)
+
     handler = _HANDLERS.get(name)
     if handler is None:
         return _error("unknown_tool", f"No tool named {name}. Available: {', '.join(TOOL_NAMES)}.")
@@ -341,3 +357,17 @@ def execute(name: str, arguments: dict[str, Any], session: Session) -> ToolResul
         return _error("invalid_arguments", f"{name}: {exc.message}")
 
     return handler(arguments, session)
+
+
+def _execute_sqlite(name: str, arguments: dict[str, Any], session: Session) -> ToolResult:
+    from . import sqlite_store
+
+    schemas = {s["name"]: s["input_schema"] for s in tool_schemas()}
+    if name not in schemas:
+        return _error("unknown_tool", f"No tool named {name}. Available: {', '.join(schemas)}.")
+    try:
+        jsonschema.validate(arguments, schemas[name])
+    except jsonschema.ValidationError as exc:
+        return _error("invalid_arguments", f"{name}: {exc.message}")
+    content, is_error = sqlite_store.execute(name, arguments, session, run_dir(session.run_id))
+    return ToolResult(content, is_error=is_error)

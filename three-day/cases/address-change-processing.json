@@ -1,0 +1,25 @@
+{
+  "fixture_id": "address-change-processing",
+  "customer_id": "cust-8242",
+  "session_id": "sess-0110",
+  "message": "Can you send B-5414 to my office instead? 55 Quarry Road, Suite 200, Loam Valley IA 52230.",
+  "expected": {
+    "required_tools": [
+      "lookup_order",
+      "escalate_to_human"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-orders-01"
+    ]
+  },
+  "metadata": {
+    "category": "address",
+    "why": "Processing, so the address can be corrected, but the agent has no tool to change it: it should hand over to a person rather than claim it changed it.",
+    "climb_split": "climb"
+  }
+}

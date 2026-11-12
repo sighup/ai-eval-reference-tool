@@ -33,3 +33,8 @@ traces/*
 
 # Claude Code
 .claude/
+
+## Three-day lab
+# Grader output and the judge cache are regenerated; labels, criteria and judges are yours to keep.
+three-day/work/results/
+three-day/db/northwind.db

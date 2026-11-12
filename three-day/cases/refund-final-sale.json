@@ -1,0 +1,24 @@
+{
+  "fixture_id": "refund-final-sale",
+  "customer_id": "cust-7391",
+  "session_id": "sess-0119",
+  "message": "I want to return the two sun hats from A-3290 please, they're too small.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-returns-02"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "The Clearance Sun Hats are final sale: no return at any point.",
+    "climb_split": "holdout"
+  }
+}

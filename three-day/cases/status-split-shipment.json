@@ -1,0 +1,26 @@
+{
+  "fixture_id": "status-split-shipment",
+  "customer_id": "cust-3546",
+  "session_id": "sess-0102",
+  "message": "Order A-3286 says in transit but half of it already turned up last week. Where are the rain jackets?",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund",
+      "cancel_order"
+    ],
+    "must_mention": [
+      "CP550913377102"
+    ],
+    "policy_docs": [
+      "kb-shipping-01"
+    ]
+  },
+  "metadata": {
+    "category": "status",
+    "why": "Two parcels: cook set and mug delivered 2026-07-24; the three Harbor Rain Shells are in a second parcel, in transit, due 2026-07-30, tracking CP550913377102.",
+    "climb_split": "climb"
+  }
+}

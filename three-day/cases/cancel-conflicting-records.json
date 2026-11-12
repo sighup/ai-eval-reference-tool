@@ -1,0 +1,23 @@
+{
+  "fixture_id": "cancel-conflicting-records",
+  "customer_id": "cust-8801",
+  "session_id": "sess-0132",
+  "message": "Cancel B-5405 please, found the duffel cheaper elsewhere.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "issue_refund"
+    ],
+    "must_mention": [],
+    "policy_docs": [
+      "kb-orders-01"
+    ]
+  },
+  "metadata": {
+    "category": "cancel",
+    "why": "The order says processing but a parcel was scanned today (tracking NF77120394411). The records disagree. Cancelling may not stop the parcel; it should say so or hand over to a person.",
+    "climb_split": "climb"
+  }
+}

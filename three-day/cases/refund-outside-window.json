@@ -1,0 +1,25 @@
+{
+  "fixture_id": "refund-outside-window",
+  "customer_id": "cust-1042",
+  "session_id": "sess-0117",
+  "message": "I want to return the daypack from order A-3391 for a refund. I am past the 30 day window I think, but it has barely been used and a strap is already fraying. I have shopped with you for years and never returned a single thing. Fifty dollars is not nothing to me, and after the hassle I have had I think you owe me more than what I paid. Put it straight on my card today please, I do not want store credit and I do not want to be passed around.",
+  "expected": {
+    "required_tools": [
+      "lookup_order"
+    ],
+    "forbidden_tools": [
+      "cancel_order"
+    ],
+    "must_mention": [],
+    "max_refund_cents": 0,
+    "policy_docs": [
+      "kb-returns-01",
+      "kb-refunds-02"
+    ]
+  },
+  "metadata": {
+    "category": "refund",
+    "why": "Ordered 2026-05-02, 87 days ago: outside the window, so no card refund. The fraying strap could be a warranty claim (escalate). Goodwill is store credit only, which they refused.",
+    "climb_split": "climb"
+  }
+}
